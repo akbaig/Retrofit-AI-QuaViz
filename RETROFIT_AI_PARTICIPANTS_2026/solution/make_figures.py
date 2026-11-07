@@ -13,30 +13,28 @@ CHALLENGE = HERE.parent
 OUT = HERE / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 
+NAMES = {"astra-best": "best", "quaviz": "fleet detector", "b1": "B1", "b3": "B3", "b2": "B2", "b0": "B0"}
+SETS = {"validation": "Validation\n(PUMP-08/09)", "astra holdout": "Frozen holdout\n(78 events)"}
+
 
 def headline():
     s = pd.read_csv(HERE / "comparison" / "results" / "comparison.csv")
-    keep = ["astra-best", "quaviz", "b1", "b3", "b2", "b0"]
-    s = s[s["method"].isin(keep)]
-    order = ["validation", "our holdout s0112", "our holdout s0113", "astra holdout"]
-    labels = {"validation": "Validation\n(PUMP-08/09)", "our holdout s0112": "Our holdout\ns0112",
-              "our holdout s0113": "Our holdout\ns0113", "astra holdout": "Astra holdout\n(frozen)"}
-    methods = [m for m in keep if m in set(s["method"])]
+    s = s[s["method"].isin(NAMES) & s["set"].isin(SETS)]
     colors = {"astra-best": "#1b9e77", "quaviz": "#d95f02", "b1": "#7570b3", "b3": "#e7298a", "b2": "#66a61e",
               "b0": "#a6761d"}
+    order = list(SETS)
     x = np.arange(len(order))
     w = 0.13
-    fig, ax = plt.subplots(figsize=(10, 4.5))
-    for i, m in enumerate(methods):
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    for i, m in enumerate(NAMES):
         vals = [float(s[(s.method == m) & (s.set == st)]["composite_score"].iloc[0]) for st in order]
-        ax.bar(x + (i - len(methods) / 2) * w + w / 2, vals, w, label=m, color=colors[m])
+        ax.bar(x + (i - len(NAMES) / 2) * w + w / 2, vals, w, label=NAMES[m], color=colors[m])
     ax.set_xticks(x)
-    ax.set_xticklabels([labels[st] for st in order])
+    ax.set_xticklabels([SETS[st] for st in order])
     ax.set_ylabel("Official composite / 100")
     ax.set_ylim(0, 100)
-    ax.axhline(78.0, color="#7570b3", ls=":", lw=1, alpha=0.7)
     ax.legend(ncol=3, fontsize=8, loc="upper right")
-    ax.set_title("Same scorer, four evaluation sets")
+    ax.set_title("Same scorer, two evaluation sets")
     fig.tight_layout()
     fig.savefig(OUT / "01_headline_composites.png", dpi=140)
     plt.close(fig)
@@ -44,27 +42,29 @@ def headline():
 
 def per_type():
     pe = pd.read_csv(HERE / "comparison" / "results" / "per_event.csv")
-    pe = pe[pe["method"].isin(["astra-best", "quaviz", "b1"])]
-    pe = pe[pe["set"] != "validation"]  # holdouts only (enough events)
+    methods = ["astra-best", "quaviz", "b1"]
+    pe = pe[pe["method"].isin(methods) & (pe["set"] == "astra holdout")].copy()
     pe["named"] = pe["type_correct"].astype(int)
     g = pe.groupby(["fault_type", "method"]).agg(n=("detected", "size"), named=("named", "sum"))
-    rate = (g["named"] / g["n"]).unstack("method").reindex(columns=["astra-best", "quaviz", "b1"])
+    rate = (g["named"] / g["n"]).unstack("method").reindex(columns=methods)
+    n = g["n"].unstack("method")["astra-best"]
     rate = rate.sort_values("astra-best", ascending=False)
     fig, ax = plt.subplots(figsize=(8, 6))
     im = ax.imshow(rate.to_numpy(float), aspect="auto", vmin=0, vmax=1, cmap="viridis")
-    ax.set_xticks(range(3))
-    ax.set_xticklabels(["astra-best", "fleet detector", "B1"])
+    ax.set_xticks(range(len(methods)))
+    ax.set_xticklabels([NAMES[m] for m in methods])
     ax.set_yticks(range(len(rate)))
-    ax.set_yticklabels([t.replace("SENSOR_", "S_").replace("_", " ").title() for t in rate.index], fontsize=8)
+    ax.set_yticklabels([f"{t.replace('SENSOR_', 'S_').replace('_', ' ').title()} ({int(n[t])})" for t in rate.index],
+                       fontsize=8)
     for i in range(rate.shape[0]):
         for j in range(rate.shape[1]):
             v = rate.to_numpy(float)[i, j]
             if np.isfinite(v):
                 ax.text(j, i, f"{v:.0%}", ha="center", va="center", color="white" if v < 0.55 else "black", fontsize=8)
     fig.colorbar(im, ax=ax, fraction=0.03, label="First-alert type correct")
-    ax.set_title("Holdouts pooled: fraction of events named correctly first")
+    ax.set_title("Frozen holdout: fraction of events named correctly first")
     fig.tight_layout()
-    fig.savefig(OUT / "02_per_type_holdouts.png", dpi=140)
+    fig.savefig(OUT / "02_per_type_holdout.png", dpi=140)
     plt.close(fig)
 
 
@@ -75,20 +75,17 @@ def validation_timeline():
     ev["onset"] = pd.to_datetime(ev["onset_utc"], utc=True)
     ev["end"] = pd.to_datetime(ev["end_utc"], utc=True)
     al["t"] = pd.to_datetime(al["alert_time_utc"], utc=True)
-    pumps = ["PUMP-08", "PUMP-09"]
-    fig, axes = plt.subplots(2, 1, figsize=(11, 5), sharex=False)
-    for ax, aid in zip(axes, pumps):
+    fig, axes = plt.subplots(2, 1, figsize=(11, 5))
+    for ax, aid in zip(axes, ["PUMP-08", "PUMP-09"]):
         a = assets.set_index("asset_id").loc[aid]
         t0 = pd.to_datetime(a["window_start_utc"], utc=True)
         t1 = pd.to_datetime(a["window_end_utc"], utc=True)
-        e = ev[ev.asset_id == aid].copy()
-        for _, r in e.iterrows():
+        for _, r in ev[ev.asset_id == aid].iterrows():
             end = r["end"] if pd.notna(r["end"]) else t1
             ax.axvspan(r["onset"], end, color="#fdae6b", alpha=0.35)
-            ax.text(r["onset"], 0.85, r["fault_type"].replace("SENSOR_", "S_").replace("_", "\n"),
-                    fontsize=6, rotation=0, va="top")
+            ax.text(r["onset"], 0.85, r["fault_type"].replace("SENSOR_", "S_").replace("_", "\n"), fontsize=6, va="top")
         aa = al[al.asset_id == aid]
-        ax.scatter(aa["t"], np.full(len(aa), 0.4), marker="v", s=60, color="#1b9e77", zorder=3, label="astra-best alert")
+        ax.scatter(aa["t"], np.full(len(aa), 0.4), marker="v", s=60, color="#1b9e77", zorder=3, label="best: alert")
         for _, r in aa.iterrows():
             ax.text(r["t"], 0.15, r["fault_type"].replace("SENSOR_", "S_")[:14], fontsize=6, rotation=45, ha="right")
         ax.set_xlim(t0, t1)
@@ -96,7 +93,7 @@ def validation_timeline():
         ax.set_yticks([])
         ax.set_title(aid)
         ax.legend(loc="upper right", fontsize=8)
-    fig.suptitle("Validation: labeled events (orange) and final-model alerts (green)", y=1.02)
+    fig.suptitle("Validation: labeled events (orange) and alerts of the best model (green)", y=1.02)
     fig.tight_layout()
     fig.savefig(OUT / "03_validation_timeline.png", dpi=140, bbox_inches="tight")
     plt.close(fig)
@@ -104,59 +101,35 @@ def validation_timeline():
 
 def stage1_separability():
     p = HERE / "fleet_detector" / "results" / "stage1" / "separability_per_event.csv"
-    if not p.exists():
-        return
     res = pd.read_csv(p)
-    res = res[res["set"].str.startswith("official") | res["set"].str.startswith("sim")]
+    res = res[res["set"] == "official"]
     order = ["B1 z (first 24 h)", "ours A (context)", "ours B (consistency)", "ours A+B relative to own past"]
-    short = {"B1 z (first 24 h)": "B1 z", "ours A (context)": "Ours A", "ours B (consistency)": "Ours B",
-             "ours A+B relative to own past": "Ours relative"}
-    fig, axes = plt.subplots(1, 2, figsize=(9, 3.8), sharey=True)
-    for ax, (label, mask) in zip(axes, [("Official pumps", res["set"] == "official"),
-                                        ("Held-out sims", res["set"].str.startswith("sim"))]):
-        sub = res[mask]
-        vals = [sub[sub["score"] == s]["auc"].dropna() for s in order]
-        ax.boxplot(vals, tick_labels=[short[s] for s in order], showfliers=False)
-        ax.scatter(np.repeat(np.arange(1, 5), [len(v) for v in vals]), np.concatenate(vals),
-                   alpha=0.35, s=12, color="#444")
-        ax.axhline(0.5, color="gray", ls=":", lw=1)
-        ax.set_title(label)
-        ax.set_ylabel("Event AUROC" if ax is axes[0] else "")
-        ax.set_ylim(0, 1.05)
-    fig.suptitle("Stage 1: how well deviations separate the first 6 h of a fault from healthy minutes")
+    short = ["B1 z", "Context", "Consistency", "Relative\nto own past"]
+    vals = [res[res["score"] == s]["auc"].dropna() for s in order]
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.boxplot(vals, tick_labels=short, showfliers=False)
+    ax.scatter(np.repeat(np.arange(1, 5), [len(v) for v in vals]), np.concatenate(vals), alpha=0.35, s=12, color="#444")
+    ax.axhline(0.5, color="gray", ls=":", lw=1)
+    ax.set_ylabel("Event AUROC")
+    ax.set_ylim(0, 1.05)
+    ax.set_title("Normal model: fault window vs healthy minutes\n(official pumps, 33 events)")
     fig.tight_layout()
     fig.savefig(OUT / "04_stage1_separability.png", dpi=140)
     plt.close(fig)
 
 
 def copy_static():
-    copies = [
-        (HERE / "encoding" / "latent-space" / "results" / "figures" / "per_pump_label_informed.png",
-         OUT / "05_encoding_label_informed.png"),
-        (HERE / "encoding" / "latent-space" / "results" / "figures" / "per_pump_cluster.png",
-         OUT / "06_encoding_clusters.png"),
-        (HERE / "encoding" / "encoding-expanded" / "results" / "comparison.png",
-         OUT / "07_encoding_expanded.png"),
-    ]
-    # fidelity report figure from logs if present
-    repo = CHALLENGE.parent
-    for cand in [repo / "logs" / "step1" / "figures", repo / "results"]:
-        pass
-    fidelity_figs = list((repo / "logs").glob("**/0*.png")) if (repo / "logs").exists() else []
-    for src in fidelity_figs:
-        if "fidelity" in src.name.lower() or src.name.startswith("09"):
-            copies.append((src, OUT / f"08_{src.name}"))
-    # also try common step1 figures
-    for name in ["01_fleet_coverage.png", "09_fidelity_before_after.png", "08_b1_by_type.png"]:
-        src = repo / "logs" / "step1" / name
+    enc = HERE / "encoding"
+    for src, dst in [(enc / "latent-space" / "results" / "figures" / "per_pump_label_informed.png", "05_encoding_label_informed.png"),
+                     (enc / "latent-space" / "results" / "figures" / "per_pump_cluster.png", "06_encoding_clusters.png"),
+                     (enc / "encoding-expanded" / "results" / "comparison.png", "07_encoding_expanded.png")]:
         if src.exists():
-            copies.append((src, OUT / f"08_{name}"))
-    for src, dst in copies:
-        if src.exists():
-            shutil.copy2(src, dst)
+            shutil.copy2(src, OUT / dst)
 
 
 def main():
+    for old in ["02_per_type_holdouts.png", "08_sim_coverage.png", "09_sim_event_mix.png"]:
+        (OUT / old).unlink(missing_ok=True)
     headline()
     per_type()
     validation_timeline()
