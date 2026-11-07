@@ -1,0 +1,13 @@
+asset_id,model,available,reason,supervised_rows,training_states
+PUMP-01,label_informed,True,,5944,"{'COMMUNICATION_LOSS': 67, 'NO_LABELED_EVENT': 3461, 'SUCTION_STRAINER_CLOGGING': 2416}"
+PUMP-02,label_informed,True,,5997,"{'BEARING_WEAR': 1041, 'BEARING_WEAR|SENSOR_DRIFT': 4956}"
+PUMP-03,label_informed,True,,6046,"{'DISCHARGE_RESTRICTION|IMPELLER_WEAR': 3127, 'IMPELLER_WEAR': 2919}"
+PUMP-04,label_informed,True,,5790,"{'BEARING_WEAR': 1187, 'BEARING_WEAR|IMBALANCE': 3905, 'BEARING_WEAR|IMBALANCE|SENSOR_NOISE_SPIKES': 698}"
+PUMP-05,label_informed,False,Fewer than two unambiguous training states,1467,{'IMPELLER_WEAR': 1467}
+PUMP-06,label_informed,True,,6013,"{'CAVITATION|MISALIGNMENT|SUCTION_STRAINER_CLOGGING': 66, 'MISALIGNMENT': 3237, 'MISALIGNMENT|SUCTION_STRAINER_CLOGGING': 2231, 'NO_LABELED_EVENT': 479}"
+PUMP-07,label_informed,False,Fewer than two unambiguous training states,599,{'NO_LABELED_EVENT': 599}
+PUMP-08,label_informed,True,,2217,"{'BEARING_WEAR': 1077, 'BEARING_WEAR|SUCTION_STRAINER_CLOGGING': 1140}"
+PUMP-09,label_informed,True,,5744,"{'MISALIGNMENT': 1245, 'MISALIGNMENT|SENSOR_DRIFT': 1639, 'MISALIGNMENT|SENSOR_STUCK': 1210, 'NO_LABELED_EVENT': 502, 'SENSOR_DRIFT': 1148}"
+PUMP-10,label_informed,False,No public event labels for this pump,0,{}
+PUMP-11,label_informed,False,No public event labels for this pump,0,{}
+PUMP-12,label_informed,False,No public event labels for this pump,0,{}

@@ -1,0 +1,14 @@
+{
+  "asset_id": "PUMP-09",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 5744,
+  "training_states": {
+    "MISALIGNMENT": 1245,
+    "MISALIGNMENT|SENSOR_DRIFT": 1639,
+    "MISALIGNMENT|SENSOR_STUCK": 1210,
+    "NO_LABELED_EVENT": 502,
+    "SENSOR_DRIFT": 1148
+  }
+}

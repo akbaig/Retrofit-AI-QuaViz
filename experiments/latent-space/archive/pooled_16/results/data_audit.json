@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "raw_rows": 7238783,
+  "minute_rows_supplied": 120650,
+  "complete_minute_grid": 120960,
+  "absent_complete_minutes": 310,
+  "snapshots": 358,
+  "events_by_split": {
+    "train": 27,
+    "validation": 9
+  },
+  "observable_events_by_split": {
+    "train": 26,
+    "validation": 9
+  },
+  "duplicate_minutes": 0,
+  "source_hashes": {
+    "vibration_snapshots.parquet": "4225b1117db7ddddda93ea406c69da75f5444f48f743e560fa32035b2f902b5c",
+    "benign_windows_train_validation.csv": "d1f6e8040e4d616aeed60cbae67a836fa4c1e0381aaff56c7976c73be3e7e649",
+    "assets.csv": "bf80906062ee87861adcf0d94accbf303b49b6c8c4f9060bbd3d5318dbeaef69",
+    "events_validation.csv": "68e7ffc01673dacf805c907a6367f0f9c91887a1316ab4bc79ed8384fea2bbad",
+    "provenance.md": "3186e140e56498735e01b5dd00b9f7a4fddc45223ad3a3101634edbe4af54870",
+    "operating_context.csv": "52bb06165e0a63fb27bc0564c4ce585ddffe2bf0c9e58dc3e4a67ad4049e72d0",
+    "units.md": "54eda64ca55093903af3f6b3ceb89158ebcb42e60d6129beb8eb997f068fbc3c",
+    "simulation_assumptions.md": "3955f7db21a3769f25b0bc6a2d3afff82b9c6709236dee39fb369dadef25f14b",
+    "manifest.json": "721b2b065c35093915593e3c4552ee89228054aba204a8d55b65021190c4c81e",
+    "schema.json": "ab07d61da7c6cecfcdef6afb823303674cae51512c46a9c32743400f273565ce",
+    "events_train.csv": "08b607f38a64a34601de1b578896ca2c8314977bc76eecdec8dddb253f641392",
+    "alarms.csv": "1baef0d0bf62a9987e8c79904782a0d0c6f96de6c02a0bc623a66a228745e456",
+    "data_dictionary.csv": "db816137b7e4b163ce990585ad2f5d1b0f45a4ddd8dc5e95efbf85857e248a8d",
+    "maintenance.csv": "26a134aa2881cbbb9fb37ca138e4442c8fd1c2d5b8b6c07e4ed5249cb9656578",
+    "features_1min.parquet": "de25928738c45a5d6608d6c1a3e6e3eb69d612d23e99a9f184f3b23db4d9c52c"
+  },
+  "vendor_hashes": {
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f"
+  }
+}

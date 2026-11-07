@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "automated_tests": 21,
+  "classifier_fits": 192,
+  "browser_url": "http://127.0.0.1:8766/fault_detection.html",
+  "browser_checks": {
+    "explorer_link_followed": true,
+    "chart_loaded": true,
+    "score_tables": 3,
+    "no_horizontal_overflow_at_width": 624,
+    "limitation_and_test_recall_visible": true
+  },
+  "independent_review": "No blocking findings; requested orchestration regression added and passing."
+}

@@ -1,0 +1,13 @@
+{
+  "asset_id": "PUMP-06",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 6013,
+  "training_states": {
+    "CAVITATION|MISALIGNMENT|SUCTION_STRAINER_CLOGGING": 66,
+    "MISALIGNMENT": 3237,
+    "MISALIGNMENT|SUCTION_STRAINER_CLOGGING": 2231,
+    "NO_LABELED_EVENT": 479
+  }
+}

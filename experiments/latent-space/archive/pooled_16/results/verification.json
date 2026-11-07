@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "rows": 120960,
+  "dimensions": 16,
+  "models": [
+    {
+      "model": "supervised_contrastive_seed123",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "supervised_contrastive",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "supervised_contrastive_seed7",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "raw_pca",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "denoising_ae",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "physical_pca",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "temporal_ae",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    },
+    {
+      "model": "rbf_pca",
+      "shape": [
+        120960,
+        16
+      ],
+      "reload_max_abs_error": 0.0,
+      "fit_assets": [
+        "PUMP-01",
+        "PUMP-02",
+        "PUMP-03",
+        "PUMP-04",
+        "PUMP-05",
+        "PUMP-06",
+        "PUMP-07"
+      ]
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "test_labels_unknown": true,
+  "selected_test_reload": true,
+  "selected_model": "supervised_contrastive",
+  "ambiguous_minutes_excluded": 22068
+}

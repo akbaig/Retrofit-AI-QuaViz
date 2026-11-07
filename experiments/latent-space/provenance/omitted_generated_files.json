@@ -1,0 +1,613 @@
+{
+  "reason": "Large feature caches and redundant vector/split exports can be regenerated. Full per-encoder .npy arrays, row metadata, trained models and downstream predictions are included.",
+  "files": [
+    {
+      "path": "results/selected_embeddings.parquet",
+      "bytes": 26370261
+    },
+    {
+      "path": "results/selected_embeddings.npy",
+      "bytes": 15483008
+    },
+    {
+      "path": "results/plot_rows.parquet",
+      "bytes": 423712
+    },
+    {
+      "path": "results/features.parquet",
+      "bytes": 55803169
+    },
+    {
+      "path": "results/PUMP-11/autoencoder_embeddings.parquet",
+      "bytes": 2154339
+    },
+    {
+      "path": "results/PUMP-11/train.parquet",
+      "bytes": 1275878
+    },
+    {
+      "path": "results/PUMP-11/test.parquet",
+      "bytes": 424423
+    },
+    {
+      "path": "results/PUMP-11/selected_embeddings.parquet",
+      "bytes": 2154788
+    },
+    {
+      "path": "results/PUMP-11/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-11/temporal_ae_embeddings.parquet",
+      "bytes": 2153405
+    },
+    {
+      "path": "results/PUMP-11/denoising_ae_embeddings.parquet",
+      "bytes": 2154574
+    },
+    {
+      "path": "results/PUMP-11/validation.parquet",
+      "bytes": 424566
+    },
+    {
+      "path": "results/PUMP-11/kernel_pca_embeddings.parquet",
+      "bytes": 1946620
+    },
+    {
+      "path": "results/PUMP-11/pca_embeddings.parquet",
+      "bytes": 2154788
+    },
+    {
+      "path": "results/PUMP-10/autoencoder_embeddings.parquet",
+      "bytes": 2155094
+    },
+    {
+      "path": "results/PUMP-10/train.parquet",
+      "bytes": 1276079
+    },
+    {
+      "path": "results/PUMP-10/test.parquet",
+      "bytes": 424420
+    },
+    {
+      "path": "results/PUMP-10/selected_embeddings.parquet",
+      "bytes": 2155197
+    },
+    {
+      "path": "results/PUMP-10/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-10/temporal_ae_embeddings.parquet",
+      "bytes": 2155072
+    },
+    {
+      "path": "results/PUMP-10/denoising_ae_embeddings.parquet",
+      "bytes": 2155168
+    },
+    {
+      "path": "results/PUMP-10/validation.parquet",
+      "bytes": 424767
+    },
+    {
+      "path": "results/PUMP-10/kernel_pca_embeddings.parquet",
+      "bytes": 1845548
+    },
+    {
+      "path": "results/PUMP-10/pca_embeddings.parquet",
+      "bytes": 2155197
+    },
+    {
+      "path": "results/PUMP-04/label_informed_embeddings.parquet",
+      "bytes": 2154905
+    },
+    {
+      "path": "results/PUMP-04/autoencoder_embeddings.parquet",
+      "bytes": 2154742
+    },
+    {
+      "path": "results/PUMP-04/train.parquet",
+      "bytes": 1275915
+    },
+    {
+      "path": "results/PUMP-04/test.parquet",
+      "bytes": 424457
+    },
+    {
+      "path": "results/PUMP-04/selected_embeddings.parquet",
+      "bytes": 2154833
+    },
+    {
+      "path": "results/PUMP-04/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-04/temporal_ae_embeddings.parquet",
+      "bytes": 2154722
+    },
+    {
+      "path": "results/PUMP-04/denoising_ae_embeddings.parquet",
+      "bytes": 2155011
+    },
+    {
+      "path": "results/PUMP-04/validation.parquet",
+      "bytes": 424510
+    },
+    {
+      "path": "results/PUMP-04/kernel_pca_embeddings.parquet",
+      "bytes": 2151553
+    },
+    {
+      "path": "results/PUMP-04/pca_embeddings.parquet",
+      "bytes": 2154833
+    },
+    {
+      "path": "results/PUMP-04/label_informed_validation.parquet",
+      "bytes": 424589
+    },
+    {
+      "path": "results/PUMP-04/label_informed_train.parquet",
+      "bytes": 1275873
+    },
+    {
+      "path": "results/PUMP-04/label_informed_test.parquet",
+      "bytes": 424512
+    },
+    {
+      "path": "results/PUMP-03/label_informed_embeddings.parquet",
+      "bytes": 2154406
+    },
+    {
+      "path": "results/PUMP-03/autoencoder_embeddings.parquet",
+      "bytes": 2156801
+    },
+    {
+      "path": "results/PUMP-03/train.parquet",
+      "bytes": 1276065
+    },
+    {
+      "path": "results/PUMP-03/test.parquet",
+      "bytes": 424434
+    },
+    {
+      "path": "results/PUMP-03/selected_embeddings.parquet",
+      "bytes": 2154953
+    },
+    {
+      "path": "results/PUMP-03/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-03/temporal_ae_embeddings.parquet",
+      "bytes": 2157169
+    },
+    {
+      "path": "results/PUMP-03/denoising_ae_embeddings.parquet",
+      "bytes": 2156577
+    },
+    {
+      "path": "results/PUMP-03/validation.parquet",
+      "bytes": 424500
+    },
+    {
+      "path": "results/PUMP-03/kernel_pca_embeddings.parquet",
+      "bytes": 2156253
+    },
+    {
+      "path": "results/PUMP-03/pca_embeddings.parquet",
+      "bytes": 2154953
+    },
+    {
+      "path": "results/PUMP-03/label_informed_validation.parquet",
+      "bytes": 424394
+    },
+    {
+      "path": "results/PUMP-03/label_informed_train.parquet",
+      "bytes": 1275747
+    },
+    {
+      "path": "results/PUMP-03/label_informed_test.parquet",
+      "bytes": 424350
+    },
+    {
+      "path": "results/PUMP-02/label_informed_embeddings.parquet",
+      "bytes": 2154854
+    },
+    {
+      "path": "results/PUMP-02/autoencoder_embeddings.parquet",
+      "bytes": 2154511
+    },
+    {
+      "path": "results/PUMP-02/train.parquet",
+      "bytes": 1276046
+    },
+    {
+      "path": "results/PUMP-02/test.parquet",
+      "bytes": 424400
+    },
+    {
+      "path": "results/PUMP-02/selected_embeddings.parquet",
+      "bytes": 2154856
+    },
+    {
+      "path": "results/PUMP-02/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-02/temporal_ae_embeddings.parquet",
+      "bytes": 2154644
+    },
+    {
+      "path": "results/PUMP-02/denoising_ae_embeddings.parquet",
+      "bytes": 2154626
+    },
+    {
+      "path": "results/PUMP-02/validation.parquet",
+      "bytes": 424483
+    },
+    {
+      "path": "results/PUMP-02/kernel_pca_embeddings.parquet",
+      "bytes": 2116242
+    },
+    {
+      "path": "results/PUMP-02/pca_embeddings.parquet",
+      "bytes": 2154856
+    },
+    {
+      "path": "results/PUMP-02/label_informed_validation.parquet",
+      "bytes": 424513
+    },
+    {
+      "path": "results/PUMP-02/label_informed_train.parquet",
+      "bytes": 1276067
+    },
+    {
+      "path": "results/PUMP-02/label_informed_test.parquet",
+      "bytes": 424350
+    },
+    {
+      "path": "results/PUMP-05/autoencoder_embeddings.parquet",
+      "bytes": 2154724
+    },
+    {
+      "path": "results/PUMP-05/train.parquet",
+      "bytes": 1276060
+    },
+    {
+      "path": "results/PUMP-05/test.parquet",
+      "bytes": 424404
+    },
+    {
+      "path": "results/PUMP-05/selected_embeddings.parquet",
+      "bytes": 2155021
+    },
+    {
+      "path": "results/PUMP-05/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-05/temporal_ae_embeddings.parquet",
+      "bytes": 2155896
+    },
+    {
+      "path": "results/PUMP-05/denoising_ae_embeddings.parquet",
+      "bytes": 2154981
+    },
+    {
+      "path": "results/PUMP-05/validation.parquet",
+      "bytes": 424572
+    },
+    {
+      "path": "results/PUMP-05/kernel_pca_embeddings.parquet",
+      "bytes": 2149137
+    },
+    {
+      "path": "results/PUMP-05/pca_embeddings.parquet",
+      "bytes": 2155021
+    },
+    {
+      "path": "results/PUMP-12/autoencoder_embeddings.parquet",
+      "bytes": 2156327
+    },
+    {
+      "path": "results/PUMP-12/train.parquet",
+      "bytes": 1277800
+    },
+    {
+      "path": "results/PUMP-12/test.parquet",
+      "bytes": 425115
+    },
+    {
+      "path": "results/PUMP-12/selected_embeddings.parquet",
+      "bytes": 2157732
+    },
+    {
+      "path": "results/PUMP-12/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-12/temporal_ae_embeddings.parquet",
+      "bytes": 2156519
+    },
+    {
+      "path": "results/PUMP-12/denoising_ae_embeddings.parquet",
+      "bytes": 2156314
+    },
+    {
+      "path": "results/PUMP-12/validation.parquet",
+      "bytes": 425252
+    },
+    {
+      "path": "results/PUMP-12/kernel_pca_embeddings.parquet",
+      "bytes": 2063405
+    },
+    {
+      "path": "results/PUMP-12/pca_embeddings.parquet",
+      "bytes": 2157732
+    },
+    {
+      "path": "results/PUMP-09/label_informed_embeddings.parquet",
+      "bytes": 2154917
+    },
+    {
+      "path": "results/PUMP-09/autoencoder_embeddings.parquet",
+      "bytes": 2154623
+    },
+    {
+      "path": "results/PUMP-09/train.parquet",
+      "bytes": 1275976
+    },
+    {
+      "path": "results/PUMP-09/test.parquet",
+      "bytes": 424290
+    },
+    {
+      "path": "results/PUMP-09/selected_embeddings.parquet",
+      "bytes": 2154608
+    },
+    {
+      "path": "results/PUMP-09/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-09/temporal_ae_embeddings.parquet",
+      "bytes": 2154504
+    },
+    {
+      "path": "results/PUMP-09/denoising_ae_embeddings.parquet",
+      "bytes": 2154499
+    },
+    {
+      "path": "results/PUMP-09/validation.parquet",
+      "bytes": 424433
+    },
+    {
+      "path": "results/PUMP-09/kernel_pca_embeddings.parquet",
+      "bytes": 1607419
+    },
+    {
+      "path": "results/PUMP-09/pca_embeddings.parquet",
+      "bytes": 2154608
+    },
+    {
+      "path": "results/PUMP-09/label_informed_validation.parquet",
+      "bytes": 424469
+    },
+    {
+      "path": "results/PUMP-09/label_informed_train.parquet",
+      "bytes": 1275974
+    },
+    {
+      "path": "results/PUMP-09/label_informed_test.parquet",
+      "bytes": 424520
+    },
+    {
+      "path": "results/PUMP-07/autoencoder_embeddings.parquet",
+      "bytes": 2154893
+    },
+    {
+      "path": "results/PUMP-07/train.parquet",
+      "bytes": 1275955
+    },
+    {
+      "path": "results/PUMP-07/test.parquet",
+      "bytes": 424497
+    },
+    {
+      "path": "results/PUMP-07/selected_embeddings.parquet",
+      "bytes": 2155096
+    },
+    {
+      "path": "results/PUMP-07/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-07/temporal_ae_embeddings.parquet",
+      "bytes": 2155089
+    },
+    {
+      "path": "results/PUMP-07/denoising_ae_embeddings.parquet",
+      "bytes": 2154760
+    },
+    {
+      "path": "results/PUMP-07/validation.parquet",
+      "bytes": 424744
+    },
+    {
+      "path": "results/PUMP-07/kernel_pca_embeddings.parquet",
+      "bytes": 1928327
+    },
+    {
+      "path": "results/PUMP-07/pca_embeddings.parquet",
+      "bytes": 2155096
+    },
+    {
+      "path": "results/PUMP-06/label_informed_embeddings.parquet",
+      "bytes": 2157240
+    },
+    {
+      "path": "results/PUMP-06/autoencoder_embeddings.parquet",
+      "bytes": 2156678
+    },
+    {
+      "path": "results/PUMP-06/train.parquet",
+      "bytes": 1277104
+    },
+    {
+      "path": "results/PUMP-06/test.parquet",
+      "bytes": 424888
+    },
+    {
+      "path": "results/PUMP-06/selected_embeddings.parquet",
+      "bytes": 2156630
+    },
+    {
+      "path": "results/PUMP-06/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-06/temporal_ae_embeddings.parquet",
+      "bytes": 2156440
+    },
+    {
+      "path": "results/PUMP-06/denoising_ae_embeddings.parquet",
+      "bytes": 2156584
+    },
+    {
+      "path": "results/PUMP-06/validation.parquet",
+      "bytes": 425040
+    },
+    {
+      "path": "results/PUMP-06/kernel_pca_embeddings.parquet",
+      "bytes": 2120143
+    },
+    {
+      "path": "results/PUMP-06/pca_embeddings.parquet",
+      "bytes": 2156630
+    },
+    {
+      "path": "results/PUMP-06/label_informed_validation.parquet",
+      "bytes": 425179
+    },
+    {
+      "path": "results/PUMP-06/label_informed_train.parquet",
+      "bytes": 1277629
+    },
+    {
+      "path": "results/PUMP-06/label_informed_test.parquet",
+      "bytes": 424986
+    },
+    {
+      "path": "results/PUMP-01/label_informed_embeddings.parquet",
+      "bytes": 2155155
+    },
+    {
+      "path": "results/PUMP-01/autoencoder_embeddings.parquet",
+      "bytes": 2155290
+    },
+    {
+      "path": "results/PUMP-01/train.parquet",
+      "bytes": 1276039
+    },
+    {
+      "path": "results/PUMP-01/test.parquet",
+      "bytes": 424521
+    },
+    {
+      "path": "results/PUMP-01/selected_embeddings.parquet",
+      "bytes": 2155141
+    },
+    {
+      "path": "results/PUMP-01/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-01/temporal_ae_embeddings.parquet",
+      "bytes": 2155400
+    },
+    {
+      "path": "results/PUMP-01/denoising_ae_embeddings.parquet",
+      "bytes": 2155279
+    },
+    {
+      "path": "results/PUMP-01/validation.parquet",
+      "bytes": 424588
+    },
+    {
+      "path": "results/PUMP-01/kernel_pca_embeddings.parquet",
+      "bytes": 1957525
+    },
+    {
+      "path": "results/PUMP-01/pca_embeddings.parquet",
+      "bytes": 2155141
+    },
+    {
+      "path": "results/PUMP-01/label_informed_validation.parquet",
+      "bytes": 424538
+    },
+    {
+      "path": "results/PUMP-01/label_informed_train.parquet",
+      "bytes": 1275998
+    },
+    {
+      "path": "results/PUMP-01/label_informed_test.parquet",
+      "bytes": 424603
+    },
+    {
+      "path": "results/PUMP-08/label_informed_embeddings.parquet",
+      "bytes": 2148200
+    },
+    {
+      "path": "results/PUMP-08/autoencoder_embeddings.parquet",
+      "bytes": 2148104
+    },
+    {
+      "path": "results/PUMP-08/train.parquet",
+      "bytes": 1275970
+    },
+    {
+      "path": "results/PUMP-08/test.parquet",
+      "bytes": 424529
+    },
+    {
+      "path": "results/PUMP-08/selected_embeddings.parquet",
+      "bytes": 2148104
+    },
+    {
+      "path": "results/PUMP-08/selected_embeddings.npy",
+      "bytes": 1290368
+    },
+    {
+      "path": "results/PUMP-08/temporal_ae_embeddings.parquet",
+      "bytes": 2155055
+    },
+    {
+      "path": "results/PUMP-08/denoising_ae_embeddings.parquet",
+      "bytes": 2148090
+    },
+    {
+      "path": "results/PUMP-08/validation.parquet",
+      "bytes": 418198
+    },
+    {
+      "path": "results/PUMP-08/kernel_pca_embeddings.parquet",
+      "bytes": 1727560
+    },
+    {
+      "path": "results/PUMP-08/pca_embeddings.parquet",
+      "bytes": 2148495
+    },
+    {
+      "path": "results/PUMP-08/label_informed_validation.parquet",
+      "bytes": 418142
+    },
+    {
+      "path": "results/PUMP-08/label_informed_train.parquet",
+      "bytes": 1276059
+    },
+    {
+      "path": "results/PUMP-08/label_informed_test.parquet",
+      "bytes": 424647
+    }
+  ]
+}

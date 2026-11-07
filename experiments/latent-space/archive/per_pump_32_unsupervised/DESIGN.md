@@ -1,0 +1,13 @@
+# Unsupervised 32D representations per pump
+
+User explicitly excludes label-informed encoders, requests an explanation of the old metric and reconstruction loss, and authorizes a new 32-dimensional experiment with train/validation/test from every pump. No additional design approval is needed.
+
+Fit five separate encoders for each of 12 pumps: PCA, approximate RBF kernel PCA, ordinary autoencoder, denoising autoencoder, and temporal GRU autoencoder. All use identical observed numeric inputs from causal minute/physics/history/waveform features. No event file, label, alarm, or maintenance record is read. Input feature availability and mean/std scaling are fitted only on that pump's training interval.
+
+Each pump has 10,080 completed-minute observations. Chronological partitions: first 6,048 train, next 2,016 validation, last 2,016 test. First 120 validation/test minutes are warmup and excluded from checkpoint selection and reconstruction scoring. Histories remain causal and may carry earlier measured state, as in streaming inference; long thermal state and old snapshots are not reset at split boundaries. This is within-pump evaluation, not the original asset-held-out challenge benchmark. Original benchmark split is retained as metadata only.
+
+Every model reconstructs the same current-minute input feature vector. Primary metric: mean across features of observed-cell squared reconstruction error in training-standardized units (no target clipping). Also report per-feature MSE, the error of predicting the training mean, and skill relative to that baseline. Exclude features absent or constant in training and disclose them. These exclusions limit claims about sensors/conditions not seen during training. All input values remain unbounded, with missing values filled by the training mean and separately masked.
+
+PCA uses its analytic decoder; kernel PCA uses a train-only ridge decoder; neural models use their learned decoders. Neural epochs/checkpoint selection uses validation reconstruction loss. Select each pump's model using validation only, freeze, then calculate final test losses. Test results do not choose models. Reconstruction quality is not fault detection performance.
+
+KMeans and UMAP/PCA projections fit training embeddings only. Plot each pump separately with split, cluster, time, operating-mode, and reconstruction-error coloring. Independently fitted coordinates are not aligned across pumps. Export all minute vectors, metadata, split files, models, metrics, source hashes and an offline explorer. Archive the previous pooled 16D experiment including its rejected supervised branch; remove that branch from active code/results/UI.

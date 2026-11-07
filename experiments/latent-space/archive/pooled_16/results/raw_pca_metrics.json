@@ -1,0 +1,86 @@
+{
+  "macro_ap": 0.30078243846621744,
+  "prevalence_ap": 0.1348115760982719,
+  "fault_cluster_ari": 0.236620339357414,
+  "fault_cluster_nmi": 0.42507273560198566,
+  "asset_cluster_nmi": 0.732181755051814,
+  "tier_cluster_nmi": 0.4727462436030942,
+  "mode_cluster_nmi": 0.25554450625550307,
+  "cluster_stability_ari": 0.7835621222119369,
+  "validation_silhouette": 0.11450736969709396,
+  "probe_train_rows": 10530,
+  "probe_validation_rows": 3202,
+  "per_fault": [
+    {
+      "fault_type": "AIR_ENTRAINMENT",
+      "positive_minutes_sampled": 83,
+      "prevalence": 0.025921299188007497,
+      "average_precision": 0.025921299188007497
+    },
+    {
+      "fault_type": "BEARING_WEAR",
+      "positive_minutes_sampled": 1248,
+      "prevalence": 0.38975640224859465,
+      "average_precision": 0.2938000423983839
+    },
+    {
+      "fault_type": "COMMUNICATION_LOSS",
+      "positive_minutes_sampled": 20,
+      "prevalence": 0.006246096189881324,
+      "average_precision": 1.0
+    },
+    {
+      "fault_type": "DISCHARGE_RESTRICTION",
+      "positive_minutes_sampled": 564,
+      "prevalence": 0.17613991255465333,
+      "average_precision": 0.17613991255465333
+    },
+    {
+      "fault_type": "MISALIGNMENT",
+      "positive_minutes_sampled": 819,
+      "prevalence": 0.2557776389756402,
+      "average_precision": 0.4751706935828722
+    },
+    {
+      "fault_type": "SENSOR_DRIFT",
+      "positive_minutes_sampled": 557,
+      "prevalence": 0.17395377888819488,
+      "average_precision": 0.17017863111204168
+    },
+    {
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "positive_minutes_sampled": 124,
+      "prevalence": 0.03872579637726421,
+      "average_precision": 0.03872579637726421
+    },
+    {
+      "fault_type": "SENSOR_STUCK",
+      "positive_minutes_sampled": 242,
+      "prevalence": 0.07557776389756403,
+      "average_precision": 0.07557776389756403
+    },
+    {
+      "fault_type": "SUCTION_STRAINER_CLOGGING",
+      "positive_minutes_sampled": 228,
+      "prevalence": 0.0712054965646471,
+      "average_precision": 0.4515278070851702
+    }
+  ],
+  "per_asset": [
+    {
+      "asset_id": "PUMP-08",
+      "macro_ap": 0.6381453704838254,
+      "supported_fault_types": 4
+    },
+    {
+      "asset_id": "PUMP-09",
+      "macro_ap": 0.2654192308597323,
+      "supported_fault_types": 5
+    }
+  ],
+  "running_macro_ap": 0.21556408780068903,
+  "model": "raw_pca",
+  "latent_dimensions": 16,
+  "input_features": 44,
+  "fit_seconds": 0.03500029200222343
+}

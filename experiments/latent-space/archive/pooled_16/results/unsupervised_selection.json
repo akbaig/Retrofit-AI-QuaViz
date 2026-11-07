@@ -1,0 +1,24 @@
+{
+  "selected_model": "raw_pca",
+  "criterion": "validation macro average precision of fixed 15-neighbor multilabel probe",
+  "model_candidates": [
+    "raw_pca",
+    "physical_pca",
+    "rbf_pca",
+    "denoising_ae",
+    "temporal_ae"
+  ],
+  "selected_before_test_transform": true,
+  "dimensions": 16,
+  "seed": 42,
+  "fitted_assets": [
+    "PUMP-01",
+    "PUMP-02",
+    "PUMP-03",
+    "PUMP-04",
+    "PUMP-05",
+    "PUMP-06",
+    "PUMP-07"
+  ],
+  "model_sha256": "758779934da66b9f64052561f712c5630056aaddedfa5ce7dfba008d097f8595"
+}

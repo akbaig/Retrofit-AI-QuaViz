@@ -1,0 +1,122 @@
+[
+  {
+    "epoch": 1,
+    "train_masked_mse": 1.9538243732282095
+  },
+  {
+    "epoch": 2,
+    "train_masked_mse": 0.9702884938035693
+  },
+  {
+    "epoch": 3,
+    "train_masked_mse": 0.7316917745130402
+  },
+  {
+    "epoch": 4,
+    "train_masked_mse": 0.6223084096397672
+  },
+  {
+    "epoch": 5,
+    "train_masked_mse": 0.5652166908340794
+  },
+  {
+    "epoch": 6,
+    "train_masked_mse": 0.526078070380858
+  },
+  {
+    "epoch": 7,
+    "train_masked_mse": 0.49305854950632366
+  },
+  {
+    "epoch": 8,
+    "train_masked_mse": 0.4706800750323704
+  },
+  {
+    "epoch": 9,
+    "train_masked_mse": 0.45132181740232874
+  },
+  {
+    "epoch": 10,
+    "train_masked_mse": 0.43345796103988377
+  },
+  {
+    "epoch": 11,
+    "train_masked_mse": 0.4196219529424395
+  },
+  {
+    "epoch": 12,
+    "train_masked_mse": 0.4102759419807366
+  },
+  {
+    "epoch": 13,
+    "train_masked_mse": 0.3998222675706659
+  },
+  {
+    "epoch": 14,
+    "train_masked_mse": 0.3899232308779444
+  },
+  {
+    "epoch": 15,
+    "train_masked_mse": 0.3837648874947003
+  },
+  {
+    "epoch": 16,
+    "train_masked_mse": 0.37330526805349756
+  },
+  {
+    "epoch": 17,
+    "train_masked_mse": 0.36672079882451464
+  },
+  {
+    "epoch": 18,
+    "train_masked_mse": 0.3588376912687506
+  },
+  {
+    "epoch": 19,
+    "train_masked_mse": 0.35258512465017183
+  },
+  {
+    "epoch": 20,
+    "train_masked_mse": 0.3468275990869318
+  },
+  {
+    "epoch": 21,
+    "train_masked_mse": 0.3413422123662063
+  },
+  {
+    "epoch": 22,
+    "train_masked_mse": 0.33538633372102467
+  },
+  {
+    "epoch": 23,
+    "train_masked_mse": 0.3305059958781515
+  },
+  {
+    "epoch": 24,
+    "train_masked_mse": 0.32661190203257967
+  },
+  {
+    "epoch": 25,
+    "train_masked_mse": 0.3262728394142219
+  },
+  {
+    "epoch": 26,
+    "train_masked_mse": 0.319157783474241
+  },
+  {
+    "epoch": 27,
+    "train_masked_mse": 0.3155989476612636
+  },
+  {
+    "epoch": 28,
+    "train_masked_mse": 0.3079060611448118
+  },
+  {
+    "epoch": 29,
+    "train_masked_mse": 0.3047477070774351
+  },
+  {
+    "epoch": 30,
+    "train_masked_mse": 0.30143843804086956
+  }
+]

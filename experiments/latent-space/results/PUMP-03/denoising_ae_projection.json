@@ -1,0 +1,9 @@
+{
+  "fingerprint": "6e1f1afa40744f56759f03845060cb96d63c23e8a4a450bc179ea80b18dca0ff",
+  "neighbors": 25,
+  "min_dist": 0.15,
+  "epochs": 200,
+  "seed": 42,
+  "stride": 10,
+  "training_only": true
+}

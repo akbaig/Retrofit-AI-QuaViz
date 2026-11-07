@@ -1,0 +1,7 @@
+model,validation_umap_trustworthiness
+raw_pca,0.8828621115676953
+physical_pca,0.8818096178121559
+rbf_pca,0.9467352214433433
+denoising_ae,0.9263127467569092
+temporal_ae,0.9279455724760294
+supervised_contrastive,0.9197956785647141

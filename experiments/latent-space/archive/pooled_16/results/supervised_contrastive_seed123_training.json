@@ -1,0 +1,122 @@
+[
+  {
+    "epoch": 1,
+    "contrastive_plus_reconstruction_loss": 4.009500577449798
+  },
+  {
+    "epoch": 2,
+    "contrastive_plus_reconstruction_loss": 3.6330568265914915
+  },
+  {
+    "epoch": 3,
+    "contrastive_plus_reconstruction_loss": 3.5572417616844176
+  },
+  {
+    "epoch": 4,
+    "contrastive_plus_reconstruction_loss": 3.4893779373168945
+  },
+  {
+    "epoch": 5,
+    "contrastive_plus_reconstruction_loss": 3.4840893602371215
+  },
+  {
+    "epoch": 6,
+    "contrastive_plus_reconstruction_loss": 3.41838684797287
+  },
+  {
+    "epoch": 7,
+    "contrastive_plus_reconstruction_loss": 3.4082792019844055
+  },
+  {
+    "epoch": 8,
+    "contrastive_plus_reconstruction_loss": 3.414940505027771
+  },
+  {
+    "epoch": 9,
+    "contrastive_plus_reconstruction_loss": 3.388469123840332
+  },
+  {
+    "epoch": 10,
+    "contrastive_plus_reconstruction_loss": 3.3807289600372314
+  },
+  {
+    "epoch": 11,
+    "contrastive_plus_reconstruction_loss": 3.3660889291763305
+  },
+  {
+    "epoch": 12,
+    "contrastive_plus_reconstruction_loss": 3.3452616214752195
+  },
+  {
+    "epoch": 13,
+    "contrastive_plus_reconstruction_loss": 3.3373896050453187
+  },
+  {
+    "epoch": 14,
+    "contrastive_plus_reconstruction_loss": 3.3300480747222903
+  },
+  {
+    "epoch": 15,
+    "contrastive_plus_reconstruction_loss": 3.3119156622886656
+  },
+  {
+    "epoch": 16,
+    "contrastive_plus_reconstruction_loss": 3.2871585941314696
+  },
+  {
+    "epoch": 17,
+    "contrastive_plus_reconstruction_loss": 3.2962415599823
+  },
+  {
+    "epoch": 18,
+    "contrastive_plus_reconstruction_loss": 3.2733571696281434
+  },
+  {
+    "epoch": 19,
+    "contrastive_plus_reconstruction_loss": 3.2535274958610536
+  },
+  {
+    "epoch": 20,
+    "contrastive_plus_reconstruction_loss": 3.2322922563552856
+  },
+  {
+    "epoch": 21,
+    "contrastive_plus_reconstruction_loss": 3.2168130445480347
+  },
+  {
+    "epoch": 22,
+    "contrastive_plus_reconstruction_loss": 3.229277403354645
+  },
+  {
+    "epoch": 23,
+    "contrastive_plus_reconstruction_loss": 3.208378031253815
+  },
+  {
+    "epoch": 24,
+    "contrastive_plus_reconstruction_loss": 3.1913447690010073
+  },
+  {
+    "epoch": 25,
+    "contrastive_plus_reconstruction_loss": 3.193677313327789
+  },
+  {
+    "epoch": 26,
+    "contrastive_plus_reconstruction_loss": 3.1918702030181887
+  },
+  {
+    "epoch": 27,
+    "contrastive_plus_reconstruction_loss": 3.187525222301483
+  },
+  {
+    "epoch": 28,
+    "contrastive_plus_reconstruction_loss": 3.1785061883926393
+  },
+  {
+    "epoch": 29,
+    "contrastive_plus_reconstruction_loss": 3.1794489288330077
+  },
+  {
+    "epoch": 30,
+    "contrastive_plus_reconstruction_loss": 3.170675220489502
+  }
+]

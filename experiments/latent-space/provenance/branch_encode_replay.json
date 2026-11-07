@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "rows": 6120,
+  "dimensions": 32,
+  "label_inputs": false,
+  "matches_saved_vectors": true,
+  "rtol": 2e-05,
+  "atol": 2e-05
+}

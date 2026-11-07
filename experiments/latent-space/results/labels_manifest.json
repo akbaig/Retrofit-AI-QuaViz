@@ -1,0 +1,142 @@
+{
+  "model": "label_informed",
+  "event_sources": {
+    "events_train.csv": "08b607f38a64a34601de1b578896ca2c8314977bc76eecdec8dddb253f641392",
+    "events_validation.csv": "68e7ffc01673dacf805c907a6367f0f9c91887a1316ab4bc79ed8384fea2bbad"
+  },
+  "uses_training_labels": true,
+  "validation_labels_used_for_selection": false,
+  "test_labels_used_for_selection": false,
+  "inference_requires_labels": false,
+  "training_label_scope": "Each pump first60% only; pre-detectable/unobservable overlaps excluded",
+  "pumps": [
+    {
+      "asset_id": "PUMP-01",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 5944,
+      "training_states": {
+        "COMMUNICATION_LOSS": 67,
+        "NO_LABELED_EVENT": 3461,
+        "SUCTION_STRAINER_CLOGGING": 2416
+      }
+    },
+    {
+      "asset_id": "PUMP-02",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 5997,
+      "training_states": {
+        "BEARING_WEAR": 1041,
+        "BEARING_WEAR|SENSOR_DRIFT": 4956
+      }
+    },
+    {
+      "asset_id": "PUMP-03",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 6046,
+      "training_states": {
+        "DISCHARGE_RESTRICTION|IMPELLER_WEAR": 3127,
+        "IMPELLER_WEAR": 2919
+      }
+    },
+    {
+      "asset_id": "PUMP-04",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 5790,
+      "training_states": {
+        "BEARING_WEAR": 1187,
+        "BEARING_WEAR|IMBALANCE": 3905,
+        "BEARING_WEAR|IMBALANCE|SENSOR_NOISE_SPIKES": 698
+      }
+    },
+    {
+      "asset_id": "PUMP-05",
+      "model": "label_informed",
+      "available": false,
+      "reason": "Fewer than two unambiguous training states",
+      "supervised_rows": 1467,
+      "training_states": {
+        "IMPELLER_WEAR": 1467
+      }
+    },
+    {
+      "asset_id": "PUMP-06",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 6013,
+      "training_states": {
+        "CAVITATION|MISALIGNMENT|SUCTION_STRAINER_CLOGGING": 66,
+        "MISALIGNMENT": 3237,
+        "MISALIGNMENT|SUCTION_STRAINER_CLOGGING": 2231,
+        "NO_LABELED_EVENT": 479
+      }
+    },
+    {
+      "asset_id": "PUMP-07",
+      "model": "label_informed",
+      "available": false,
+      "reason": "Fewer than two unambiguous training states",
+      "supervised_rows": 599,
+      "training_states": {
+        "NO_LABELED_EVENT": 599
+      }
+    },
+    {
+      "asset_id": "PUMP-08",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 2217,
+      "training_states": {
+        "BEARING_WEAR": 1077,
+        "BEARING_WEAR|SUCTION_STRAINER_CLOGGING": 1140
+      }
+    },
+    {
+      "asset_id": "PUMP-09",
+      "model": "label_informed",
+      "available": true,
+      "reason": "",
+      "supervised_rows": 5744,
+      "training_states": {
+        "MISALIGNMENT": 1245,
+        "MISALIGNMENT|SENSOR_DRIFT": 1639,
+        "MISALIGNMENT|SENSOR_STUCK": 1210,
+        "NO_LABELED_EVENT": 502,
+        "SENSOR_DRIFT": 1148
+      }
+    },
+    {
+      "asset_id": "PUMP-10",
+      "model": "label_informed",
+      "available": false,
+      "reason": "No public event labels for this pump",
+      "supervised_rows": 0,
+      "training_states": {}
+    },
+    {
+      "asset_id": "PUMP-11",
+      "model": "label_informed",
+      "available": false,
+      "reason": "No public event labels for this pump",
+      "supervised_rows": 0,
+      "training_states": {}
+    },
+    {
+      "asset_id": "PUMP-12",
+      "model": "label_informed",
+      "available": false,
+      "reason": "No public event labels for this pump",
+      "supervised_rows": 0,
+      "training_states": {}
+    }
+  ]
+}

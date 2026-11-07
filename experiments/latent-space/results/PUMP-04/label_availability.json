@@ -1,0 +1,12 @@
+{
+  "asset_id": "PUMP-04",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 5790,
+  "training_states": {
+    "BEARING_WEAR": 1187,
+    "BEARING_WEAR|IMBALANCE": 3905,
+    "BEARING_WEAR|IMBALANCE|SENSOR_NOISE_SPIKES": 698
+  }
+}

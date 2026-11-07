@@ -1,0 +1,33 @@
+{
+  "selected_model": "supervised_contrastive",
+  "best_unsupervised": "raw_pca",
+  "criterion": "validation macro average precision of fixed 15-neighbor multilabel probe; prespecified seed 42",
+  "dimensions": 16,
+  "seed": 42,
+  "selected_before_test_transform": true,
+  "uses_training_labels": true,
+  "fitted_assets": [
+    "PUMP-01",
+    "PUMP-02",
+    "PUMP-03",
+    "PUMP-04",
+    "PUMP-05",
+    "PUMP-06",
+    "PUMP-07"
+  ],
+  "model_sha256": "eaa504e5235173cdd5fc284bbcfaeff4827332cb7b5efda7fd6cb1a9f20f86d8",
+  "seed_sensitivity": [
+    {
+      "model": "supervised_contrastive",
+      "macro_ap": 0.4350181124986545
+    },
+    {
+      "model": "supervised_contrastive_seed7",
+      "macro_ap": 0.4218799093568924
+    },
+    {
+      "model": "supervised_contrastive_seed123",
+      "macro_ap": 0.49051049329394314
+    }
+  ]
+}

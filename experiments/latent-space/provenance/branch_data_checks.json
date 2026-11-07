@@ -1,0 +1,16 @@
+{
+  "dataset": "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/RETROFIT_AI_PARTICIPANTS_2026/data/full",
+  "six_input_hashes_match": true,
+  "documented_vector_loading_and_classifier_example_passed": true,
+  "shape": [
+    10080,
+    32
+  ],
+  "split_counts": [
+    6048,
+    1896,
+    1896
+  ],
+  "first_time": "2025-08-11 00:01:00+00:00",
+  "prefix_cutoff": "2025-08-11 08:32:00+00:00"
+}

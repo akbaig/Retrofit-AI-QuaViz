@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "models_verified": 67,
+  "rows": 120960,
+  "dimensions": 32,
+  "pumps": [
+    {
+      "pump": "PUMP-01",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-02",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-03",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-04",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-05",
+      "models_verified": 5,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-06",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-07",
+      "models_verified": 5,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-08",
+      "models_verified": 6,
+      "selected_model": "autoencoder",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-09",
+      "models_verified": 6,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-10",
+      "models_verified": 5,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-11",
+      "models_verified": 5,
+      "selected_model": "pca",
+      "rows": 10080
+    },
+    {
+      "pump": "PUMP-12",
+      "models_verified": 5,
+      "selected_model": "pca",
+      "rows": 10080
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "label_files_read": true,
+  "label_informed_training_rows_verified": true,
+  "baseline_models_and_embeddings_unchanged": true,
+  "selection_uses_labels": false
+}
