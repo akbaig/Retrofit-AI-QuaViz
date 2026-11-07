@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "probes_verified": 192,
+  "frozen_encoder_artifacts_verified": 134,
+  "test_ranking_evaluable_cases": 0,
+  "train_only_scaling_and_fit_indices": true,
+  "predictions_replayed": true,
+  "scores_recomputed": true,
+  "validation_selection_recomputed": true
+}

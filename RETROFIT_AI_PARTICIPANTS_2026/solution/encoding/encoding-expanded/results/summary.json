@@ -1,0 +1,783 @@
+{
+  "selection": {
+    "created_at_utc": "2026-11-07T16:17:03.131832+00:00",
+    "selected_encoder": "expanded_task_encoder/logistic",
+    "selected_logistic_encoder": "expanded_task_encoder/logistic",
+    "added_candidates": [
+      "expanded_task_encoder/histogram",
+      "expanded_kernel_pca/histogram",
+      "frozen_denoising_ae/histogram"
+    ],
+    "selected_frozen_reference": "frozen_denoising_ae/logistic",
+    "frozen_reference_development_ranking": [
+      {
+        "candidate": "frozen_denoising_ae/logistic",
+        "macro_ap": 0.7966898579873474,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_autoencoder/logistic",
+        "macro_ap": 0.7841566022269093,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_pca/logistic",
+        "macro_ap": 0.7767166136190682,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_temporal_ae/logistic",
+        "macro_ap": 0.7651651571427204,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_kernel_pca/logistic",
+        "macro_ap": 0.7487105869191444,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      }
+    ],
+    "selection_source_sha256": "5a92f1309f43f636c66c97e2afa06d2fefa57b2b43b9b8976acaab59d3664cf2",
+    "new_model_selection_sha256": "b42708f95184790e941a4239d760c2f13bb33a703b4251d47833e60a07e1f40c",
+    "all_candidates_reported": true,
+    "test_tuning_allowed": false,
+    "note": "Reference selection excludes frozen label-informed encoder, which was unavailable on two families; paired same-encoder comparisons are also reported."
+  },
+  "rankings": {
+    "development": [
+      {
+        "candidate": "raw_features/histogram",
+        "macro_ap": 0.8977526829269156,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_task_encoder/logistic",
+        "macro_ap": 0.8895985957231555,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_kernel_pca/logistic",
+        "macro_ap": 0.869673983607071,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_task_encoder/histogram",
+        "macro_ap": 0.8676984334572403,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_label_informed/logistic",
+        "macro_ap": 0.8442331944542367,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_kernel_pca/histogram",
+        "macro_ap": 0.8395126232027882,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_pca/logistic",
+        "macro_ap": 0.797573838135343,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_denoising_ae/logistic",
+        "macro_ap": 0.7966898579873474,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "raw_features/logistic",
+        "macro_ap": 0.7924378307577257,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_denoising_ae/histogram",
+        "macro_ap": 0.791098378965246,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_temporal_ae/logistic",
+        "macro_ap": 0.7880442381506138,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_autoencoder/logistic",
+        "macro_ap": 0.7853428469080214,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_autoencoder/logistic",
+        "macro_ap": 0.7841566022269093,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_pca/logistic",
+        "macro_ap": 0.7767166136190682,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_denoising_ae/logistic",
+        "macro_ap": 0.7733415373985133,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_temporal_ae/logistic",
+        "macro_ap": 0.7651651571427204,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "frozen_kernel_pca/logistic",
+        "macro_ap": 0.7487105869191444,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      }
+    ],
+    "fresh_test": [
+      {
+        "candidate": "expanded_task_encoder/logistic",
+        "macro_ap": 0.8692026634085276,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_task_encoder/histogram",
+        "macro_ap": 0.8676093241635023,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "raw_features/logistic",
+        "macro_ap": 0.8574771188438358,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "raw_features/histogram",
+        "macro_ap": 0.8325792202888337,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_kernel_pca/logistic",
+        "macro_ap": 0.8265734709282287,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_pca/logistic",
+        "macro_ap": 0.8248411330249626,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_kernel_pca/histogram",
+        "macro_ap": 0.8213939119291341,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_autoencoder/logistic",
+        "macro_ap": 0.815359513558339,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_denoising_ae/logistic",
+        "macro_ap": 0.8067047905452236,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_denoising_ae/histogram",
+        "macro_ap": 0.806374662742632,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_label_informed/logistic",
+        "macro_ap": 0.8038415061951376,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_autoencoder/logistic",
+        "macro_ap": 0.7997249781267459,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_pca/logistic",
+        "macro_ap": 0.7978202335933638,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_temporal_ae/logistic",
+        "macro_ap": 0.7802302495324993,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_kernel_pca/logistic",
+        "macro_ap": 0.7540359095588077,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_denoising_ae/logistic",
+        "macro_ap": 0.7538883891209063,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "frozen_temporal_ae/logistic",
+        "macro_ap": 0.7237527349456675,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      }
+    ]
+  },
+  "knn_rankings": {
+    "development": [
+      {
+        "candidate": "expanded_label_informed/knn",
+        "macro_ap": 0.8164009506413716,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_temporal_ae/knn",
+        "macro_ap": 0.794362447603573,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_task_encoder/knn",
+        "macro_ap": 0.7841687429190581,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_denoising_ae/knn",
+        "macro_ap": 0.7740346850161479,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_autoencoder/knn",
+        "macro_ap": 0.7550713462926144,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_kernel_pca/knn",
+        "macro_ap": 0.7420165168005496,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_pca/knn",
+        "macro_ap": 0.7351017665407621,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      }
+    ],
+    "fresh_test": [
+      {
+        "candidate": "expanded_label_informed/knn",
+        "macro_ap": 0.8024745726225798,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_task_encoder/knn",
+        "macro_ap": 0.7824375354854327,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_autoencoder/knn",
+        "macro_ap": 0.7498269739515641,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_temporal_ae/knn",
+        "macro_ap": 0.7478123761732801,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_denoising_ae/knn",
+        "macro_ap": 0.7341258225286168,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_pca/knn",
+        "macro_ap": 0.7333543069765832,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      },
+      {
+        "candidate": "expanded_kernel_pca/knn",
+        "macro_ap": 0.7287149436353424,
+        "families": 7,
+        "recordings": 30,
+        "cases": 30
+      }
+    ]
+  },
+  "fault_type_test_ranking": [
+    {
+      "candidate": "raw_features/logistic",
+      "macro_ap": 0.6322415956657707,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "raw_features/histogram",
+      "macro_ap": 0.631061729462706,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_pca/logistic",
+      "macro_ap": 0.5996804830961221,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_task_encoder/histogram",
+      "macro_ap": 0.5827042792942251,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_pca/logistic",
+      "macro_ap": 0.573582672619315,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_task_encoder/logistic",
+      "macro_ap": 0.5727051945019067,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_denoising_ae/logistic",
+      "macro_ap": 0.5718649158837962,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_denoising_ae/histogram",
+      "macro_ap": 0.5697149413355364,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_autoencoder/logistic",
+      "macro_ap": 0.5689585156636717,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_autoencoder/logistic",
+      "macro_ap": 0.5681873218417975,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_kernel_pca/logistic",
+      "macro_ap": 0.5668884556855122,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_temporal_ae/logistic",
+      "macro_ap": 0.5604098434095705,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_label_informed/logistic",
+      "macro_ap": 0.5559002993818113,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_denoising_ae/logistic",
+      "macro_ap": 0.5483327934746505,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_temporal_ae/logistic",
+      "macro_ap": 0.547996906039747,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "expanded_kernel_pca/histogram",
+      "macro_ap": 0.533009646862746,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    },
+    {
+      "candidate": "frozen_kernel_pca/logistic",
+      "macro_ap": 0.5318385560722965,
+      "families": 7,
+      "recordings": 30,
+      "cases": 67
+    }
+  ],
+  "counts": {
+    "expanded_pca/logistic": {
+      "tp": 49126,
+      "fp": 25844,
+      "fn": 9391,
+      "tn": 43944,
+      "recall": 0.8395167216364475,
+      "false_positive_rate": 0.3703215452513326,
+      "precision": 0.6552754435107376,
+      "f1": 0.7360417119270042
+    },
+    "expanded_kernel_pca/logistic": {
+      "tp": 49743,
+      "fp": 25749,
+      "fn": 8774,
+      "tn": 44039,
+      "recall": 0.8500606661312098,
+      "false_positive_rate": 0.36896027970424716,
+      "precision": 0.6589175011921793,
+      "f1": 0.742382974277847
+    },
+    "expanded_autoencoder/logistic": {
+      "tp": 47535,
+      "fp": 34981,
+      "fn": 10982,
+      "tn": 34807,
+      "recall": 0.8123280414238597,
+      "false_positive_rate": 0.5012466326589099,
+      "precision": 0.5760700954966309,
+      "f1": 0.6740975516368509
+    },
+    "expanded_denoising_ae/logistic": {
+      "tp": 45224,
+      "fp": 32763,
+      "fn": 13293,
+      "tn": 37025,
+      "recall": 0.7728352444588752,
+      "false_positive_rate": 0.46946466441221985,
+      "precision": 0.5798915203816021,
+      "f1": 0.6626032936763758
+    },
+    "expanded_temporal_ae/logistic": {
+      "tp": 48411,
+      "fp": 29402,
+      "fn": 10106,
+      "tn": 40386,
+      "recall": 0.8272980501392758,
+      "false_positive_rate": 0.42130452226743853,
+      "precision": 0.6221453998689165,
+      "f1": 0.7102031834519181
+    },
+    "expanded_label_informed/logistic": {
+      "tp": 49462,
+      "fp": 24602,
+      "fn": 9055,
+      "tn": 45186,
+      "recall": 0.845258642787566,
+      "false_positive_rate": 0.352524789362068,
+      "precision": 0.6678278245841435,
+      "f1": 0.7461400954887956
+    },
+    "expanded_task_encoder/logistic": {
+      "tp": 43674,
+      "fp": 10614,
+      "fn": 14843,
+      "tn": 59174,
+      "recall": 0.7463472153391322,
+      "false_positive_rate": 0.15208918438700064,
+      "precision": 0.8044871794871795,
+      "f1": 0.7743273791055361
+    },
+    "frozen_pca/logistic": {
+      "tp": 47744,
+      "fp": 32647,
+      "fn": 10773,
+      "tn": 37141,
+      "recall": 0.8158996530922638,
+      "false_positive_rate": 0.46780248753367343,
+      "precision": 0.5938973268151908,
+      "f1": 0.6874190111440666
+    },
+    "frozen_kernel_pca/logistic": {
+      "tp": 43447,
+      "fp": 23024,
+      "fn": 15070,
+      "tn": 46764,
+      "recall": 0.7424680007519182,
+      "false_positive_rate": 0.3299134521694274,
+      "precision": 0.6536233846339005,
+      "f1": 0.6952187409991359
+    },
+    "frozen_autoencoder/logistic": {
+      "tp": 47199,
+      "fp": 29914,
+      "fn": 11318,
+      "tn": 39874,
+      "recall": 0.8065861202727412,
+      "false_positive_rate": 0.42864102711067803,
+      "precision": 0.6120757848871137,
+      "f1": 0.6959964609599646
+    },
+    "frozen_denoising_ae/logistic": {
+      "tp": 45110,
+      "fp": 27700,
+      "fn": 13407,
+      "tn": 42088,
+      "recall": 0.7708870926397458,
+      "false_positive_rate": 0.3969163753080759,
+      "precision": 0.6195577530558989,
+      "f1": 0.6869874435569228
+    },
+    "frozen_temporal_ae/logistic": {
+      "tp": 47032,
+      "fp": 35110,
+      "fn": 11485,
+      "tn": 34678,
+      "recall": 0.803732248748227,
+      "false_positive_rate": 0.5030950879807417,
+      "precision": 0.5725694528986389,
+      "f1": 0.668737869599528
+    },
+    "raw_features/logistic": {
+      "tp": 48707,
+      "fp": 26869,
+      "fn": 9810,
+      "tn": 42919,
+      "recall": 0.8323564092485944,
+      "false_positive_rate": 0.3850088840488336,
+      "precision": 0.6444770826717476,
+      "f1": 0.7264659601918072
+    },
+    "raw_features/histogram": {
+      "tp": 42090,
+      "fp": 10489,
+      "fn": 16427,
+      "tn": 59299,
+      "recall": 0.7192781584838593,
+      "false_positive_rate": 0.1502980455092566,
+      "precision": 0.8005097091994903,
+      "f1": 0.7577230503348455
+    },
+    "expanded_task_encoder/histogram": {
+      "tp": 45369,
+      "fp": 16262,
+      "fn": 13148,
+      "tn": 53526,
+      "recall": 0.7753131568603996,
+      "false_positive_rate": 0.23302000343898666,
+      "precision": 0.7361392805568626,
+      "f1": 0.7552185637713487
+    },
+    "expanded_kernel_pca/histogram": {
+      "tp": 49628,
+      "fp": 24627,
+      "fn": 8889,
+      "tn": 45161,
+      "recall": 0.8480954252610352,
+      "false_positive_rate": 0.3528830171376168,
+      "precision": 0.6683455659551545,
+      "f1": 0.7475672581568403
+    },
+    "frozen_denoising_ae/histogram": {
+      "tp": 48317,
+      "fp": 30639,
+      "fn": 10200,
+      "tn": 39149,
+      "recall": 0.8256916793410461,
+      "false_positive_rate": 0.4390296326015934,
+      "precision": 0.6119484269719844,
+      "f1": 0.702930757312345
+    }
+  },
+  "paired_encoder_comparisons": [
+    {
+      "encoder": "pca",
+      "frozen_ap": 0.7978202335933638,
+      "expanded_ap": 0.8248411330249626,
+      "improvement": 0.0270208994315988,
+      "families": 7
+    },
+    {
+      "encoder": "kernel_pca",
+      "frozen_ap": 0.7540359095588077,
+      "expanded_ap": 0.8265734709282287,
+      "improvement": 0.07253756136942102,
+      "families": 7
+    },
+    {
+      "encoder": "autoencoder",
+      "frozen_ap": 0.7997249781267459,
+      "expanded_ap": 0.815359513558339,
+      "improvement": 0.0156345354315931,
+      "families": 7
+    },
+    {
+      "encoder": "denoising_ae",
+      "frozen_ap": 0.7538883891209063,
+      "expanded_ap": 0.8067047905452236,
+      "improvement": 0.052816401424317316,
+      "families": 7
+    },
+    {
+      "encoder": "temporal_ae",
+      "frozen_ap": 0.7237527349456675,
+      "expanded_ap": 0.7802302495324993,
+      "improvement": 0.05647751458683181,
+      "families": 7
+    },
+    {
+      "encoder": "label_informed",
+      "frozen_ap": 0.8148369960287264,
+      "expanded_ap": 0.8005710819406137,
+      "improvement": -0.01426591408811273,
+      "families": 5
+    }
+  ],
+  "selected_vs_reference_by_seed": [
+    {
+      "seed": 202611071,
+      "selected": 0.8287640468567767,
+      "reference": 0.7283349978748431,
+      "difference": 0.10042904898193349,
+      "mixed_recordings": 6
+    },
+    {
+      "seed": 202611073,
+      "selected": 0.9265842982675556,
+      "reference": 0.8636142645714981,
+      "difference": 0.06297003369605748,
+      "mixed_recordings": 6
+    },
+    {
+      "seed": 202611079,
+      "selected": 0.8613433111631664,
+      "reference": 0.6783581376587571,
+      "difference": 0.18298517350440924,
+      "mixed_recordings": 6
+    },
+    {
+      "seed": 202611083,
+      "selected": 0.9293653135712087,
+      "reference": 0.7037476366529515,
+      "difference": 0.2256176769182572,
+      "mixed_recordings": 6
+    },
+    {
+      "seed": 202611089,
+      "selected": 0.8260899364285704,
+      "reference": 0.8230034934755258,
+      "difference": 0.0030864429530444992,
+      "mixed_recordings": 6
+    }
+  ],
+  "paired_seed_bootstrap_95pct_delta_ap": [
+    0.06124737715443451,
+    0.18314599234511816
+  ],
+  "bootstrap_replicates": 2000,
+  "warning": "Five seeds from one public simulator; within known engineering families; no real-world or official event-score claim."
+}

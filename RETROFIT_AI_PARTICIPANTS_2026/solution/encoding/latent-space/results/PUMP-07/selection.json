@@ -1,0 +1,9 @@
+{
+  "asset_id": "PUMP-07",
+  "selected_model": "pca",
+  "criterion": "lowest validation feature-balanced observed NMSE across available models",
+  "dimensions": 32,
+  "uses_labels": false,
+  "test_used_for_selection": false,
+  "model_sha256": "43e00d81d605a8d26163237abe23ceaf124e9507e59847a84111a08b0e3f26ff"
+}

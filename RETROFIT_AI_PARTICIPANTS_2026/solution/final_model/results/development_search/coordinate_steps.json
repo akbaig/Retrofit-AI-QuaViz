@@ -1,0 +1,212 @@
+[
+  {
+    "pass": 1,
+    "coordinate": "BEARING_WEAR",
+    "from_trial": 43,
+    "to_trial": 43,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "SUCTION_STRAINER_CLOGGING",
+    "from_trial": 43,
+    "to_trial": 63,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "CAVITATION",
+    "from_trial": 63,
+    "to_trial": 65,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "DISCHARGE_RESTRICTION",
+    "from_trial": 65,
+    "to_trial": 79,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "MISALIGNMENT",
+    "from_trial": 79,
+    "to_trial": 79,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "IMBALANCE",
+    "from_trial": 79,
+    "to_trial": 102,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "IMPELLER_WEAR",
+    "from_trial": 102,
+    "to_trial": 108,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "AIR_ENTRAINMENT",
+    "from_trial": 108,
+    "to_trial": 118,
+    "accepted": true
+  },
+  {
+    "pass": 1,
+    "coordinate": "SENSOR_DRIFT",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "SENSOR_STUCK",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "SENSOR_CALIBRATION_SHIFT",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "SENSOR_NOISE_SPIKES",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "COMMUNICATION_LOSS",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "global_persistence",
+    "from_trial": 118,
+    "to_trial": 118,
+    "accepted": false
+  },
+  {
+    "pass": 1,
+    "coordinate": "recovery",
+    "from_trial": 118,
+    "to_trial": 177,
+    "accepted": true
+  },
+  {
+    "pass": 2,
+    "coordinate": "BEARING_WEAR",
+    "from_trial": 177,
+    "to_trial": 177,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "SUCTION_STRAINER_CLOGGING",
+    "from_trial": 177,
+    "to_trial": 198,
+    "accepted": true
+  },
+  {
+    "pass": 2,
+    "coordinate": "CAVITATION",
+    "from_trial": 198,
+    "to_trial": 198,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "DISCHARGE_RESTRICTION",
+    "from_trial": 198,
+    "to_trial": 216,
+    "accepted": true
+  },
+  {
+    "pass": 2,
+    "coordinate": "MISALIGNMENT",
+    "from_trial": 216,
+    "to_trial": 223,
+    "accepted": true
+  },
+  {
+    "pass": 2,
+    "coordinate": "IMBALANCE",
+    "from_trial": 223,
+    "to_trial": 223,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "IMPELLER_WEAR",
+    "from_trial": 223,
+    "to_trial": 243,
+    "accepted": true
+  },
+  {
+    "pass": 2,
+    "coordinate": "AIR_ENTRAINMENT",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "SENSOR_DRIFT",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "SENSOR_STUCK",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "SENSOR_CALIBRATION_SHIFT",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "SENSOR_NOISE_SPIKES",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "COMMUNICATION_LOSS",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "global_persistence",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  },
+  {
+    "pass": 2,
+    "coordinate": "recovery",
+    "from_trial": 243,
+    "to_trial": 243,
+    "accepted": false
+  }
+]

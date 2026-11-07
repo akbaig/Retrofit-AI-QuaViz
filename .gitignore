@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+
+# Local generation and throwaway data
+build/
+results/
+
+# Challenge venv and large data stay local if present outside git
+RETROFIT_AI_PARTICIPANTS_2026/.venv/
+RETROFIT_AI_PARTICIPANTS_2026/data/full/telemetry/
+
+# Detector caches (large; regenerate with stage1/stage2/stage3)
+RETROFIT_AI_PARTICIPANTS_2026/solution/fleet_detector/cache/
+RETROFIT_AI_PARTICIPANTS_2026/solution/fleet_detector/*.log
+RETROFIT_AI_PARTICIPANTS_2026/solution/final_model/runs/
+RETROFIT_AI_PARTICIPANTS_2026/solution/final_model/synthetic_data/
+
+# Encoding binaries (regenerate with run.py)
+RETROFIT_AI_PARTICIPANTS_2026/solution/encoding/**/*.npy
+RETROFIT_AI_PARTICIPANTS_2026/solution/encoding/**/*.joblib
+RETROFIT_AI_PARTICIPANTS_2026/solution/encoding/**/*.pt
+RETROFIT_AI_PARTICIPANTS_2026/solution/encoding/**/*.npz
+
+# Teammate draft, not part of the aggregated solution
+proposed_solution.md

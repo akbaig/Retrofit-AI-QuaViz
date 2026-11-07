@@ -1,0 +1,880 @@
+{
+  "hashes": {
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/preparation.json": "2e0da70b48dd018713d33ef6db0f200a17da7d80afccff5fb22bcb4b5894077a",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-01_features.parquet": "07127650ec4d93a42e5e282265a77748d2433ac459beea5dbb819090d5562557",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-01_metadata.parquet": "2e3196fa2ac7782d5b9d3fb01e2a2cfd588eeb2274492099c92e41d9613caa7d",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-02_features.parquet": "99d69a09eade7bd1eb10712bb2e0ef73be4a52d580b260e46c7303fc10eb1d9a",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-02_metadata.parquet": "61e696a5e70446023958848cc093f6e6d89ef0655f290d32f04fd0f5a89d5382",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-03_features.parquet": "c909fe73cf12365e5bbed17c6f1947c80c508cb43af83532be6a8edbd1d2e44b",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-03_metadata.parquet": "81a7a3b39376a3dd30207e8341cc91cb1190c24a82714a2e6db260f004ace22c",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-04_features.parquet": "5d09d0a498706f34ef04ed8f777f4b9f64b91fb5659be5cf72adee7d96718490",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-04_metadata.parquet": "93017aa68bca0a9667c13e63f87b73b519701fdedd468fe68b539c69cc2057b3",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-05_features.parquet": "edc4fd8afc5e87727aed5018c684e06f371e2804001aed3ca11f2b9404597fbb",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-05_metadata.parquet": "793237bfe2fded3ce1a826fd7b8794b5f24aedbafa796a0ed89aa9fecb062e68",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-06_features.parquet": "34d78619e17db3794353572f013c6c53f58c4dcf629fe3eebb2c556b2d61c3f4",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-06_metadata.parquet": "295fb2f2864ee351390429012bbba928ed404b35cab03e4b5a0e92ed6d77b46e",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-07_features.parquet": "3ca08028b7258951e73f4b6e54950228fd4921b202c9ee3ff306309245779fc8",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/.cache/development/PUMP-07_metadata.parquet": "ff46f230d4122a6e37071ff2bfd7533d08c5f4582c3f9f85f44fd4fe0ac0a3fb"
+  },
+  "role_assignments": [
+    {
+      "recording": "PUMP-01",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-01",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-01",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-01",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-02",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-07",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-12",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-02",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-07",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-12",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-01",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-01",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-01",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-01",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-02",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-02",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-02",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-02",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-01",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-04",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-09",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-01",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-04",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-09",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-01",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-02",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-03",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-04",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-05",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-06",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-07",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-08",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-09",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-01",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-02",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-03",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-04",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-05",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-06",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-07",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-02",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-02",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-02",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-02",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-03",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-03",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-03",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-03",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-13",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-13",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-03",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-03",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-03",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-03",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-04",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-04",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-04",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-04",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-03",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-11",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-15",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-03",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-11",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-15",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-19",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-20",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-21",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-22",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-23",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-24",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-25",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-26",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-27",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-15",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-16",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-17",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-18",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-19",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-20",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-21",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-04",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-04",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-04",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-04",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-05",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-05",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-05",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-05",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-14",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-14",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-28",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-29",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-30",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-31",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-32",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-33",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-34",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-35",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-36",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-05",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-05",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-05",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-05",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-06",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-06",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-06",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-06",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-06",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-10",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-06",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-10",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-06",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-06",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-06",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-06",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    },
+    {
+      "recording": "PUMP-07",
+      "role": "train",
+      "source_role": "full",
+      "seed": ""
+    },
+    {
+      "recording": "SYN-TRAIN-813107-07",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813107.0
+    },
+    {
+      "recording": "SYN-TRAIN-813109-07",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813109.0
+    },
+    {
+      "recording": "SYN-TRAIN-813121-07",
+      "role": "train",
+      "source_role": "train",
+      "seed": 813121.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-05",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213139-08",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213139.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-05",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_BALANCED-1213151-08",
+      "role": "train",
+      "source_role": "train_balanced",
+      "seed": 1213151.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-10",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-11",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-12",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-13",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-14",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-15",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-16",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-17",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_CROSSED-1313161-18",
+      "role": "train",
+      "source_role": "train_crossed",
+      "seed": 1313161.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-08",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-09",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-10",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-11",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-12",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-13",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-TRAIN_SENSOR_CROSSED-1413181-14",
+      "role": "train",
+      "source_role": "train_sensor_crossed",
+      "seed": 1413181.0
+    },
+    {
+      "recording": "SYN-DEVELOPMENT-913127-07",
+      "role": "development",
+      "source_role": "development",
+      "seed": 913127.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013137-07",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013137.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013141-07",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013141.0
+    },
+    {
+      "recording": "SYN-HOLDOUT-1013153-07",
+      "role": "development",
+      "source_role": "holdout",
+      "seed": 1013153.0
+    }
+  ],
+  "scope": "Original sources rechecked; prepared outputs sealed before fresh-test generation"
+}

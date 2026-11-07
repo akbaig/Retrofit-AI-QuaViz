@@ -1,0 +1,8 @@
+{
+  "asset_id": "PUMP-11",
+  "model": "label_informed",
+  "available": false,
+  "reason": "No public event labels for this pump",
+  "supervised_rows": 0,
+  "training_states": {}
+}

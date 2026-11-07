@@ -1,0 +1,10 @@
+# Versions used to fit and verify the serialized models (Python 3.12).
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+scikit-learn==1.9.1
+pyarrow==26.0.1
+joblib==1.6.0
+threadpoolctl==3.8.0
+PyYAML==6.0.3
+pytest==9.2.0

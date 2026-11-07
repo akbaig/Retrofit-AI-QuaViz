@@ -1,0 +1,9 @@
+{
+  "asset_id": "PUMP-08",
+  "selected_model": "autoencoder",
+  "criterion": "lowest validation feature-balanced observed NMSE across available models",
+  "dimensions": 32,
+  "uses_labels": false,
+  "test_used_for_selection": false,
+  "model_sha256": "de78496ed4919ac05c474d89ee6af82449e9e173dea150fb02342faafcd831db"
+}

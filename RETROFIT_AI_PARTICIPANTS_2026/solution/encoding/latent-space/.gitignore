@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+output/
+results-recorded/
+# Regenerable feature cache and duplicate vector/split tables.
+# Per-encoder .npy vectors, models, metadata and predictions are tracked.
+results/features.parquet
+results/*_embeddings.parquet
+results/selected_embeddings.npy
+results/PUMP-*/*_embeddings.parquet
+results/PUMP-*/selected_embeddings.npy
+results/PUMP-*/train.parquet
+results/PUMP-*/validation.parquet
+results/PUMP-*/test.parquet
+results/PUMP-*/label_informed_train.parquet
+results/PUMP-*/label_informed_validation.parquet
+results/PUMP-*/label_informed_test.parquet

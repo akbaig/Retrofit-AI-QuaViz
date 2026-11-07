@@ -1,0 +1,18 @@
+{
+  "browser_checked": true,
+  "checks": [
+    "Label-informed AE selectable for eligible pumps",
+    "Fault annotation overlay",
+    "Validation scored filter",
+    "PUMP-05 single-state reason and disabled option",
+    "PUMP-10 missing-label reason and disabled option",
+    "Comparison row marks training-label use",
+    "No browser console errors",
+    "Label-informed12-pump overview visually inspected"
+  ],
+  "unit_tests_passed": 15,
+  "saved_models_verified": 67,
+  "inference_cli_replay_rows": 512,
+  "inference_cli_asset": "PUMP-01",
+  "inference_cli_model": "label_informed"
+}

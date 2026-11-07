@@ -1,0 +1,13 @@
+Verified PUMP-01 6 encoders, split exports, scores, prefix inference
+Verified PUMP-02 6 encoders, split exports, scores, prefix inference
+Verified PUMP-03 6 encoders, split exports, scores, prefix inference
+Verified PUMP-04 6 encoders, split exports, scores, prefix inference
+Verified PUMP-05 5 encoders, split exports, scores, prefix inference
+Verified PUMP-06 6 encoders, split exports, scores, prefix inference
+Verified PUMP-07 5 encoders, split exports, scores, prefix inference
+Verified PUMP-08 6 encoders, split exports, scores, prefix inference
+Verified PUMP-09 6 encoders, split exports, scores, prefix inference
+Verified PUMP-10 5 encoders, split exports, scores, prefix inference
+Verified PUMP-11 5 encoders, split exports, scores, prefix inference
+Verified PUMP-12 5 encoders, split exports, scores, prefix inference
+PASS: 67 fitted models; 120,960 selected 32D rows; 12 independent chronological splits.

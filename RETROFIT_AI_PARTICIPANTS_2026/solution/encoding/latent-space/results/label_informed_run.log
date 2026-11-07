@@ -1,0 +1,13 @@
+PUMP-01 label-informed validation 0.2334 test 39.83244 selected pca
+PUMP-02 label-informed validation 6.23829 test 1.61646 selected pca
+PUMP-03 label-informed validation 0.04883 test 0.05632 selected pca
+PUMP-04 label-informed validation 2.85925 test 2.71646 selected pca
+PUMP-05 label-informed unavailable: Fewer than two unambiguous training states
+PUMP-06 label-informed validation 89.93553 test 1.47212 selected pca
+PUMP-07 label-informed unavailable: Fewer than two unambiguous training states
+PUMP-08 label-informed validation 67.40833 test 286.3824 selected autoencoder
+PUMP-09 label-informed validation 18.15671 test 48.06267 selected pca
+PUMP-10 label-informed unavailable: No public event labels for this pump
+PUMP-11 label-informed unavailable: No public event labels for this pump
+PUMP-12 label-informed unavailable: No public event labels for this pump
+Completed label-informed extension

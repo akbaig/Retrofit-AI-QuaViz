@@ -1,0 +1,24 @@
+{
+  "epochs": 30,
+  "preparation_sha256": "2e0da70b48dd018713d33ef6db0f200a17da7d80afccff5fb22bcb4b5894077a",
+  "source_hashes": {
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/protocol.py": "f6778b9c9fcd52539b786fdc331b2f3b0b08f9b875e09907daa586f8e1790666",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/run_expanded.py": "441212c8c926da238234d6055fafe4dbd64266f67222ff56ffa50fd0b4c3a17d",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/encoding-expanded/task_encoder.py": "b197dde95438d5f15a61635b0cd0efc811abb034547a04aba50c686b4d5d1776",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/data.py": "1b0f272b83c27e3b390e7b68987abd7112bbe766d53045c991c9c4061919e698",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/encode.py": "a0af450e6a175f0bf65230de8d99c7def3f168b7b0a67e09b2120bd3739bd3df",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/evaluate.py": "95807dbe7eace57323e3f184353909bb1dbb2663439164b9f1345cae037acc36",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/extend_label_informed.py": "5de448a71fde064201ac5714408607e6a0956b77d0bf7b7445b2272c9001b03d",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/fault_detection.py": "f77f6086cb0126a2912b9eb72f06abaa586d7a9f62c74f1538fb77cae2551733",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/fault_detection_report.py": "e6aaadd68e5cf44b1e14797810480de64a0ad0de40b744aaa7031934df51f985",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/label_informed.py": "597c086740a1aa9f07c9d89a325b06fb32ab89ac9d3cbd7fb03ef94b5582f22b",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/models.py": "9703c31b21eb09b740ac07c70aacb38f92f5c1e558954a51ac35d28201647e89",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/run.py": "439cffc6ebb7edd183b5aeae224aa48e713b6eef9828968c3c11fa914150b743",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/summarize.py": "8977295085b90ba1c0edd27a14e24f591fcdbbcdfafd625f78b3c3904605520d",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/verify.py": "252bfe2e1929004ddf7896e97f1dea5c6d5e1f750165925d86af6f2ec79e4a26",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/verify_fault_detection.py": "1a98535084a494e0e3a6f464eeaa0432bfcc7170511b41b7801bf1111b58e8a4",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/visualize.py": "c258ee41b6db79f1e1857d6d3ebb720a35d89974c746dcb452bc93df5111492d",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/vendor/features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "/Users/khizar/Projects/SinceAI/Retrofit-AI-QuaViz-encoding-astra/experiments/latent-space/vendor/physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f"
+  }
+}

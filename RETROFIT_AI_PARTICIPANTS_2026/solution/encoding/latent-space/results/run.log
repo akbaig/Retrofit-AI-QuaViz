@@ -1,0 +1,97 @@
+Preparing PUMP-01
+Preparing PUMP-02
+Preparing PUMP-03
+Preparing PUMP-04
+Preparing PUMP-05
+Preparing PUMP-06
+Preparing PUMP-07
+Preparing PUMP-08
+Preparing PUMP-09
+Preparing PUMP-10
+Preparing PUMP-11
+Preparing PUMP-12
+PUMP-01 inputs 153 train 6048 val 1896 test 1896
+PUMP-01 pca validation NMSE 0.13773 epoch None
+PUMP-01 kernel_pca validation NMSE 0.15881 epoch None
+PUMP-01 autoencoder validation NMSE 0.1728 epoch 45
+PUMP-01 denoising_ae validation NMSE 0.20461 epoch 50
+PUMP-01 temporal_ae validation NMSE 0.25003 epoch 50
+SELECTED PUMP-01 pca test NMSE 30.19218855816357
+PUMP-02 inputs 194 train 6048 val 1896 test 1896
+PUMP-02 pca validation NMSE 3.7354 epoch None
+PUMP-02 kernel_pca validation NMSE 12.99133 epoch None
+PUMP-02 autoencoder validation NMSE 6.26667 epoch 50
+PUMP-02 denoising_ae validation NMSE 5.86596 epoch 40
+PUMP-02 temporal_ae validation NMSE 7.54319 epoch 35
+SELECTED PUMP-02 pca test NMSE 0.6449560098612517
+PUMP-03 inputs 55 train 6048 val 1896 test 1896
+PUMP-03 pca validation NMSE 0.00477 epoch None
+PUMP-03 kernel_pca validation NMSE 0.05943 epoch None
+PUMP-03 autoencoder validation NMSE 0.02099 epoch 50
+PUMP-03 denoising_ae validation NMSE 0.04156 epoch 45
+PUMP-03 temporal_ae validation NMSE 0.04125 epoch 50
+SELECTED PUMP-03 pca test NMSE 0.0032193988141578133
+PUMP-04 inputs 207 train 6048 val 1896 test 1896
+PUMP-04 pca validation NMSE 2.17636 epoch None
+PUMP-04 kernel_pca validation NMSE 6.15775 epoch None
+PUMP-04 autoencoder validation NMSE 2.76499 epoch 30
+PUMP-04 denoising_ae validation NMSE 2.76923 epoch 45
+PUMP-04 temporal_ae validation NMSE 3.18434 epoch 50
+SELECTED PUMP-04 pca test NMSE 1.8616524300794213
+PUMP-05 inputs 55 train 6048 val 1896 test 1896
+PUMP-05 pca validation NMSE 0.02851 epoch None
+PUMP-05 kernel_pca validation NMSE 2.15491 epoch None
+PUMP-05 autoencoder validation NMSE 0.64153 epoch 50
+PUMP-05 denoising_ae validation NMSE 0.67265 epoch 30
+PUMP-05 temporal_ae validation NMSE 1.06704 epoch 40
+SELECTED PUMP-05 pca test NMSE 0.0009474286774341297
+PUMP-06 inputs 132 train 6048 val 1896 test 1896
+PUMP-06 pca validation NMSE 77.23979 epoch None
+PUMP-06 kernel_pca validation NMSE 92.89233 epoch None
+PUMP-06 autoencoder validation NMSE 86.30228 epoch 10
+PUMP-06 denoising_ae validation NMSE 86.31666 epoch 5
+PUMP-06 temporal_ae validation NMSE 90.68963 epoch 10
+SELECTED PUMP-06 pca test NMSE 0.7479853679451554
+PUMP-07 inputs 194 train 6048 val 1896 test 1896
+PUMP-07 pca validation NMSE 0.30637 epoch None
+PUMP-07 kernel_pca validation NMSE 1.07966 epoch None
+PUMP-07 autoencoder validation NMSE 0.39132 epoch 50
+PUMP-07 denoising_ae validation NMSE 0.42668 epoch 50
+PUMP-07 temporal_ae validation NMSE 0.52206 epoch 45
+SELECTED PUMP-07 pca test NMSE 45.054722424972
+PUMP-08 inputs 150 train 6048 val 1896 test 1896
+PUMP-08 pca validation NMSE 71.51643 epoch None
+PUMP-08 kernel_pca validation NMSE 130.62077 epoch None
+PUMP-08 autoencoder validation NMSE 65.38294 epoch 25
+PUMP-08 denoising_ae validation NMSE 69.55817 epoch 20
+PUMP-08 temporal_ae validation NMSE 112.3833 epoch 25
+SELECTED PUMP-08 autoencoder test NMSE 289.58103083750143
+PUMP-09 inputs 184 train 6048 val 1896 test 1896
+PUMP-09 pca validation NMSE 1.27411 epoch None
+PUMP-09 kernel_pca validation NMSE 32.93 epoch None
+PUMP-09 autoencoder validation NMSE 15.27586 epoch 50
+PUMP-09 denoising_ae validation NMSE 16.2833 epoch 40
+PUMP-09 temporal_ae validation NMSE 29.65323 epoch 45
+SELECTED PUMP-09 pca test NMSE 4.867626917323933
+PUMP-10 inputs 150 train 6048 val 1896 test 1896
+PUMP-10 pca validation NMSE 0.35756 epoch None
+PUMP-10 kernel_pca validation NMSE 1.65352 epoch None
+PUMP-10 autoencoder validation NMSE 0.7437 epoch 50
+PUMP-10 denoising_ae validation NMSE 0.84581 epoch 50
+PUMP-10 temporal_ae validation NMSE 0.96255 epoch 50
+SELECTED PUMP-10 pca test NMSE 310.9337713523644
+PUMP-11 inputs 76 train 6048 val 1896 test 1896
+PUMP-11 pca validation NMSE 0.02731 epoch None
+PUMP-11 kernel_pca validation NMSE 1565.5148 epoch None
+PUMP-11 autoencoder validation NMSE 193.96132 epoch 30
+PUMP-11 denoising_ae validation NMSE 236.82708 epoch 25
+PUMP-11 temporal_ae validation NMSE 1523.70632 epoch 50
+SELECTED PUMP-11 pca test NMSE 0.07358686489618475
+PUMP-12 inputs 197 train 6048 val 1896 test 1896
+PUMP-12 pca validation NMSE 0.34243 epoch None
+PUMP-12 kernel_pca validation NMSE 0.48232 epoch None
+PUMP-12 autoencoder validation NMSE 0.41225 epoch 50
+PUMP-12 denoising_ae validation NMSE 0.4427 epoch 40
+PUMP-12 temporal_ae validation NMSE 0.4571 epoch 50
+SELECTED PUMP-12 pca test NMSE 123.37209440874518
+Completed per-pump experiment

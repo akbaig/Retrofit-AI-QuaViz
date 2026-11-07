@@ -1,0 +1,12 @@
+{
+  "asset_id": "PUMP-01",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 5944,
+  "training_states": {
+    "COMMUNICATION_LOSS": 67,
+    "NO_LABELED_EVENT": 3461,
+    "SUCTION_STRAINER_CLOGGING": 2416
+  }
+}
