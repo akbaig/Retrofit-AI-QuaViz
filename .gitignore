@@ -26,3 +26,6 @@ RETROFIT_AI_PARTICIPANTS_2026/solution/encoding/**/*.npz
 
 # Teammate draft, not part of the aggregated solution
 proposed_solution.md
+
+# Final-model feature cache (rebuilt by run.py prepare)
+RETROFIT_AI_PARTICIPANTS_2026/solution/final_model/cache/
