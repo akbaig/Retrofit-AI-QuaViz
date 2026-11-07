@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "role": "train_sensor_crossed",
+  "purpose": "training augmentation only",
+  "seeds": [
+    1413181
+  ],
+  "days": 1.5,
+  "tracks_per_seed": 21,
+  "targets": [
+    [
+      "SENSOR_DRIFT",
+      "motor_current_a"
+    ],
+    [
+      "SENSOR_DRIFT",
+      "motor_power_kw"
+    ],
+    [
+      "SENSOR_NOISE_SPIKES",
+      "motor_current_a"
+    ],
+    [
+      "SENSOR_NOISE_SPIKES",
+      "motor_power_kw"
+    ],
+    [
+      "SENSOR_NOISE_SPIKES",
+      "vibration_accel_rms_g"
+    ],
+    [
+      "SENSOR_NOISE_SPIKES",
+      "vibration_crest_factor"
+    ],
+    [
+      "HEALTHY",
+      null
+    ]
+  ],
+  "coverage_strata": [
+    [
+      "PUMP-02",
+      "FIXED_SPEED",
+      "T2_FULL",
+      "2024-05-15T00:00:00"
+    ],
+    [
+      "PUMP-07",
+      "VFD_TEMPERATURE",
+      "T2_FULL",
+      "2024-08-15T00:00:00"
+    ],
+    [
+      "PUMP-04",
+      "VFD_PRESSURE",
+      "T1_RETROFIT",
+      "2024-06-17T00:00:00"
+    ]
+  ],
+  "selection_basis": "training label coverage gaps and generic channel engineering scales",
+  "validation_or_development_event_configurations_used": false,
+  "reserved_evaluation_seed_manifest_sha256": "fa7f26599bb52bf10e660153e41996b5ea681458f5696345858a50f448a01fbd"
+}

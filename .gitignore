@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+/solutions/astra_best/cache/
+/solutions/astra_best/runs/
+/solutions/astra_best/synthetic_data/
+/solutions/astra_best/output/
+/solutions/astra_best/baseline_results/

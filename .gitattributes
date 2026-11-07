@@ -1,0 +1,3 @@
+# Preserve the original solution bytes and recorded checksums on every platform.
+solutions/astra_best/** -text
+solutions/astra_best/model.joblib binary

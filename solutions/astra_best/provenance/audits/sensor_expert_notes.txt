@@ -1,0 +1,161 @@
+Shared sensor expert: implementation and measured development behavior
+=====================================================================
+
+Interface
+---------
+SensorExpert().fit(X, meta, events)
+SensorExpert.predict(X, meta) -> four SENSOR_* score columns, same row index.
+The reference experiments pass hist_01.transform(X, meta), using its frozen
+healthy-reference regressors. Supply a chronological available history prefix
+for each asset. All historical reference calculations are past-only.
+
+This is a shared classifier across sensor tags: a current sensor and a pressure
+sensor are represented by the same generic feature schema. IDs only isolate
+histories and match training events; channel names only select measurements and
+match event.sensor_tag. Neither is an inference feature. Profiles, static ratings,
+calendar times, hidden schedules and fault labels are not inference features.
+
+Features compare observed within-minute noise and between-update variability
+with robust, delayed historical references; characterize flat readings, jumps
+and trends; and measure departures from physical consistency or learned healthy
+expectations. References use observations at least 60 minutes old. Temperature,
+current and pressure units cancel in the generic ratios. A load-dependent
+electrical power-factor consistency check also supplies evidence before a
+historical reference has matured. It is approximate, not a direct alert rule.
+
+Targets match the event's affected sensor, rather than labeling every channel
+positive. Pre-detectable and unobservable intervals for that target fault are
+unknown. Other sensors and machine-fault intervals provide negative examples.
+Predict pools each fault's score by maximum across currently observed channels.
+These are uncalibrated scores; max pooling introduces a multiple-channel false-
+alarm opportunity, so select thresholds/persistence after pooling.
+
+Six tests pass: target specificity/unknown intervals, prefix causality and no
+identity columns, unit/channel invariance, isolated asset histories, a learned
+noise model transferring to an unseen sensor tag, and missing-channel masking.
+
+sensor_expert_01
+----------------
+Fit on original_train + train + train_balanced, after frozen hist_01 transform.
+76,615 sampled channel examples; 47 generic features; four independently trained
+140-iteration histogram gradient-boosted classifiers (15 leaves, minimum leaf35,
+L2=3, learning rate .06). Positive sampling/event weights balance training events.
+
+Synthetic development, minute-level metrics (not official event scores):
+                            AP       AUC     Positive median    Negative p99
+SENSOR_DRIFT              .0353     .8006          .8289              .9535
+SENSOR_STUCK             1.0000    1.0000          .9999              .0029
+SENSOR_CALIBRATION_SHIFT  .0130     .5867          .4867              .9732
+SENSOR_NOISE_SPIKES       .4923     .8502          .0138              .0584
+
+Noise transfer is substantial but uneven. Current-noise, with zero current-noise
+training examples, has median score .9998 and every active minute exceeds .8.
+Acceleration-noise's median is .067 and its 95th percentile .582, despite a
+clear within-minute noise ratio of3.16. The first model lets unrelated learned
+residual or offset features influence noise classification too much.
+
+Original public validation was evaluated after explicit parent authorization:
+                            AP       Positive median    Negative minutes >=.8
+SENSOR_DRIFT              .1307             .3600                       2033
+SENSOR_STUCK              .8173             .7914                        115
+SENSOR_CALIBRATION_SHIFT    N/A               N/A                       1877
+SENSOR_NOISE_SPIKES       .9966             .9998                         11
+No calibration-shift positives exist in that validation split.
+
+The PUMP-09 current drift is NOT pre-existing. The window starts February9 00:00;
+onset is06:01:58, detectable09:21:58, and end February11 09:22:33. Thus six healthy
+hours are available. The actual current residual median increases from1.51
+before onset to15.84 during the visible event (absolute median17.47), but the
+shared model underuses that evidence. Its current-channel median drift score is
+.301; only41 visible minutes exceed.8. False current predictions are mostly on
+PUMP-08 (1042 minutes>=.8), with94 such minutes on PUMP-09 after the event. False
+calibration shifts are primarily PUMP-09 bearing temperature (1621 minutes>=.8),
+where learned expected-value bias/thermal changes resemble a sensor offset.
+
+An original-validation prefix check confirms the saved01 model predictions
+remain reproducible after additive feature/routing updates to the module.
+
+sensor_expert_02 changes
+-----------------------
+Adds train_crossed machine/healthy tracks as hard negatives. Negative sampling
+balances assets; positive fitting weights balance events without applying the
+inverse-duration weighting twice. Adds deviations from the sensor's historical
+learned-residual bias and historical electrical-consistency bias, plus slope and
+trend directionality. This aims to distinguish an emerging offset from a static
+asset bias. Original01 models keep their original feature columns.
+
+Noise classification uses only generic variance/step features, data support,
+operating transitions and trend directionality. Increasing normalized within-
+minute noise ratios have monotone constraints. Stuck classification uses flatness,
+update counts and context, excluding unrelated physical offsets. Drift/shift
+retain the broader generic consistency and temporal feature set.
+
+All numerical results for each subsequent run are saved in its analysis.json;
+official benchmark scoring remains the parent runner's responsibility.
+
+sensor_expert_03: matched sensor augmentation, same frozen reference
+-----------------------------------------------------------------
+Adds train_sensor_crossed to the four earlier training sets: 396,720 minutes
+across115 assets. There are85,615 retained channel examples. Drift/shift use54
+generic features, stuck10 and noise18. Fit plus both development predictions
+took56.6 seconds after memory use was reduced to143 retained input columns.
+
+Synthetic development, minute-level metrics:
+                            AP       AUC     Positive median    Negative p99
+SENSOR_DRIFT              .1199     .8933          .9438              .9679
+SENSOR_STUCK              .9999    1.0000          .9999              .0297
+SENSOR_CALIBRATION_SHIFT  .0227     .7196          .7239              .9511
+SENSOR_NOISE_SPIKES       .7192     .9622          .9763              .8836
+
+Current-noise median is.9988 with100% of active minutes>.8; acceleration-noise
+median is.9826 with96.0%>.8. The missing-observation crest-noise event remains
+unresolved (its pooled score can only come from other channels). Power-drift
+median is.9438 and its95th percentile.9821. False drift/shift episodes remain a
+limitation: raw max scores must not use a default global threshold of.55.
+
+Original public validation:
+                            AP       Positive median    Negative minutes >=.8
+SENSOR_DRIFT              .2249             .3010                       1127
+SENSOR_STUCK              .9698             .9999                        156
+SENSOR_CALIBRATION_SHIFT    N/A               N/A                        558
+SENSOR_NOISE_SPIKES       .9893             .9982                         21
+
+PUMP-09 current drift has504/2881 visible minutes above.8 and a95th-percentile
+score of.9540, so sustained high-confidence portions are available even though
+its median is low. Threshold and persistence selection belongs to the complete
+pipeline's development policy; these minute metrics are not official event F1.
+
+Actual03 split-gain attribution (correlated training importance, not causal gain):
+- DRIFT: 60-minute historical residual departure18.78%, absolute consistency
+  departure9.96%, historical mean offset6.85%, historical noise ratio6.51%,
+  target/peer residual dominance5.48%, mean healthy-model residual5.38%.
+- STUCK: fraction of unchanged observed updates over60 minutes93.24%, count of
+  equal measured updates4.39%. Held wireless values are not counted as updates.
+- CALIBRATION SHIFT: absolute/signed mean healthy-model residual16.17%/10.34%,
+  normalized mean absolute step6.10%, current learned residual5.64%.
+- NOISE: mean absolute measured step over60 minutes relative to historical
+  reference63.24%, normalized60-minute variation7.44%, current within-minute
+  noise ratio7.26%, short/long noise ratio3.88%, max recent noise ratio3.87%.
+
+The actual noise expert therefore learns shared changes in dispersion, while
+the drift expert learns evolving physical/healthy-model disagreement. Neither
+uses sensor-tag one-hot features or profile/rating identities. It still has
+limited drift/step specificity and must be assessed within the selected alert
+policy, not promoted based solely on these component results.
+
+Run03 saves model.joblib, both probability parquets, training.log, analysis.json,
+and split_gain_importance.json. analysis.json records source/reference/model
+SHA-256 hashes, package versions, training composition and per-event behavior.
+
+Observed-data mismatch, not a scoring adjustment
+------------------------------------------------
+The synthetic development crest-noise event on asset02 is marked observable=True
+but has no observed target crest values, no within-minute std, and zero actual
+target updates throughout its event interval. A predictor cannot infer that
+unobserved noise from that channel. The event and official scorer were NOT changed
+or suppressed. This mismatch should be disclosed separately from performance.
+
+The augmentation owner independently verified that new train_sensor_crossed
+events contain actual target observations: at least593 active RUNNING minutes
+and220 clean prefault reporting minutes per event. Those are training additions,
+not replacements or modifications to evaluation labels.

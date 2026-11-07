@@ -1,0 +1,30 @@
+{
+  "SENSOR_DRIFT": {
+    "positives": 2881,
+    "AP": 0.1307245381955935,
+    "pos_p50": 0.3599761426448822,
+    "neg_p99": 0.9138897120952609,
+    "neg_minutes_ge_0.8": 2033
+  },
+  "SENSOR_STUCK": {
+    "positives": 1210,
+    "AP": 0.817334932049224,
+    "pos_p50": 0.7913575768470764,
+    "neg_p99": 0.054308234266938135,
+    "neg_minutes_ge_0.8": 115
+  },
+  "SENSOR_CALIBRATION_SHIFT": {
+    "positives": 0,
+    "AP": null,
+    "pos_p50": NaN,
+    "neg_p99": 0.9181278347969055,
+    "neg_minutes_ge_0.8": 1877
+  },
+  "SENSOR_NOISE_SPIKES": {
+    "positives": 621,
+    "AP": 0.9966419089931898,
+    "pos_p50": 0.9998044371604919,
+    "neg_p99": 0.0234902738779772,
+    "neg_minutes_ge_0.8": 11
+  }
+}

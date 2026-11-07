@@ -1,0 +1,14 @@
+{
+  "threshold": 0.95,
+  "persistence": 15,
+  "recovery": 60,
+  "reminder": 1440,
+  "thresholds": {
+    "BEARING_WEAR": 0.8,
+    "CAVITATION": 0.02,
+    "DISCHARGE_RESTRICTION": 0.02,
+    "IMPELLER_WEAR": 0.02,
+    "AIR_ENTRAINMENT": 0.4,
+    "MISALIGNMENT": 0.25
+  }
+}

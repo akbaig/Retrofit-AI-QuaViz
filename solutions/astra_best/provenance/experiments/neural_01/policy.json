@@ -1,0 +1,7 @@
+{
+  "threshold": 0.6,
+  "persistence": 15,
+  "recovery": 60,
+  "reminder": 1440,
+  "thresholds": {}
+}

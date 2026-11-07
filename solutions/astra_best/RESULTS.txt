@@ -1,0 +1,149 @@
+MEASURED RESULT — FROZEN SUPERVISED QUAVIZ ENSEMBLE
+
+Scores below are the unchanged challenge composite, out of 100. This combines
+event detection, timeliness, correct fault type, correct machine/sensor class,
+and false/repeat-alert burden. It is not classification accuracy.
+
+                                     Public validation   Frozen synthetic holdout
+Published Isolation Forest B3               69.1625          not run
+Published threshold B1 (k=6, 15 min)         78.0125          41.7240
+B1 selected on mean development (k=4,15)    76.0961          40.9243
+Best tested validation B1 (k=6, 5 min)       80.2035          43.5292
+NEW LEARNED ENSEMBLE                        95.0214          63.5086
+
+The new model improves public validation by 17.0088 points over published B1,
+14.8178 over the best B1 setting in the declared 20-setting grid, and 25.8589
+over published B3. On the fresh holdout it improves by 21.7846 points over
+published B1 and 19.9794 points over the strongest of the three preselected B1
+settings. "Best tested" does not mean every possible B1 setting was optimized.
+
+PUBLIC VALIDATION: DEVELOPMENT RESULT, NOT A BLIND TEST
+
+Two pumps, 14 asset-days, 9 scored events:
+- Detected 9/9; correct first fault type 8/9; correct machine/sensor class 9/9.
+- 0 false-alert episodes and 1 excess-repeat episode; precision 90.0%.
+- The one wrong first diagnosis is AIR_ENTRAINMENT called IMPELLER_WEAR.
+- The scorer counts a matching-time alert as a detection even when its fault
+  identity is wrong. Detection counts and diagnosis counts are separate.
+
+The public validation data were used for model and policy selection. Selection
+optimized equal mean score on that split and a separate synthetic development
+set (7 recordings, 19 scored events). The latter score is 72.7852: 15/19 events
+detected, 11/19 correct first types, 4 false episodes and 2 excess repeats.
+The selected ensemble policy search contains 314 unique candidates; the full
+trial history is included. Several model families and revisions were tested.
+
+FRESH HOLDOUT: NO MODEL OR POLICY CHANGES AFTER FREEZE
+
+21 new three-day recordings, 63 asset-days, 88,432 observed minute rows,
+256 measured vibration snapshots, 78 scored events; 6 additional events are
+excluded as unobservable by the original scorer. Healthy recordings remain in
+the score and exposure denominator. Seeds: 1013137, 1013141, 1013153.
+
+                                  New model    Best tested validation B1
+Detected events                    55/78              39/78
+Correct first fault types          37/78              18/78
+Correct machine/sensor classes     51/78              31/78
+Event recall                       70.5%              50.0%
+Alert precision                    67.9%              53.4%
+False-alert episodes                  14                 23
+Excess-repeat episodes                12                 11
+False + excess per asset-day        0.413              0.540
+Official composite                 63.5086            43.5292
+
+Per-seed official composite (each includes seven recordings):
+Seed             New model   Published B1   Development B1   Validation B1
+1013137            56.8824       33.6533         33.7594           37.3799
+1013141            63.5684       39.2271         43.7819           46.2970
+1013153            73.7064       56.9316         47.3201           48.5605
+
+The model beats all three baseline settings in each of the three seed groups.
+These are related synthetic realizations, not independent real industrial sites.
+The lower holdout score is evidence against treating 95.0 as expected unseen
+accuracy. New seeds alone also cannot remove shared-simulator assumptions.
+
+Remaining weaknesses are visible: only 8/20 cavitation events are detected,
+with 1/20 correctly named first; only 1/7 calibration-shift events is detected,
+with 0/7 correctly named first. The per-type and per-event CSVs expose every
+miss and wrong diagnosis. No post-holdout tuning was performed.
+
+WHAT WAS BUILT
+
+A supervised boosted-tree ensemble with physical signal processing and a
+shared sensor-diagnosis branch; no Isolation Forest. Fourteen healthy-response
+regressors provide expected values and residuals. Four equally weighted views
+average scores on machine faults/gateway loss; four shared classifiers identify sensor
+drift, freezing, calibration shifts and noise by inspecting each channel.
+The compact artifact contains 40 active binary classifiers and 14 regressors.
+
+Training union: 7 supplied training pumps plus 108 generated training recordings,
+396,720 minute slots. The simulator is used to create labeled training examples
+with crossed operating/instrumentation conditions. Labels supervise training;
+inference does not receive event labels, deadlines, latent states or asset IDs
+as predictors. Current/past observations supply every prediction.
+
+The policy needs 15 consecutive minutes of evidence, applies startup/stopped
+inhibition, waits four hours below the recovery threshold before rearming, and
+allows one 24-hour reminder. It outputs a suspected fault, score and supporting
+measurements. Inspection recommendations are a static text lookup; fault
+identification is learned. Scores are not calibrated real-world probabilities.
+
+A small neural alternative was actually trained and tested (79.7799 validation,
+66.0545 synthetic development under its bounded policy search), then rejected.
+A variational autoencoder is not the selected solution: existing fault labels
+allow direct learning of which fault is present.
+
+EARLY WARNING
+
+This detects a developing condition from current evidence. It does not forecast
+a failure date or detect a condition before it appears in any measurements.
+Deadline lead = event action deadline minus first alert time. It does not mean
+lead before onset. On original validation only two detected events have such
+deadlines: one alert is early, the other about two minutes late. No general
+early-warning-duration claim is made from that small denominator.
+
+REPRODUCIBILITY AND VERIFICATION
+
+Freeze time: 2026-11-07T13:23:32.918861+00:00, before holdout generation.
+Freeze SHA256:
+a6edd3db339351f2d76a66f92921bd7f9604ae5d3b192b5f09e112e3ded2c75f
+Final model SHA256:
+0a1884354fa22a4a6de33302a988c99e074b88a59c430f04f64aaa8d5453d983
+Unchanged official scorer SHA256:
+5293c2e427d6181e0f24cfd64d617fc96d284c31a949410d3c88769a7e1802c2
+
+The compact saved artifact exactly reproduced all 50,400 development prediction
+rows and both reported development scores. Actual-model prefix/future-mutation
+audits passed. The final full test suite passed 40 tests; 11 warnings were
+non-failing (intentional adversarial numeric inputs and library deprecations).
+The packaged model, run from a different working directory, reproduced the
+validation prediction CSV exactly and scored 95.0213516730 with the original
+scorer. All 29 portable unit tests also passed from the delivery directory.
+Unlabeled public-test inference produced 43 alerts over three assets after the
+freeze. These are supplied as predictions, not a measured test-score claim.
+
+REPORTING ERROR AND RECOVERY
+
+The first frozen evaluation completed aggregate scoring and rechecked frozen
+inputs, then the original scorer raised a TypeError while making a supplemental
+per-asset report for a healthy asset with an empty event table. The initial
+model predictions and aggregate report were already saved and were preserved.
+
+A separate reporting script reused those exact predictions and recomputed only
+the same three predeclared B1 settings. The aggregate report reproduced exactly.
+All aggregate and per-seed scores use the unmodified official scorer, including
+healthy assets. Per-asset official composites for eventless assets are marked
+unavailable, with raw alerts and false episodes reported. No model, feature,
+policy, seed, training data or scorer changed. The recovery code, original error
+record and full freeze verification are retained under provenance/.
+
+FILES
+
+README.txt: architecture and quick-start inference.
+REPRODUCE.txt: generation, training, selection, inference and scoring commands.
+model.joblib, policy.json: the frozen ready-to-run solution.
+results/: validation, synthetic development, unscored test and holdout outputs.
+results/holdout/: comparisons, all scored predictions, per-event/type/seed data.
+results/development_search/: selected policy and full selection history.
+provenance/: training metadata, seed/artifact manifests, hashes and audit records.
+PACKAGE_MANIFEST.json: portable SHA256 checksums for all delivered files.

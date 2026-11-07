@@ -1,0 +1,7 @@
+{
+  "run": "final_ensemble",
+  "freeze_sha256": "a6edd3db339351f2d76a66f92921bd7f9604ae5d3b192b5f09e112e3ded2c75f",
+  "freeze_manifest": "/Users/khizar/Projects/SinceAI/experiments/quaviz-learned/FREEZE.json",
+  "data_dir": "/Users/khizar/Projects/SinceAI/experiments/quaviz-learned/synthetic_data/holdout",
+  "holdout_manifest_sha256": "755927b41b7430f1985d83bb479c032c3f09cbca2a38511de3954eb575a1f925"
+}

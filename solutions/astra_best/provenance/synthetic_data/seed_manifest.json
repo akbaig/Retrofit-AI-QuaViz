@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "roles": {
+    "train": [
+      813107,
+      813109,
+      813121
+    ],
+    "development": [
+      913127
+    ],
+    "holdout": [
+      1013137,
+      1013141,
+      1013153
+    ]
+  },
+  "templates": [
+    "PUMP-01",
+    "PUMP-02",
+    "PUMP-03",
+    "PUMP-04",
+    "PUMP-05",
+    "PUMP-06",
+    "PUMP-07"
+  ],
+  "days": 3,
+  "holdout_status": "reserved; generation requires a frozen pipeline manifest",
+  "holdout_domain_variation": "flow/head +/-15%; power scales with flow*head; seasons/context/tier variation",
+  "source_reuse": "profile defaults and training engineering specs; all published scenarios discarded"
+}

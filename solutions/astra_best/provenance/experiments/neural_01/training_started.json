@@ -1,0 +1,267 @@
+{
+  "datasets": [
+    "original_train",
+    "train",
+    "train_balanced",
+    "train_crossed"
+  ],
+  "hidden": [
+    32,
+    16
+  ],
+  "activation": "tanh",
+  "max_iter": 60,
+  "max_samples_per_fault": 20000,
+  "seed": 20261129,
+  "reference_from": "hist_01",
+  "reference_sha256": "21e179cf7ba46cbccf34e652ed3c3d183db7d8055e2bd04dcab1344f86794c9e",
+  "scaling": "Training-only median and IQR, std fallback; clip +/-8; append missingness indicators",
+  "sampling": "Equal source budgets; inverse-duration event-balanced positive resampling; uniform negatives; class-balanced loss",
+  "early_stopping": false,
+  "internal_validation_split": null,
+  "sources": [
+    {
+      "dataset": "original_train",
+      "rows": 70560,
+      "assets": 7,
+      "samples": {
+        "BEARING_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SUCTION_STRAINER_CLOGGING": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "CAVITATION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "DISCHARGE_RESTRICTION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "MISALIGNMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMBALANCE": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMPELLER_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "AIR_ENTRAINMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_DRIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_STUCK": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_CALIBRATION_SHIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_NOISE_SPIKES": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "COMMUNICATION_LOSS": {
+          "positive": 2500,
+          "negative": 2500
+        }
+      }
+    },
+    {
+      "dataset": "train",
+      "rows": 90720,
+      "assets": 21,
+      "samples": {
+        "BEARING_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SUCTION_STRAINER_CLOGGING": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "CAVITATION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "DISCHARGE_RESTRICTION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "MISALIGNMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMBALANCE": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMPELLER_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "AIR_ENTRAINMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_DRIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_STUCK": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_CALIBRATION_SHIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_NOISE_SPIKES": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "COMMUNICATION_LOSS": {
+          "positive": 2500,
+          "negative": 2500
+        }
+      }
+    },
+    {
+      "dataset": "train_balanced",
+      "rows": 86400,
+      "assets": 30,
+      "samples": {
+        "BEARING_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SUCTION_STRAINER_CLOGGING": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "CAVITATION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "DISCHARGE_RESTRICTION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "MISALIGNMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMBALANCE": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMPELLER_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "AIR_ENTRAINMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_DRIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_STUCK": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "SENSOR_CALIBRATION_SHIFT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_NOISE_SPIKES": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "COMMUNICATION_LOSS": {
+          "positive": 0,
+          "negative": 2500
+        }
+      }
+    },
+    {
+      "dataset": "train_crossed",
+      "rows": 103680,
+      "assets": 36,
+      "samples": {
+        "BEARING_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SUCTION_STRAINER_CLOGGING": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "CAVITATION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "DISCHARGE_RESTRICTION": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "MISALIGNMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMBALANCE": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "IMPELLER_WEAR": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "AIR_ENTRAINMENT": {
+          "positive": 2500,
+          "negative": 2500
+        },
+        "SENSOR_DRIFT": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "SENSOR_STUCK": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "SENSOR_CALIBRATION_SHIFT": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "SENSOR_NOISE_SPIKES": {
+          "positive": 0,
+          "negative": 2500
+        },
+        "COMMUNICATION_LOSS": {
+          "positive": 0,
+          "negative": 2500
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "neural.py": "8006a9b7b389d087f2fa59e02bb256bf1aab79538d6f40d44e2251b7d76b1d7a",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f",
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f",
+    "alerts.py": "05f7e1da10c7d6d2b2a2615b5645c9d8096f86a79ed6a59a414e39481a8e372f"
+  }
+}

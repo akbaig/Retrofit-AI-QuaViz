@@ -1,0 +1,151 @@
+{
+  "purpose": "target-only generation integrity audit; not inference features",
+  "rows": [
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-01-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 1327,
+      "running_active_observations": 79533,
+      "running_prefault_observed_minutes": 276
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-02-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1381,
+      "running_active_observations": 82775,
+      "running_prefault_observed_minutes": 472
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-03-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 1228,
+      "running_active_observations": 73605,
+      "running_prefault_observed_minutes": 514
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-04-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1043,
+      "running_active_observations": 62517,
+      "running_prefault_observed_minutes": 541
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-05-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_accel_rms_g",
+      "running_active_observed_minutes": 1194,
+      "running_active_observations": 71561,
+      "running_prefault_observed_minutes": 414
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-06-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_crest_factor",
+      "running_active_observed_minutes": 1315,
+      "running_active_observations": 78811,
+      "running_prefault_observed_minutes": 473
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-08-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 899,
+      "running_active_observations": 53820,
+      "running_prefault_observed_minutes": 564
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-09-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1256,
+      "running_active_observations": 75188,
+      "running_prefault_observed_minutes": 522
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-10-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 1130,
+      "running_active_observations": 67656,
+      "running_prefault_observed_minutes": 528
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-11-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1272,
+      "running_active_observations": 76123,
+      "running_prefault_observed_minutes": 420
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-12-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_accel_rms_g",
+      "running_active_observed_minutes": 1252,
+      "running_active_observations": 74920,
+      "running_prefault_observed_minutes": 511
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-13-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_crest_factor",
+      "running_active_observed_minutes": 1325,
+      "running_active_observations": 79325,
+      "running_prefault_observed_minutes": 488
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-15-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 1033,
+      "running_active_observations": 61716,
+      "running_prefault_observed_minutes": 585
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-16-E01",
+      "fault_type": "SENSOR_DRIFT",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1239,
+      "running_active_observations": 74050,
+      "running_prefault_observed_minutes": 585
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-17-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_current_a",
+      "running_active_observed_minutes": 1285,
+      "running_active_observations": 76813,
+      "running_prefault_observed_minutes": 425
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-18-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "motor_power_kw",
+      "running_active_observed_minutes": 1142,
+      "running_active_observations": 68266,
+      "running_prefault_observed_minutes": 607
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-19-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_accel_rms_g",
+      "running_active_observed_minutes": 662,
+      "running_active_observations": 662,
+      "running_prefault_observed_minutes": 231
+    },
+    {
+      "event_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-20-E01",
+      "fault_type": "SENSOR_NOISE_SPIKES",
+      "sensor_tag": "vibration_crest_factor",
+      "running_active_observed_minutes": 593,
+      "running_active_observations": 593,
+      "running_prefault_observed_minutes": 220
+    }
+  ],
+  "features_sha256": "dcd557b86b7d48a80926cae9c1d1fcb1a55c7da83e433d3911614a2d11e4aed4",
+  "events_sha256": "e0e86f97a11bc1eeb8f30213cac84af928048e64ab51546b4ad26783accbd28a"
+}

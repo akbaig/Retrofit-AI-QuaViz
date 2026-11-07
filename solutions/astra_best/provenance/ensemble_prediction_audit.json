@@ -1,0 +1,42 @@
+{
+  "dataset": "original_validation",
+  "tests": "Actual ViewEnsemble.predict_proba versus algebraically cached probabilities and subsequent arbitrary future numeric mutation",
+  "results": {
+    "ensemble_noise_07": {
+      "prefix_hours_per_asset": 48,
+      "assets": [
+        "PUMP-08",
+        "PUMP-09"
+      ],
+      "prefix_rows": 5760,
+      "cached_matches_actual_exactly": true,
+      "cached_actual_max_absolute_difference": 0.0,
+      "future_mutation_matches_prefix_exactly": true,
+      "future_mutation_max_absolute_difference": 0.0,
+      "future_rows_mutated": 14400,
+      "numeric_columns_mutated": 357,
+      "model_sha256": "916be6e2a50ef34fc1f3e205e92800782ae0e598b5266ccfe8a6c588997136e5"
+    },
+    "ensemble_sensor_08": {
+      "prefix_hours_per_asset": 48,
+      "assets": [
+        "PUMP-08",
+        "PUMP-09"
+      ],
+      "prefix_rows": 5760,
+      "cached_matches_actual_exactly": true,
+      "cached_actual_max_absolute_difference": 0.0,
+      "future_mutation_matches_prefix_exactly": true,
+      "future_mutation_max_absolute_difference": 0.0,
+      "future_rows_mutated": 14400,
+      "numeric_columns_mutated": 357,
+      "model_sha256": "cc3229c7bdc8275d6b348f6d305c48f504468ef61819a2f36335290f1cc6f481"
+    }
+  },
+  "seconds": 10.291632175445557,
+  "source_hashes": {
+    "composite.py": "7cde95f97b48257b9d01672857afc8282c99bfcfbff3731131801f4d81b57b7a",
+    "sensor_expert.py": "67aba438f9ed5a550317699fff89606e74b954b0e7afa1362786a724722ad411",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f"
+  }
+}

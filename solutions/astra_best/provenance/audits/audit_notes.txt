@@ -1,0 +1,71 @@
+Quaviz learned detector: independent architecture and evaluation audit
+Reviewed 2026-11-07 against the unchanged public simulator and scorer.
+
+Historical prefreeze review: scope and integrity
+- Fit only public training assets PUMP-01..07 and clearly declared freshly generated simulator data.
+- The public validation set is familiar from earlier experiments: call it familiar validation, never blind or unseen. It contains two pumps and nine scored events; one newly correct diagnosis alone moves composite score by 25/9 = 2.78 points.
+- Do not access test telemetry, hidden labels, private configuration, or modify the source dataset, simulator or scorer. A new seed from the public simulator measures within-simulator generalization, not real-world or hidden-test performance.
+- Familiar public validation is explicitly authorized development data under BENCHMARK_RULES.md. Freeze serialized model, feature list, alert policy and hashes before opening the separate fresh synthetic holdout. Save every attempted development run rather than presenting only the winner.
+
+Labels and temporal alignment
+- features_1min aggregates [window_start, window_start+1min); its complete row is available at window_start+1min. Every alert and training target must use that availability timestamp.
+- Preserve an explicit asset start/end minute grid, including fully missing gateway intervals. A running_fraction=0 caused by missing telemetry must not hide communication loss.
+- One target per fault type (multi-hot), because physical and sensor faults overlap. Match fault names against the fixed taxonomy; class follows the type.
+- The scored start is max(onset, detectable-6h, asset start). Physical state ends at end_utc, but sensor/cavitation/air events receive 30min scoring tolerance; that tolerance should not be treated as 30min of persistent faulty physiology in the training targets.
+- Never turn an unobservable event into a positive; mask its affected target rather than learning a healthy negative there. Mask or down-weight early, not-yet-detectable portions of slowly developing events, rather than forcing onset labels onto healthy-looking readings.
+- Cavitation deadlines can precede detectable_utc by several minutes. A rigid positive start at detectable_utc sacrifices legitimate early warning; onset-aligned or softly weighted early cavitation labels are reasonable because there is already a physical signature.
+- Training labels may use event endpoints and detectability. Inference features, normalization, imputation and alerts may not. No centered rolling windows, backfill, full-week scaling, retrospectively chosen healthy blocks, or whole-window medians.
+- Mask stopped/startup physiology for machine training, with causal settling features; keep sensor and gateway evaluation active. Persistent label windows often include stopped operation.
+
+High-leverage learning choices
+- Tree models on causal physical and temporal features are a defensible learned architecture. Compare at least one learned-feature ablation; do not describe a classifier that only reweights existing rule outputs as wholly new physical modeling.
+- Learn absolute normalized physical residuals as well as causal per-asset changes. Pre-existing wear contaminates first-day commissioning, so change-only features cannot recover it reliably.
+- Include pump head/flow/speed affinity residuals where channels exist, current/power consistency, temperature rise above fluid/ambient, acceleration-to-velocity/crest signatures, local variability, slopes, and elapsed flat/missing duration. Include channel-presence and tier information so missing channels are not mistaken for zero measurements.
+- Use causal windows at short and long scales (e.g. 5/30/120min), speed/load context and time since restart. Drift versus calibration shift needs temporal shape; imbalance versus bearing wear needs acceleration/crest/heat evidence.
+- Weight or subsample by event, asset and healthy episode. Dense minutes from a week-long event must not dominate brief cavitation episodes or rare sensor faults. Rowwise random cross-validation is invalid because neighboring minutes and duplicated event states leak across folds.
+- Group validation by simulated pump realization and original source pump; preferably keep a full profile/tier combination out. Resimulating only the seven original fault schedules with different noise seeds preserves strong schedule/profile/label shortcuts.
+- Randomize fault timing, duration, severity, sensor tags, physical ratings, benign conditions and overlapping fault combinations independently where the simulator supports them. Include clean controls and faults before commissioning. Do not use asset id, site id, absolute date, scenario ids, future maintenance, or event-derived channels as model input.
+- With only seven original training assets, a fold may have no positives for a fault. Handle absent binary classes explicitly and report per-class event coverage. A large minute count is not a large number of independent examples.
+
+Alert policy and unchanged scoring details
+- Tune on grouped development events using the official composite, not minute accuracy/AUC alone. Selection should also examine precision, recall, first-diagnosis accuracy, timeliness and alert burden separately.
+- The scorer merges alert timestamps separated by <=5min from the burst anchor. Distinct diagnoses inside that burst lose all type credit; distinct classes lose class credit. Stable diagnosis and a minimum six-minute separation between separately justified overlapping-fault alerts avoid this.
+- The first matched burst determines diagnosis/class credit permanently; a later correction cannot repair it. An uncertain premature guess can consume an event and lower the eventual score.
+- Matching prefers exact type, then class, then undetected event, then onset. Long overlapping faults can absorb unknown/repeated alerts and hide missed short episodes.
+- Repeats form anchored 30min episodes. One reminder at least 12h after the last free/counting anchor is free; a recovery-based re-arm can capture repeated short events without constant reminders.
+- Global 12h lockout will miss legitimate repeated cavitation episodes; per-type 12h lockout still needs a causal recovery/reset rule. Conversely, re-arming on every brief probability dip creates excess repeats.
+- Confidence is not scored except when the scorer is explicitly invoked with a minimum confidence. Do not claim calibrated probabilities without separate calibration evidence.
+
+Comparisons and reporting
+- Report the published B1 validation value (78.01 with the released runner's train-selected policy) separately from any retuned or causal variant.
+- On fresh simulator evaluation, give B1 the same synthetic training/development source for threshold/persistence selection and the same evaluated assets, event labels and scorer; also retain the fixed published B1 parameters for a transparent reference.
+- Published B1 zscores uses the complete first 24h even for alerts in that period. It is noncausal for those early timestamps. Do not silently repair it and continue calling the result published B1; identify any causal warmup variant separately.
+- The claim 'considerably better than B1' needs consistent improvement across grouped development and multiple holdout pump realizations, not just nine familiar validation events. Report paired per-realization score deltas and their spread, event counts, per-type results and failures.
+- Check raw-data prefix invariance including partial final minutes and outages, not only prefixing a prebuilt complete-minute table. Confirm output CSV schema and that all alerts fall within the permitted asset window.
+
+Source evidence
+- BENCHMARK_RULES.md sections 1, 2, 4 and 5.
+- src/retrofit_sim/dataset.py: features_1min and asset_row.
+- src/retrofit_sim/scoring.py: bursts, score/w_start/w_end, matching, repeats and first_row.
+- src/retrofit_sim/generate.py: events_for, normal_constant_run_s, simulate_asset.
+- src/retrofit_sim/labels.py: detectable_time.
+- src/retrofit_sim/baselines.py: zscores and _alerts_from_flag.
+- baselines/run_baselines.py: train-only B1 grid.
+
+Historical implementation review, before final freeze, 2026-11-07
+- Earlier independent feature tests verified completed waveform acquisition, six-hour expiry, restart invalidation, future-input mutation isolation, label/identifier exclusion and raw telemetry prefixes on sparse PUMP-01 and dense PUMP-04 training data.
+- The reviewer found finite raw aggregate statistics reaching physics features after the corresponding mean was invalidated. The parent fixed consistent statistic masking; both regression cases subsequently passed in the complete project test suite.
+- New independent tests load the saved hist_01 model once and inspect only observed features/context/snapshots for the first 48h of PUMP-08 and PUMP-09. No event-label file is read by these tests. At a 31h17m29s cutoff, transformed learned residuals, every class probability, and actual alert/evidence rows match the full-run prefix exactly. Mutating every future numeric telemetry/context value and future waveform leaves those alerts unchanged. Both assets pass.
+- A separate deterministic inference test verifies that an explicit independent clock extends a truncated telemetry stream through terminal gateway silence and emits COMMUNICATION_LOSS after the configured persistence. With no clock and no later observation, inference stops at the observed horizon and invents no future gap.
+- The three new inference cases passed in 38.99s during concurrent model fitting. Existing saved hist_01 is used solely to exercise the pipeline; these prefix checks are not final holdout performance estimates.
+- Inference contract: without --until, supplied minute aggregates must already be complete, and supplied context/snapshot records must already be available. A partial final minute cannot safely reveal its completion time from count/rows alone. Explicit --until excludes incomplete final windows; the raw-prefix tests exercise this behavior. This is a documented input contract, not evidence that arbitrary partially accumulated aggregates are safe without a clock.
+- infer_asset reads no event labels and removes alerts at/after the declared asset end. build_features produces a numeric whitelist with no asset identifiers, absolute timestamps, labels, simulator seeds or latent state as learned inputs; asset identity remains only in grouping/output metadata.
+- evaluate_frozen.py is prepared but has not read or generated any holdout. It requires a separately supplied immutable manifest SHA256, full inference/model/policy/B1/source coverage, and a generated holdout manifest bound to that same SHA. It verifies hashes before opening holdout inputs and again before publishing results, preserves a one-shot output directory, and reports fixed published B1 separately from development-selected B1.
+- The evaluator's syntax and rejection of a mismatched immutable freeze before any holdout access were checked. Real evaluator/model/holdout integration remains deliberately pending the parent's explicit final freeze.
+
+Final audit, after frozen evaluation
+- Independent final full-suite rerun: 40 passed, 11 non-failing warnings, 6.24 s.
+- Final artifact: 14 healthy regressors, 36 core binary boosted-tree classifiers and 4 shared sensor classifiers; 8.6716 MiB. Core views use equal-weight score averaging.
+- Public-test observations were used only after freeze for label-free submission inference (43 alerts). They were never used for fitting, policy selection or scoring. Earlier development-scope language above is historical.
+- Frozen holdout aggregate: 63.5086 vs 43.5292 strongest preselected threshold setting. Aggregate scores include all healthy assets. A supplemental per-asset empty-event table triggers an original-scorer TypeError; a separate reporting-only continuation preserved the original predictions and aggregate report, verified all hashes and recomputed only fixed B1 comparators. Eventless per-asset composites are unavailable; their alert counts remain shown. No model/policy/scorer changes followed the freeze.
+- Full source-layout replay tests passed in the original workspace; portable unit-test command excludes tests/test_review.py, whose replay fixture hardcodes original source layout.

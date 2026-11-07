@@ -1,0 +1,1041 @@
+{
+  "role": "train_crossed",
+  "seeds": [
+    1313161
+  ],
+  "days": 2.0,
+  "runs": [
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-01",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 2.308,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 10.115078693143175,
+          "end_h": 43.35572054958494,
+          "jitter_h": 0,
+          "repair_h": 0.6064136237567808,
+          "params": {
+            "rate_per_h": 0.024457270723652013,
+            "t_fail_h": 27.53774356980132,
+            "w_max": 0.8179220634170566
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-02",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.199,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_suction_strainer_clogging",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 14.102733883549552,
+          "end_h": 42.710434208391526,
+          "jitter_h": 0,
+          "repair_h": 1.9827010132726168,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2937611486005458,
+            "c_max": 4.920160764814765
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "CAVITATION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-03",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.19,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 10.846662673940873,
+          "end_h": 40.90947902401037,
+          "jitter_h": 0,
+          "repair_h": 1.3925418712647928,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 1.5,
+            "extra_max": 0.4047891873127662
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-04",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.123,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 8.975271229698363,
+          "end_h": 44.71172485064205,
+          "jitter_h": 0,
+          "repair_h": 1.8550025462893913,
+          "params": {
+            "level": 0.5575445792490066,
+            "growth_per_h": 0.002132625210872116
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-05",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.164,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 11.93892243925664,
+          "end_h": 44.48548359786238,
+          "jitter_h": 0,
+          "repair_h": 1.6468081449347136,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.07775806342924882,
+            "u0": 0.13388014230663792,
+            "u_max": 1.2895388969396004
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-06",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.156,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 11.754741884392265,
+          "end_h": 40.71051764949837,
+          "jitter_h": 0,
+          "repair_h": 1.3899305604217926,
+          "params": {
+            "rate_per_h": 0.007839875092152436,
+            "iw0": 0.0,
+            "iw_max": 0.09627008816226286
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-07",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.14,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 13.31194222103278,
+          "end_h": 39.700230682328,
+          "jitter_h": 0,
+          "repair_h": 0.9290524925385781,
+          "params": {
+            "alpha_max": 0.043643915797242146
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-08",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.148,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "crossed_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 14.338012359768372,
+          "end_h": 41.69855295569046,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2800361387924945,
+            "c_max": 7.226719165307567
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 15.632478616686168,
+          "end_h": 41.69855295569046,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 6.80698343298805,
+            "ramp_h": 1.1292423911183023
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "CAVITATION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-09",
+      "template_asset_id": "PUMP-02",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 0.818,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0076232216103784,
+      "rating_scale_head": 0.9642499382148494,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-10",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.191,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 13.820039282956568,
+          "end_h": 42.66337223750801,
+          "jitter_h": 0,
+          "repair_h": 1.9749475790510902,
+          "params": {
+            "rate_per_h": 0.02812632079923625,
+            "t_fail_h": 23.470781013830425,
+            "w_max": 0.8906289961283665
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-11",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.126,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_suction_strainer_clogging",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 12.862713408857815,
+          "end_h": 40.2897089283672,
+          "jitter_h": 0,
+          "repair_h": 1.4333943564218414,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.17294087190930188,
+            "c_max": 3.1988024661406564
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-12",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.231,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 12.396176014165642,
+          "end_h": 42.14532619404015,
+          "jitter_h": 0,
+          "repair_h": 0.8820042289189474,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 0.08,
+            "extra_max": 0.9739602146435643
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-13",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.145,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 11.162327904090228,
+          "end_h": 43.82582233257827,
+          "jitter_h": 0,
+          "repair_h": 0.5253507371491877,
+          "params": {
+            "level": 0.4833757722855857,
+            "growth_per_h": 0.003696107378642242
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-14",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.194,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 11.909616419099105,
+          "end_h": 39.807080692089585,
+          "jitter_h": 0,
+          "repair_h": 0.7658759256718473,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.05493401371783587,
+            "u0": 0.11197695094011312,
+            "u_max": 1.040924424894658
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-15",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.259,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 10.784540297286206,
+          "end_h": 39.991987707862926,
+          "jitter_h": 0,
+          "repair_h": 1.1506666674048334,
+          "params": {
+            "rate_per_h": 0.004242649887941291,
+            "iw0": 0.0,
+            "iw_max": 0.10889554108493872
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-16",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.176,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 13.45216503681014,
+          "end_h": 39.79116964798218,
+          "jitter_h": 0,
+          "repair_h": 1.7164434330128913,
+          "params": {
+            "alpha_max": 0.038883899735816276
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-17",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.182,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "crossed_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 12.01629246348878,
+          "end_h": 43.63205958450739,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.37389053786784476,
+            "c_max": 6.801014184315856
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 14.70200750989924,
+          "end_h": 43.63205958450739,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 7.5037168148013205,
+            "ramp_h": 1.33135174466951
+          }
+        }
+      ],
+      "event_classes": {
+        "CAVITATION": 3,
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-18",
+      "template_asset_id": "PUMP-07",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 0.839,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.001494828972419,
+      "rating_scale_head": 1.022549490876129,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-19",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.154,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 9.448450244859242,
+          "end_h": 41.72443453901777,
+          "jitter_h": 0,
+          "repair_h": 1.2658715941040153,
+          "params": {
+            "rate_per_h": 0.0385724299396028,
+            "t_fail_h": 32.60433450351308,
+            "w_max": 0.8250884579847528
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-20",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.074,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_suction_strainer_clogging",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 13.485764179826727,
+          "end_h": 43.28662288922555,
+          "jitter_h": 0,
+          "repair_h": 0.5025835939102473,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.15688142701847937,
+            "c_max": 4.668797343976011
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "CAVITATION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-21",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.163,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 10.250003270547467,
+          "end_h": 42.32837377738888,
+          "jitter_h": 0,
+          "repair_h": 1.7673443056108813,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 0.025,
+            "extra_max": 0.8678534889532252
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-22",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.112,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 11.624351799985952,
+          "end_h": 41.230630264204436,
+          "jitter_h": 0,
+          "repair_h": 1.7941314361026037,
+          "params": {
+            "level": 0.625542836856066,
+            "growth_per_h": 0.0001642958838054449
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-23",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.107,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 12.118814371167165,
+          "end_h": 41.62242144926932,
+          "jitter_h": 0,
+          "repair_h": 1.7941307730936664,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.07592072473320795,
+            "u0": 0.06782567737930384,
+            "u_max": 0.8543541070454084
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-24",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.095,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 9.51280805615006,
+          "end_h": 42.89729374555719,
+          "jitter_h": 0,
+          "repair_h": 1.1459799262533443,
+          "params": {
+            "rate_per_h": 0.007189467813112128,
+            "iw0": 0.0,
+            "iw_max": 0.0768734840260398
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-25",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.106,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 14.291670536056557,
+          "end_h": 40.1450644558595,
+          "jitter_h": 0,
+          "repair_h": 1.0019889287350563,
+          "params": {
+            "alpha_max": 0.04527652253372888
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-26",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.124,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "crossed_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 12.59644127675725,
+          "end_h": 42.33091377296628,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.3964162112496133,
+            "c_max": 5.564494059545622
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 14.308249888263143,
+          "end_h": 42.33091377296628,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 5.890157578067746,
+            "ramp_h": 0.7898462392347554
+          }
+        }
+      ],
+      "event_classes": {
+        "CAVITATION": 2,
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-27",
+      "template_asset_id": "PUMP-04",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 0.845,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0269190573018914,
+      "rating_scale_head": 1.0081295148390295,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-28",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.167,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 9.36797308595492,
+          "end_h": 42.054986484017306,
+          "jitter_h": 0,
+          "repair_h": 1.3040039150770855,
+          "params": {
+            "rate_per_h": 0.03588175798496449,
+            "t_fail_h": 23.59847864150085,
+            "w_max": 0.949792143670491
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-29",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.168,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_suction_strainer_clogging",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 9.323271793900556,
+          "end_h": 43.457002919382994,
+          "jitter_h": 0,
+          "repair_h": 1.635540749764246,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2610068250568202,
+            "c_max": 2.8735357571726157
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-30",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.251,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 8.771682306554215,
+          "end_h": 42.18995625623759,
+          "jitter_h": 0,
+          "repair_h": 1.1958501402596993,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 0.25,
+            "extra_max": 1.0325045560564672
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-31",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.174,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 14.338361700060979,
+          "end_h": 42.42609871709967,
+          "jitter_h": 0,
+          "repair_h": 1.3228544195348741,
+          "params": {
+            "level": 0.5529157606701401,
+            "growth_per_h": 0.0032153181217933506
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-32",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.152,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 10.678898896825462,
+          "end_h": 44.09977666877369,
+          "jitter_h": 0,
+          "repair_h": 1.8853992454604398,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.07093682764217875,
+            "u0": 0.0005813461755674043,
+            "u_max": 0.9159133838967397
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-33",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.162,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 9.62378029845424,
+          "end_h": 43.93112848648717,
+          "jitter_h": 0,
+          "repair_h": 0.8271838893620245,
+          "params": {
+            "rate_per_h": 0.007564194096797041,
+            "iw0": 0.0,
+            "iw_max": 0.124925980403586
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-34",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.102,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 9.960601796830288,
+          "end_h": 41.642571335557804,
+          "jitter_h": 0,
+          "repair_h": 1.7806515060944095,
+          "params": {
+            "alpha_max": 0.05221644748449397
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-35",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 1.041,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "crossed_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 13.917950179511664,
+          "end_h": 42.941796075111554,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.36394764343284475,
+            "c_max": 6.669932475716252
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 15.50523201974875,
+          "end_h": 42.941796075111554,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 6.5683452451164355,
+            "ramp_h": 0.7538670956569874
+          }
+        }
+      ],
+      "event_classes": {
+        "CAVITATION": 2,
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_CROSSED-1313161-36",
+      "template_asset_id": "PUMP-05",
+      "seed": 1313161,
+      "minutes": 2880,
+      "seconds": 0.745,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0350533325677524,
+      "rating_scale_head": 0.9706531946025083,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    }
+  ],
+  "observed_minute_rows": 103680,
+  "asset_count": 36,
+  "total_seconds": 42.232,
+  "source_config_sha256": "3963529068778cd84a9c515ddf03e6bfc40c8f5908e438753ea45230b42f161d",
+  "generator_sha256": "2a18414e519fa58cf955a26fe78012831ced0fb1c26dbd466d7c28e1b46b499d",
+  "reserved_seed_manifest_sha256": "cba6cbbad0485da1d1ae4d70d0f13ed64ecd20d48bac0305ffaff547b80b9c43",
+  "availability": "features are emitted at available_at_utc = window_start_utc + 60s",
+  "inference_inputs": [
+    "features_1min.parquet",
+    "operating_context.csv",
+    "assets.csv",
+    "vibration_snapshots.parquet"
+  ],
+  "snapshot_count": 417,
+  "snapshot_caveat": "Published snapshots_for waveform route includes simulated measurement variation and missing gateways, but does not apply channel sensor-fault corruption; waveform use should be ablated.",
+  "target_only": [
+    "events.csv"
+  ],
+  "latent_or_truth_exports": [],
+  "artifacts": {
+    "features_1min.parquet": "fa0f913e00cf25e4f4bc560952c576cc98631fe2e288cbdb13daf5be4f14b1b5",
+    "operating_context.csv": "520a0673a7318cff58d3c1098f0f3566362423b1e9d13d1c374213c6dfee4b2e",
+    "assets.csv": "fd297e489b24814ca62fc0d14a46dce53c352ecbaa9fdeb998c233c6d7842555",
+    "events.csv": "3de032360eb821df81262a2c3a4f3e16b43cf09269a00644738ca4339222a96d",
+    "vibration_snapshots.parquet": "124b6c4d7aeecf7b37e7cf70ffa7c5674129714cfeaf0dc548c1a0ce3776f897"
+  },
+  "event_counts": {
+    "CAVITATION": 10,
+    "SUCTION_STRAINER_CLOGGING": 8,
+    "BEARING_WEAR": 4,
+    "DISCHARGE_RESTRICTION": 4,
+    "MISALIGNMENT": 4,
+    "IMBALANCE": 4,
+    "IMPELLER_WEAR": 4,
+    "AIR_ENTRAINMENT": 4
+  },
+  "observable_event_counts": {
+    "CAVITATION": 10,
+    "SUCTION_STRAINER_CLOGGING": 8,
+    "BEARING_WEAR": 4,
+    "DISCHARGE_RESTRICTION": 4,
+    "MISALIGNMENT": 4,
+    "IMBALANCE": 4,
+    "IMPELLER_WEAR": 4,
+    "AIR_ENTRAINMENT": 4
+  }
+}

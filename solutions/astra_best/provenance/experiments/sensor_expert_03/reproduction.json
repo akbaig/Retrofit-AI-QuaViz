@@ -1,0 +1,190 @@
+{
+  "training_command": "OMP_NUM_THREADS=3 LOKY_MAX_CPU_COUNT=3 python train_sensor.py --name sensor_expert_03 --reference hist_01 --datasets original_train train train_balanced train_crossed train_sensor_crossed --evaluate development original_validation --seed 20261107 --max-iter 140 --max-positive-per-type-channel 1800 --max-negative-per-channel 3500",
+  "command_working_directory": "directory containing train_sensor.py",
+  "provenance": "Equivalent reproducible CLI for the original Python-heredoc training. This CLI was added after fitting; the existing model was not retrained.",
+  "existing_output_behavior": "The command refuses an existing run. Use an empty reconstruction runs/sensor_expert_03 path, or choose a new --name to preserve the supplied run.",
+  "datasets": [
+    "original_train",
+    "train",
+    "train_balanced",
+    "train_crossed",
+    "train_sensor_crossed"
+  ],
+  "reference_model": "hist_01",
+  "frozen_reference_sha256": "21e179cf7ba46cbccf34e652ed3c3d183db7d8055e2bd04dcab1344f86794c9e",
+  "model_sha256": "43bf6c5ac7d034d99a674fd088b5853ee9e9536d6eb3db3ba033803eb023ed6a",
+  "parameters": {
+    "seed": 20261107,
+    "max_positive_per_type_channel": 1800,
+    "max_negative_per_channel": 3500,
+    "max_iter": 140,
+    "routed": true
+  },
+  "input_rows": 396720,
+  "input_assets": 115,
+  "retained_column_count": 143,
+  "column_retention": {
+    "prefixes": [
+      "level__",
+      "std__",
+      "range__",
+      "fresh__",
+      "age__",
+      "count__",
+      "flat_minutes__",
+      "equal_updates__",
+      "residual__"
+    ],
+    "exact": [
+      "ctx__ambient_temp_c",
+      "ctx__duty_demand_pct",
+      "ctx__supply_water_temp_c",
+      "obs__gap",
+      "obs__running",
+      "obs__steady",
+      "phys__acceleration_velocity_ratio",
+      "phys__bearing_thermal_residual_k",
+      "phys__electrical_power_factor",
+      "phys__flow_required_residual",
+      "phys__fluid_supply_excess_k",
+      "phys__head_curve_residual",
+      "phys__power_pu",
+      "phys__power_shaft_residual_pu",
+      "phys__speed_command_residual",
+      "phys__valve_demand_residual",
+      "phys__winding_thermal_residual_k"
+    ],
+    "ordering": "Preserve transformed DataFrame column order."
+  },
+  "sample_order": "Datasets in listed order; prepared row and column order retained; pd.concat(ignore_index=True). SensorExpert sorts channel names, uses one seeded generator, then sorts retained row indices per channel.",
+  "training": {
+    "examples": 85615,
+    "features": 54,
+    "per_type": {
+      "SENSOR_DRIFT": {
+        "positive_samples": 8885,
+        "negative_samples": 76730,
+        "features": 54
+      },
+      "SENSOR_STUCK": {
+        "positive_samples": 6520,
+        "negative_samples": 79095,
+        "features": 10
+      },
+      "SENSOR_CALIBRATION_SHIFT": {
+        "positive_samples": 10341,
+        "negative_samples": 75274,
+        "features": 54
+      },
+      "SENSOR_NOISE_SPIKES": {
+        "positive_samples": 10869,
+        "negative_samples": 74746,
+        "features": 18
+      }
+    },
+    "channel_positive_minutes": {
+      "ambient_temp_c": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "bearing_temp_c": {
+        "SENSOR_DRIFT": 2999,
+        "SENSOR_STUCK": 1482,
+        "SENSOR_CALIBRATION_SHIFT": 3118,
+        "SENSOR_NOISE_SPIKES": 1171
+      },
+      "discharge_pressure_kpa": {
+        "SENSOR_DRIFT": 993,
+        "SENSOR_STUCK": 1831,
+        "SENSOR_CALIBRATION_SHIFT": 3678,
+        "SENSOR_NOISE_SPIKES": 2690
+      },
+      "flow_m3_h": {
+        "SENSOR_DRIFT": 429,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 2686,
+        "SENSOR_NOISE_SPIKES": 698
+      },
+      "fluid_temp_c": {
+        "SENSOR_DRIFT": 191,
+        "SENSOR_STUCK": 982,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_current_a": {
+        "SENSOR_DRIFT": 6696,
+        "SENSOR_STUCK": 1177,
+        "SENSOR_CALIBRATION_SHIFT": 1763,
+        "SENSOR_NOISE_SPIKES": 3926
+      },
+      "motor_power_kw": {
+        "SENSOR_DRIFT": 3776,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 387,
+        "SENSOR_NOISE_SPIKES": 4034
+      },
+      "motor_speed_rpm": {
+        "SENSOR_DRIFT": 72,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_winding_temp_c": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "suction_pressure_kpa": {
+        "SENSOR_DRIFT": 6727,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 1872,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "valve_position_pct": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "vibration_accel_rms_g": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 507,
+        "SENSOR_CALIBRATION_SHIFT": 484,
+        "SENSOR_NOISE_SPIKES": 3861
+      },
+      "vibration_crest_factor": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 507,
+        "SENSOR_NOISE_SPIKES": 3820
+      },
+      "vibration_rms_mm_s": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 572,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      }
+    }
+  },
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1"
+  },
+  "original_training_source_hashes": {
+    "sensor_expert.py": "67aba438f9ed5a550317699fff89606e74b954b0e7afa1362786a724722ad411",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f",
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f"
+  },
+  "reproduction_source_hashes": {
+    "train_sensor.py": "0979b56df95013dca5d6c9cc58c1a1ce7686f81be87a72fae82e27c9293f286d",
+    "run.py": "80b7734fdb4a29ef45464bf97526441656d67350ae8504e3f344c52aae4bff2b",
+    "paths.py": "2e5f3f1f93c0edf700dabb9f76ad446ba2e2e2b4a0451756da487e26a43f1f87"
+  },
+  "verification": "Five CLI-contract tests passed; --help smoke passed. Original source, reference-model and fitted-model SHA256 hashes rechecked unchanged. No fitting performed."
+}

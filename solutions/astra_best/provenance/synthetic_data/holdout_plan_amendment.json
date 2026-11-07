@@ -1,0 +1,21 @@
+{
+  "amended_at_utc": "2026-11-07T13:07:19.152256+00:00",
+  "reason": "Expand untouched final synthetic holdout from seven to twenty-one independent perturbed asset trajectories before generation",
+  "role": "holdout",
+  "previous_seeds": [
+    1013137
+  ],
+  "reserved_seeds": [
+    1013137,
+    1013141,
+    1013153
+  ],
+  "assets_per_seed": 7,
+  "days_per_asset": 3,
+  "heldout_data_generated": false,
+  "heldout_labels_inspected": false,
+  "previous_manifest": "seed_manifest.initial.json",
+  "previous_manifest_sha256": "cba6cbbad0485da1d1ae4d70d0f13ed64ecd20d48bac0305ffaff547b80b9c43",
+  "current_manifest": "seed_manifest.json",
+  "current_manifest_sha256": "fa7f26599bb52bf10e660153e41996b5ea681458f5696345858a50f448a01fbd"
+}

@@ -1,0 +1,200 @@
+{
+  "training": {
+    "examples": 76615,
+    "features": 54,
+    "per_type": {
+      "SENSOR_DRIFT": {
+        "positive_samples": 7085,
+        "negative_samples": 69530,
+        "features": 54
+      },
+      "SENSOR_STUCK": {
+        "positive_samples": 6520,
+        "negative_samples": 70095,
+        "features": 10
+      },
+      "SENSOR_CALIBRATION_SHIFT": {
+        "positive_samples": 10341,
+        "negative_samples": 66274,
+        "features": 54
+      },
+      "SENSOR_NOISE_SPIKES": {
+        "positive_samples": 3669,
+        "negative_samples": 72946,
+        "features": 18
+      }
+    },
+    "channel_positive_minutes": {
+      "ambient_temp_c": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "bearing_temp_c": {
+        "SENSOR_DRIFT": 2999,
+        "SENSOR_STUCK": 1482,
+        "SENSOR_CALIBRATION_SHIFT": 3118,
+        "SENSOR_NOISE_SPIKES": 1171
+      },
+      "discharge_pressure_kpa": {
+        "SENSOR_DRIFT": 993,
+        "SENSOR_STUCK": 1831,
+        "SENSOR_CALIBRATION_SHIFT": 3678,
+        "SENSOR_NOISE_SPIKES": 2690
+      },
+      "flow_m3_h": {
+        "SENSOR_DRIFT": 429,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 2686,
+        "SENSOR_NOISE_SPIKES": 698
+      },
+      "fluid_temp_c": {
+        "SENSOR_DRIFT": 191,
+        "SENSOR_STUCK": 982,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_current_a": {
+        "SENSOR_DRIFT": 3083,
+        "SENSOR_STUCK": 1177,
+        "SENSOR_CALIBRATION_SHIFT": 1763,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_power_kw": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 387,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_speed_rpm": {
+        "SENSOR_DRIFT": 72,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "motor_winding_temp_c": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "suction_pressure_kpa": {
+        "SENSOR_DRIFT": 6727,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 1872,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "valve_position_pct": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "vibration_accel_rms_g": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 507,
+        "SENSOR_CALIBRATION_SHIFT": 484,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "vibration_crest_factor": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 0,
+        "SENSOR_CALIBRATION_SHIFT": 507,
+        "SENSOR_NOISE_SPIKES": 0
+      },
+      "vibration_rms_mm_s": {
+        "SENSOR_DRIFT": 0,
+        "SENSOR_STUCK": 572,
+        "SENSOR_CALIBRATION_SHIFT": 0,
+        "SENSOR_NOISE_SPIKES": 0
+      }
+    }
+  },
+  "datasets": [
+    "original_train",
+    "train",
+    "train_balanced",
+    "train_crossed"
+  ],
+  "reference_model": "hist_01",
+  "metrics": {
+    "development": {
+      "SENSOR_DRIFT": {
+        "positive_minutes": 265,
+        "average_precision": 0.015840057653885832,
+        "roc_auc": 0.7245742769928913,
+        "positive_median": 0.5493484139442444,
+        "negative_p99": 0.9625308531522752,
+        "negative_above.8": 3467
+      },
+      "SENSOR_STUCK": {
+        "positive_minutes": 911,
+        "average_precision": 0.9998460510445646,
+        "roc_auc": 0.9999952077171927,
+        "positive_median": 0.9998518228530884,
+        "negative_p99": 0.026631333976983924,
+        "negative_above.8": 58
+      },
+      "SENSOR_CALIBRATION_SHIFT": {
+        "positive_minutes": 353,
+        "average_precision": 0.0162842660578662,
+        "roc_auc": 0.6555504575369022,
+        "positive_median": 0.7019257545471191,
+        "negative_p99": 0.963756263256073,
+        "negative_above.8": 5892
+      },
+      "SENSOR_NOISE_SPIKES": {
+        "positive_minutes": 1490,
+        "average_precision": 0.31761030026039494,
+        "roc_auc": 0.7806191967095759,
+        "positive_median": 0.0015242618974298239,
+        "negative_p99": 0.11456001654267302,
+        "negative_above.8": 33
+      }
+    },
+    "original_validation": {
+      "SENSOR_DRIFT": {
+        "positive_minutes": 2881,
+        "average_precision": 0.09296065730190187,
+        "roc_auc": 0.2733977976326969,
+        "positive_median": 0.11735895276069641,
+        "negative_p99": 0.9212865173816681,
+        "negative_above.8": 3022
+      },
+      "SENSOR_STUCK": {
+        "positive_minutes": 1210,
+        "average_precision": 0.9714680156184475,
+        "roc_auc": 0.9966143192508748,
+        "positive_median": 0.9998518228530884,
+        "negative_p99": 0.4717146158218384,
+        "negative_above.8": 88
+      },
+      "SENSOR_CALIBRATION_SHIFT": {
+        "positive_minutes": 0,
+        "average_precision": null,
+        "roc_auc": null,
+        "positive_median": NaN,
+        "negative_p99": 0.8850853407382965,
+        "negative_above.8": 538
+      },
+      "SENSOR_NOISE_SPIKES": {
+        "positive_minutes": 621,
+        "average_precision": 0.9921322367639099,
+        "roc_auc": 0.9998453087370516,
+        "positive_median": 0.9991364479064941,
+        "negative_p99": 0.19027727141976286,
+        "negative_above.8": 19
+      }
+    }
+  },
+  "seconds": 137.42732691764832,
+  "current_compatible_source_hashes": {
+    "sensor_expert.py": "67aba438f9ed5a550317699fff89606e74b954b0e7afa1362786a724722ad411",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f",
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f"
+  },
+  "model_sha256": "fc4aa70766614f8bb343ad075196c6ba2839c13bef9b091d85305f3d11a399a4",
+  "frozen_reference_sha256": "21e179cf7ba46cbccf34e652ed3c3d183db7d8055e2bd04dcab1344f86794c9e"
+}

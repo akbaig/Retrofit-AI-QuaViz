@@ -1,0 +1,12 @@
+{
+  "threshold": 0.95,
+  "persistence": 15,
+  "recovery": 720,
+  "reminder": 1440,
+  "thresholds": {
+    "SUCTION_STRAINER_CLOGGING": 0.02,
+    "CAVITATION": 0.005,
+    "DISCHARGE_RESTRICTION": 0.02,
+    "SENSOR_DRIFT": 0.6
+  }
+}

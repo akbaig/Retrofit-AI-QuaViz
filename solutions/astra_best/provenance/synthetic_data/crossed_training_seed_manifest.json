@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "role": "train_crossed",
+  "purpose": "training augmentation only",
+  "seeds": [
+    1313161
+  ],
+  "days": 2.0,
+  "tracks_per_seed": 36,
+  "classes": [
+    "BEARING_WEAR",
+    "SUCTION_STRAINER_CLOGGING",
+    "DISCHARGE_RESTRICTION",
+    "MISALIGNMENT",
+    "IMBALANCE",
+    "IMPELLER_WEAR",
+    "AIR_ENTRAINMENT",
+    "CAVITATION",
+    "HEALTHY"
+  ],
+  "coverage_strata": [
+    [
+      "PUMP-02",
+      "FIXED_SPEED",
+      "T2_FULL",
+      false
+    ],
+    [
+      "PUMP-07",
+      "VFD_TEMPERATURE",
+      "T2_FULL",
+      false
+    ],
+    [
+      "PUMP-04",
+      "FIXED_SPEED",
+      "T2_FULL",
+      false
+    ],
+    [
+      "PUMP-05",
+      "VFD_PRESSURE",
+      "T1_RETROFIT",
+      true
+    ]
+  ],
+  "selection_basis": "full factorial machine class by control/profile/instrumentation coverage",
+  "validation_or_test_data_used": false,
+  "reserved_evaluation_seed_manifest_sha256": "cba6cbbad0485da1d1ae4d70d0f13ed64ecd20d48bac0305ffaff547b80b9c43"
+}

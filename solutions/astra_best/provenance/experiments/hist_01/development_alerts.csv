@@ -1,0 +1,19 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+SYN-DEVELOPMENT-913127-01,2024-12-02T23:20:00+00:00,MACHINE,AIR_ENTRAINMENT,0.9045409167317392,learned AIR_ENTRAINMENT score=0.905; sustained 15 min,Check for air ingress and unstable suction or delivered flow.
+SYN-DEVELOPMENT-913127-01,2024-12-03T08:53:00+00:00,MACHINE,AIR_ENTRAINMENT,0.9698862168657734,learned AIR_ENTRAINMENT score=0.970; sustained 15 min,Check for air ingress and unstable suction or delivered flow.
+SYN-DEVELOPMENT-913127-02,2024-05-12T18:46:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9826916577864251,learned SUCTION_STRAINER_CLOGGING score=0.983; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+SYN-DEVELOPMENT-913127-02,2024-05-12T21:06:00+00:00,MACHINE,IMBALANCE,0.9499601818920446,learned IMBALANCE score=0.950; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-03,2024-11-12T23:25:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9997981550888784,learned COMMUNICATION_LOSS score=1.000; sustained 15 min,"Check gateway power, network and data acquisition."
+SYN-DEVELOPMENT-913127-04,2024-07-16T00:29:00+00:00,MACHINE,IMBALANCE,0.9979213849909973,learned IMBALANCE score=0.998; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-04,2024-07-16T21:30:00+00:00,MACHINE,IMBALANCE,0.9993546913254601,learned IMBALANCE score=0.999; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-04,2024-07-17T05:30:00+00:00,MACHINE,IMBALANCE,0.9766751227343403,learned IMBALANCE score=0.977; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-04,2024-07-17T19:17:00+00:00,MACHINE,IMPELLER_WEAR,0.9713334771032004,learned IMPELLER_WEAR score=0.971; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:12:00+00:00,MACHINE,CAVITATION,0.9993986172024681,learned CAVITATION score=0.999; sustained 15 min,"Check suction pressure, liquid level and strainer; confirm cavitation."
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:18:00+00:00,MACHINE,IMPELLER_WEAR,0.9636054899833478,learned IMPELLER_WEAR score=0.964; sustained 21 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-03T22:57:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9974898635912461,learned DISCHARGE_RESTRICTION score=0.997; sustained 15 min,Inspect discharge valves and downstream restriction.
+SYN-DEVELOPMENT-913127-05,2024-09-04T03:45:00+00:00,SENSOR,SENSOR_DRIFT,0.9296640479062022,learned SENSOR_DRIFT score=0.930; sustained 15 min,Compare the indicated instrument with a reference; recalibrate if confirmed.
+SYN-DEVELOPMENT-913127-05,2024-09-04T07:11:00+00:00,MACHINE,IMPELLER_WEAR,0.9499918219343723,learned IMPELLER_WEAR score=0.950; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-04T19:39:00+00:00,SENSOR,SENSOR_STUCK,0.9999104227608766,learned SENSOR_STUCK score=1.000; sustained 15 min,"Check frozen readings, transmitter and wiring against an independent measurement."
+SYN-DEVELOPMENT-913127-05,2024-09-05T07:11:00+00:00,MACHINE,IMPELLER_WEAR,0.9997499097893133,learned IMPELLER_WEAR score=1.000; sustained 723 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-05T10:51:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9986119419099435,learned DISCHARGE_RESTRICTION score=0.999; sustained 15 min,Inspect discharge valves and downstream restriction.
+SYN-DEVELOPMENT-913127-07,2024-02-07T21:16:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9998811060543125,learned COMMUNICATION_LOSS score=1.000; sustained 15 min,"Check gateway power, network and data acquisition."

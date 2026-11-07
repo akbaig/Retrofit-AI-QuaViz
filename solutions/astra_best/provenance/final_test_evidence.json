@@ -1,0 +1,17 @@
+{
+  "original_workspace_full_suite": {
+    "passed": 40,
+    "warnings": 11,
+    "seconds": 6.24,
+    "reviewer": "Independent learned_eval_review agent, 2026-11-07"
+  },
+  "coverage": [
+    "observation availability and missingness",
+    "raw and fitted-model prefix invariance",
+    "future-mutation isolation",
+    "sensor routing",
+    "alert persistence",
+    "training reproduction CLI",
+    "existing artifact preservation"
+  ]
+}

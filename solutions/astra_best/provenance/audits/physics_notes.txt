@@ -1,0 +1,53 @@
+Public-observation physics feature contract
+==========================================
+
+add_physics_features(frame, asset) -> 48-column float32 DataFrame, same index.
+extract_snapshot_features(samples, sample_rate_hz, rpm, asset) -> 13 floats.
+
+The implementation has no filesystem reads. It uses public assets.csv ratings,
+observed minute aggregates, and contemporaneous or past-asof operating context.
+Neither asset identifiers, event identifiers, simulator randomness, latent states,
+scenario schedules, nor labels enter feature formulas. Physics equations were
+checked against public physics.py / plant.py and TECHNICAL_MODEL.md.
+
+Causality: minute aggregate availability is minute completion, not minute start.
+The caller must supply one asset's chronological complete minute grid. Sparse
+observations can be held only backwards with bounded age, retaining age/missing
+features. Thermal expected values have past-only first-order lags (1500/2400 s).
+Waveform availability is timestamp + n_samples/sample_rate_hz; join only a fully
+captured past waveform, retain its age, and reset/expire around stops if desired.
+
+Missing signals remain NaN. The one physical substitution is fixed-speed motor
+speed inferred from observed running state. Healthy-curve-inferred flow has its
+own feature name; it is never used to compute the observed head-curve residual
+or measured hydraulic efficiency, because that would enforce fake consistency.
+NPSH may use observed flow or explicitly curve-inferred flow, so it is a model
+estimate and can be biased by pressure sensor faults or degraded pump curves.
+
+Shared nominal assumptions: temperature-control design water 25 C, setpoint from
+public context (36 C fallback), equal-percentage valve rangeability 50 and design
+position 0.8 with 25% of system resistance; suction velocity 2.5 m/s at BEP;
+bearing rise 28 K, winding rise 75 K; electrical thermal load proxy 0.94 of
+observed input power, falling back to rated-normalized current. These are broad
+engineering normalizers, not asset-specific healthy-state reconstruction. Their
+bias should be handled by the learned healthy regressor and causal residuals.
+
+Waveform features use a Hann spectrum and acceleration-to-velocity integration
+around measured 1x, 2x, 3x and vane-pass orders. Envelope evidence uses a Butterworth
+bandpass (normally 1800-4000 Hz), Hilbert amplitude, then power in the first three
+BPFO/BPFI harmonics with bands covering 1 Hz resolution and small bearing slip.
+BPFO prominence compares line-band and neighboring-band mean power. Missing or
+invalid snapshots yield NaN for all 13 columns.
+
+Snapshots are useful for separating 1x-dominant imbalance, 2x/3x misalignment,
+and BPFO-modulated bearing impacts from broadband hydraulic noise. They occur
+only every four hours: do not imply continuous spectral diagnosis. The simulator
+synthesizes them directly from physical vibration components, independently of
+monitoring-channel sensor corruptions. Report this and ablate waveform features
+to show their contribution separately from the minutely telemetry architecture.
+
+Validation performed: tests/test_physics.py has five passing tests covering prefix
+causality/no mutation, correct healthy curve identity, missing-evidence semantics,
+harmonic velocity recovery, BPFO envelope discrimination, and invalid records.
+Smoke tested all seven TRAIN assets only (70,494 original minute rows) and one
+real public TRAIN snapshot. No validation/test labels or predictions were read.

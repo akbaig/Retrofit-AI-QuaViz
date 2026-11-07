@@ -1,0 +1,169 @@
+Actual learned-model feature audit: extra_direct_01
+==================================================
+
+Scope
+-----
+Read model.joblib, training.json, policy.json, the synthetic DEVELOPMENT feature
+cache, its labels and its stored probabilities. No holdout/test data or original
+validation data were read. Analysis used the existing model without refitting or
+changing pipeline code. Development contains 7 assets, 30,240 minutes and 21
+label records (19 observable). It has no observable BEARING_WEAR or MISALIGNMENT
+examples, so it cannot establish detection quality for those classes.
+
+Actual architecture, not the initially proposed architecture
+----------------------------------------------------------
+This run has 13 independent binary ExtraTrees classifiers, each 180 trees,
+max_depth=24, min_samples_leaf=4, max_features=.65. Its 343 inputs combine
+rating-scaled sensor levels, causal 10/60-minute means/spans/deltas, data freshness
+and flat-run durations, operating context, static ratings/profile/control,
+48 explicit physics features (plus selected trailing transforms), and 13
+observed-waveform features plus age. It supports concurrent faults. Missing
+values become the distinct -999 code at the classifier boundary.
+
+Training includes original_train + synthetic train + synthetic train_balanced:
+247,680 minutes from 58 assets, with event-balanced positive sampling and 18,000
+negative examples per fault. This run DISABLES learned healthy-reference
+regressors and learned residuals (include_residuals=false). It must not be
+described as a conditional healthy-regressor system. Its selected global policy
+uses probability .55, 5-minute persistence, 60-minute recovery, 24-hour reminders.
+
+Importance family totals (percent of tree impurity decrease)
+----------------------------------------------------------
+Fault                       Physics  Snapshot  Static metadata  Context  Other observations
+BEARING_WEAR                   5.22      7.19             1.57     0.54               85.49
+SUCTION_STRAINER_CLOGGING      33.46      1.53            24.72     2.46               37.83
+CAVITATION                    19.64      0.02            64.17     5.37               10.80
+DISCHARGE_RESTRICTION          32.35      0.23            17.35     3.88               46.19
+MISALIGNMENT                  38.67      0.30            25.43     1.57               34.03
+IMBALANCE                     41.78      0.88            10.87     1.00               45.48
+IMPELLER_WEAR                 18.03      0.02             6.83     1.92               73.20
+AIR_ENTRAINMENT               29.48      0.25            28.40     6.89               34.99
+SENSOR_DRIFT                  19.01      4.60            26.44    12.58               37.38
+SENSOR_STUCK                   3.75      0.06             2.21     0.44               93.54
+SENSOR_CALIBRATION_SHIFT      25.90      2.70            16.27     3.04               52.10
+SENSOR_NOISE_SPIKES           10.41      8.41            29.70     5.82               45.67
+COMMUNICATION_LOSS             9.84      0.00             8.30     0.46               81.39
+
+These are correlated training-feature importances, not causal effects or measured
+score gains. Several physics fields' missingness also reveals instrumentation or
+control type. Static metadata excludes missingness features, so the table can
+understate dependence on asset/instrument family. A proper no-waveform or
+no-physics comparison must refit models under the same data and policy protocol.
+
+What the classifiers actually use
+--------------------------------
+BEARING_WEAR: mean10/mean60 vibration crest together 37.32%; delta60 motor speed
+12.72%; maximum 60-minute noise level 12.44%; snapshot BPFO envelope prominence
+6.28%; mean10/mean60 acceleration together 8.71%. This is a crest/acceleration
+classifier with meaningful but secondary BPFO corroboration. Development has no
+observable bearing positives; it cannot validate claimed early bearing recall.
+
+MISALIGNMENT: current/speed^3 9.98%; rated pump efficiency 7.21%; mean10 velocity
+6.73%; normalized speed 5.51%; mean60 bearing thermal residual 4.65%; motor rating
+3.89%. The expected 2x/3x waveform signature is barely used (all snapshots 0.30%).
+No development misalignment positives exist. Misalignment probability reaches
+median .629 during one development imbalance event, so cross-mechanical confusion
+is already visible.
+
+IMBALANCE: valve-demand residual 20.18%; vibration freshness 9.71%; mean10/60
+velocity 9.52%; speed-normalized vibration 4.01%; pump head rating 3.83%; bearing
+freshness 3.29%; static head rating 3.21%. Valve residual is present primarily for
+VFD_PRESSURE equipment: this is a suspicious control/instrument shortcut for a
+general rotor fault, not a credible physical cause of imbalance.
+
+SUCTION_STRAINER_CLOGGING: INDUSTRIAL_CW profile 16.05%; 60-minute change in curve
+residual 5.11%; mean60 speed-command residual 4.26%; suction pressure 4.04%;
+discharge pressure 3.74%; normalized raw discharge 3.61%. Some physics is useful,
+but profile dependence is large. Both development clogging events stay below
+.55 despite measured suction decline on the instrumented pump.
+
+CAVITATION: FLOW_VALVE control 16.78%; rated efficiency 15.27%; PROCESS_TRANSFER
+profile 11.70%; motor rating 9.69%; supply temperature 5.36%; speed-command
+residual 5.09%. Static attributes dominate actual NPSH evidence. The development
+VFD_PRESSURE cavitation has estimated NPSH margin median 1.115, yet its median
+class probability is .016. Positive/negative ranking is excellent (AUC/AP 1.0)
+over just 37 eligible positive minutes, but the global .55 threshold detects none.
+
+DISCHARGE_RESTRICTION: current/speed^3 4.50%; rated flow 4.37%; mean10 discharge
+4.05%; normalized discharge 3.95%; head rating 3.82%; raw normalized discharge
+3.65%. Development separation is relatively good (AP .801, AUC .958), although
+restriction on the uninstrumented LT pump is often confused with impeller wear.
+
+IMPELLER_WEAR: motor-power age ALONE 40.61%, followed by motor rating 2.93%,
+current/speed^3 2.88%, electrical power factor 2.88%, motor-power range 2.87%,
+10-minute power span 2.87%. The model often calls the missing-power legacy pump
+impeller wear, while missing the instrumented seawater wear event. The strong
+feature is a missing-instrument shortcut, not a measured pump-curve deficit.
+
+AIR_ENTRAINMENT: INDUSTRIAL_CW profile 10.28%; head/speed^2 8.71%; 60-minute suction
+delta 6.32%; inferred flow requirement residual 5.01%; supply temperature 4.98%;
+efficiency rating 4.88%; power/speed^3 4.81%. Development seawater air entrainment
+never crosses .55, while air is incorrectly favored during seawater impeller wear.
+
+SENSOR_DRIFT: supply temperature 7.39%; pump head rating 6.58%; flow rating 5.35%;
+motor rating 5.16%; static head 4.36%; bearing thermal residual 3.17%. The visible
+development fault affects MOTOR POWER, but the model is mostly using context and
+asset metadata. AP .0088, AUC .522; median positive probability .075.
+
+SENSOR_CALIBRATION_SHIFT: head rating 3.76%; static head 3.56%; bearing thermal
+residual 3.49%; motor rating 3.10%; 60-minute power delta 2.87%; discharge noise
+2.20%. Both development shifts (power and fluid temperature) are missed. AP .0087,
+AUC .332. Small lasting offsets need a learned healthy expectation or temporal
+change evidence; absolute profiles and short post-step deltas do not suffice.
+
+SENSOR_NOISE_SPIKES: mean60/mean10 discharge-pressure std together 14.38%; head
+rating 6.54%; motor rating 5.98%; static head 4.46%; supply temperature 4.16%; flow
+rating 3.78%; discharge range 3.49%; cross-channel maximum mean60 std 3.15%.
+Development noise affects CURRENT, CREST, and ACCELERATION. All three are missed
+by the .55 policy. AP .0485, AUC .483. This is a tag-transfer blind spot, not lack
+of detectable noise: current stdmean60 rises .0092 -> .0421, and acceleration
+stdmean60 rises .0113 -> .0332. The global maximum can also be dominated by an
+unrelated naturally noisy channel, masking the changing channel.
+
+SENSOR_STUCK: maximum flat duration 47.21% plus maximum repeated measured updates
+32.40%. These are generic cross-tag evidence. The discharge-pressure stuck event
+has median predicted probability 1.0, AP/AUC 1.0, and 100% of eligible positives
+above .55. Counts refer to newly measured equal readings, not sparse held values.
+
+COMMUNICATION_LOSS: fluid valid-sample count 45.01%; fluid range 7.30%; fluid level
+6.09%; fluid relative noise 6.01%; vibration level 5.55%; vibration alarm fraction
+5.52%; fresh fluid 5.15%. Both development gateway outages are detected with
+median probability 1.0. AP .999985 and AUC .999999. It recognizes observed data
+absence well, although reliance on particular channel counts deserves sensor-drop
+versus whole-gateway coverage in future tests.
+
+Observed waveform opportunity and ablation rationale
+---------------------------------------------------
+In development asset 07, before versus during the imbalance, median measured
+1x velocity rises 0.205 -> 1.220 mm/s, while 2x/1x falls .849 -> .129. Velocity
+RMS rises .747 -> 1.541 mm/s and speed-normalized velocity rises 2.032 -> 4.191.
+The waveform is available for 93.4% of active steady minutes, yet median imbalance
+probability is .035. This is direct evidence that the physical feature exists but
+this fit has not learned to depend on it. Snapshot importance is currently below
+1% for both imbalance and misalignment, versus 7.19% for bearing (mostly BPFO).
+
+Conversely, snapshot importance 8.41% for SENSOR_NOISE_SPIKES cannot be explained
+as direct monitoring-sensor corruption evidence: simulator waveforms are generated
+from physical vibration, separately from telemetry sensor corruptions. That may
+represent useful corroboration, but it may also be an incidental training-domain
+association. Do not claim waveform ablation will improve every class a priori.
+
+Generic improvement directions supported by this audit
+------------------------------------------------------
+1. Refit without explicit profile/rating shortcuts and with controlled exposure
+   to missingness patterns; retain engineering ratings inside normalization.
+   Simply dropping asset_id is insufficient to prevent asset-family shortcuts.
+2. Train each machine diagnosis on physically relevant feature groups plus enough
+   counterexamples across all instrument/control profiles. Mechanical classes
+   should see speed-normalized orders, envelope evidence and thermal residuals.
+3. Add shared per-channel sensor-fault features normalized to expected healthy
+   noise and context, then pool channel-level evidence. A discharge-only noise
+   training distribution does not transfer to acceleration/current failures.
+4. Restore learned healthy expected-value residuals and test their contribution,
+   especially for drift, calibration offsets and low-flow hydraulic faults.
+5. Use per-class development calibration/threshold selection only with adequate
+   class coverage. Cavitation ranking is promising but scores are not calibrated;
+   bearing/misalignment are absent from this small development sample.
+
+These are diagnosis of this specific fit, not evidence that any proposed change
+will improve the final withheld benchmark. No model or policy was changed here.

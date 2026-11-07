@@ -1,0 +1,56 @@
+{
+  "SENSOR_DRIFT": {
+    "residual_departure_mean60": 0.1877835162892399,
+    "consistency_departure_abs": 0.09957987272024135,
+    "mean60_historical_offset": 0.06852980402549073,
+    "noise_ratio60": 0.06514880003445976,
+    "residual_dominance": 0.054834919427217736,
+    "learned_residual_mean60": 0.05381114521290551,
+    "absolute_coherence_z": 0.04730320547649606,
+    "consistency_departure": 0.040830689039162094,
+    "level_std10_z": 0.03195098758527209,
+    "level_std60_z": 0.03175522540549664,
+    "learned_residual_mean60_abs": 0.0301647163135524,
+    "peer_residual_median": 0.026216805897737745
+  },
+  "SENSOR_STUCK": {
+    "flat_fraction60": 0.9323908338599844,
+    "equal_updates": 0.04393901586544189,
+    "noise_ratio60": 0.007890990641911911,
+    "context_change60": 0.0069919837959112,
+    "zero_variance": 0.002678869213385507,
+    "flat_minutes": 0.0019204242203515617,
+    "running": 0.0017668948830123798,
+    "observed_changes60": 0.0012890540208929683,
+    "steady": 0.0009294226877555257,
+    "context_change10": 0.0002025108113526517
+  },
+  "SENSOR_CALIBRATION_SHIFT": {
+    "learned_residual_mean60_abs": 0.16168229657527625,
+    "learned_residual_mean60": 0.10342212267627228,
+    "abs_step_mean60_z": 0.06100309519924891,
+    "learned_residual": 0.056402923307251565,
+    "noise_ratio60": 0.05344721853146633,
+    "residual_dominance": 0.05042085602978464,
+    "absolute_coherence_z": 0.04583104278423382,
+    "absolute_coherence_abs_z": 0.0406512278131268,
+    "consistency_departure": 0.032359010472043155,
+    "coherence_offset_abs": 0.03127514493326709,
+    "historical_offset": 0.030592812221593962,
+    "observed_changes60": 0.030097856159531377
+  },
+  "SENSOR_NOISE_SPIKES": {
+    "abs_step_mean60_z": 0.6324200992439079,
+    "level_std60_z": 0.0744162523165842,
+    "noise_ratio": 0.07262874424871556,
+    "noise_ratio10_60": 0.038779260924415554,
+    "noise_max_ratio10": 0.038695089426664185,
+    "noise_ratio10": 0.027968927036987213,
+    "observed_changes60": 0.02496478732622235,
+    "noise_ratio60": 0.020295487222509418,
+    "running": 0.018961514845282454,
+    "level_std10_z": 0.011558312844523213,
+    "std_span_ratio": 0.011003590722388476,
+    "trend_directionality": 0.009667982434647277
+  }
+}

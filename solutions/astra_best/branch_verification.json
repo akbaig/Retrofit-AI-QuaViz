@@ -1,0 +1,22 @@
+{
+  "base_commit": "596bfdbda8d1cdacfc4534223b20cb69d83f806f",
+  "branch": "astra-best",
+  "python": "3.12.14",
+  "portable_tests_passed": 29,
+  "portable_test_seconds": 3.09,
+  "pinned_installed_versions_match": true,
+  "validation_inference_exact_csv_match": true,
+  "test_inference_exact_csv_match": true,
+  "validation_alerts": 17,
+  "test_alerts": 43,
+  "official_validation_score": 95.02135167303905,
+  "official_saved_holdout_score": 63.50859435861514,
+  "original_package_hashes_verified": 233,
+  "model_sha256": "0a1884354fa22a4a6de33302a988c99e074b88a59c430f04f64aaa8d5453d983",
+  "not_rerun": [
+    "Full model retraining",
+    "New holdout generation/inference",
+    "Original-layout replay tests",
+    "Fresh pip installation"
+  ]
+}

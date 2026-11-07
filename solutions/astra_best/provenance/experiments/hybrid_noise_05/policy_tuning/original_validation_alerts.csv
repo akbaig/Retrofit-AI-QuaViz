@@ -1,0 +1,21 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+PUMP-08,2025-09-08T08:34:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9534598973015896,learned SUCTION_STRAINER_CLOGGING score=0.953; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-08T22:18:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9727795860644728,learned SUCTION_STRAINER_CLOGGING score=0.973; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-09T13:26:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.8883394549220297,learned SUCTION_STRAINER_CLOGGING score=0.888; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-10T09:46:00+00:00,MACHINE,BEARING_WEAR,0.9979509376427743,learned BEARING_WEAR score=0.998; sustained 15 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-10T13:26:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9230218811485704,learned SUCTION_STRAINER_CLOGGING score=0.923; sustained 271 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-11T09:46:00+00:00,MACHINE,BEARING_WEAR,0.9994762205267451,learned BEARING_WEAR score=0.999; sustained 1032 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-13T00:07:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9998818765138701,learned COMMUNICATION_LOSS score=1.000; sustained 15 min,"Check gateway power, network and data acquisition."
+PUMP-08,2025-09-13T04:47:00+00:00,MACHINE,BEARING_WEAR,0.9995394759402592,learned BEARING_WEAR score=1.000; sustained 15 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-13T20:30:00+00:00,SENSOR,SENSOR_NOISE_SPIKES,0.9966260194778442,learned SENSOR_NOISE_SPIKES score=0.997; sustained 15 min,"Check instrument wiring, signal quality and a reference measurement."
+PUMP-08,2025-09-14T04:47:00+00:00,MACHINE,BEARING_WEAR,0.9993527320624833,learned BEARING_WEAR score=0.999; sustained 53 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-14T16:47:00+00:00,MACHINE,BEARING_WEAR,0.9993428838309912,learned BEARING_WEAR score=0.999; sustained 15 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-09,2026-02-10T06:39:00+00:00,MACHINE,MISALIGNMENT,0.9998978873633909,learned MISALIGNMENT score=1.000; sustained 15 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-11T06:39:00+00:00,MACHINE,MISALIGNMENT,0.9999263543247003,learned MISALIGNMENT score=1.000; sustained 1455 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-12T00:20:00+00:00,SENSOR,SENSOR_STUCK,0.9992822542367119,learned SENSOR_STUCK score=0.999; sustained 15 min,"Check frozen readings, transmitter and wiring against an independent measurement."
+PUMP-09,2026-02-12T06:39:00+00:00,MACHINE,MISALIGNMENT,0.9999263900825374,learned MISALIGNMENT score=1.000; sustained 394 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-14T01:40:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.8813734657037785,learned DISCHARGE_RESTRICTION score=0.881; sustained 15 min,Inspect discharge valves and downstream restriction.
+PUMP-09,2026-02-15T01:40:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9783602193446552,learned DISCHARGE_RESTRICTION score=0.978; sustained 1455 min,Inspect discharge valves and downstream restriction.
+PUMP-09,2026-02-15T07:38:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9264371812026693,learned SUCTION_STRAINER_CLOGGING score=0.926; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-09,2026-02-15T07:44:00+00:00,MACHINE,IMPELLER_WEAR,0.2439183413256953,learned IMPELLER_WEAR score=0.244; sustained 17 min,Check hydraulic performance and inspect impeller or wear rings.
+PUMP-09,2026-02-15T14:52:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9793607588794285,learned DISCHARGE_RESTRICTION score=0.979; sustained 15 min,Inspect discharge valves and downstream restriction.

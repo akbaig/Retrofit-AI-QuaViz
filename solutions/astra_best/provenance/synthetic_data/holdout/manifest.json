@@ -1,0 +1,249 @@
+{
+  "role": "holdout",
+  "seeds": [
+    1013137,
+    1013141,
+    1013153
+  ],
+  "days": 3.0,
+  "runs": [
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-01",
+      "template_asset_id": "PUMP-01",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 1.428,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.1407009621189972,
+      "rating_scale_head": 0.8791129788271583
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-02",
+      "template_asset_id": "PUMP-02",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 1.104,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.116071946489897,
+      "rating_scale_head": 1.0667678291680358
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-03",
+      "template_asset_id": "PUMP-03",
+      "seed": 1013137,
+      "minutes": 3634,
+      "seconds": 1.085,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.9993713494606975,
+      "rating_scale_head": 1.0489104169582002
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-04",
+      "template_asset_id": "PUMP-04",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 0.855,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.1315308317028554,
+      "rating_scale_head": 0.864395629367741
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-05",
+      "template_asset_id": "PUMP-05",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 1.025,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.8785327268475223,
+      "rating_scale_head": 0.9923519133327737
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-06",
+      "template_asset_id": "PUMP-06",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 1.185,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.1223952955484455,
+      "rating_scale_head": 1.1249922662137308
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013137-07",
+      "template_asset_id": "PUMP-07",
+      "seed": 1013137,
+      "minutes": 4320,
+      "seconds": 0.603,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.935577145708388,
+      "rating_scale_head": 0.863772681336939
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-01",
+      "template_asset_id": "PUMP-01",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 0.809,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9855757595513123,
+      "rating_scale_head": 0.9989722578622424
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-02",
+      "template_asset_id": "PUMP-02",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 1.069,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.029576400076951,
+      "rating_scale_head": 0.8690812183613154
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-03",
+      "template_asset_id": "PUMP-03",
+      "seed": 1013141,
+      "minutes": 3602,
+      "seconds": 1.075,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 1.1354666708107588,
+      "rating_scale_head": 1.1465470716007744
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-04",
+      "template_asset_id": "PUMP-04",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 0.606,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.8544548585755112,
+      "rating_scale_head": 1.1351658171296048
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-05",
+      "template_asset_id": "PUMP-05",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 0.889,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.8849928485520985,
+      "rating_scale_head": 0.9963852844131743
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-06",
+      "template_asset_id": "PUMP-06",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 1.19,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0358247743793683,
+      "rating_scale_head": 0.9996573300209234
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013141-07",
+      "template_asset_id": "PUMP-07",
+      "seed": 1013141,
+      "minutes": 4320,
+      "seconds": 0.857,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.1313472022006386,
+      "rating_scale_head": 1.0543336793060056
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-01",
+      "template_asset_id": "PUMP-01",
+      "seed": 1013153,
+      "minutes": 4005,
+      "seconds": 0.823,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9405486183290196,
+      "rating_scale_head": 0.8569921631404094
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-02",
+      "template_asset_id": "PUMP-02",
+      "seed": 1013153,
+      "minutes": 4320,
+      "seconds": 0.529,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 1.03716225634701,
+      "rating_scale_head": 1.1077586363172993
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-03",
+      "template_asset_id": "PUMP-03",
+      "seed": 1013153,
+      "minutes": 4320,
+      "seconds": 1.105,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 1.080157954055894,
+      "rating_scale_head": 1.0963302985193826
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-04",
+      "template_asset_id": "PUMP-04",
+      "seed": 1013153,
+      "minutes": 4320,
+      "seconds": 0.859,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.018780153124028,
+      "rating_scale_head": 1.0967685093779445
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-05",
+      "template_asset_id": "PUMP-05",
+      "seed": 1013153,
+      "minutes": 4320,
+      "seconds": 0.904,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.9606428357960861,
+      "rating_scale_head": 1.1175838264442237
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-06",
+      "template_asset_id": "PUMP-06",
+      "seed": 1013153,
+      "minutes": 4320,
+      "seconds": 1.19,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0224833754355862,
+      "rating_scale_head": 0.9241203231716649
+    },
+    {
+      "asset_id": "SYN-HOLDOUT-1013153-07",
+      "template_asset_id": "PUMP-07",
+      "seed": 1013153,
+      "minutes": 3751,
+      "seconds": 0.837,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9033419263147133,
+      "rating_scale_head": 1.0974585134231285
+    }
+  ],
+  "observed_minute_rows": 88432,
+  "asset_count": 21,
+  "total_seconds": 20.447,
+  "source_config_sha256": "3963529068778cd84a9c515ddf03e6bfc40c8f5908e438753ea45230b42f161d",
+  "generator_sha256": "51966ec625c2d6f2098758a2ec27da2c301c15940b8bde9a34a16f9b91ca4c49",
+  "reserved_seed_manifest_sha256": "fa7f26599bb52bf10e660153e41996b5ea681458f5696345858a50f448a01fbd",
+  "availability": "features are emitted at available_at_utc = window_start_utc + 60s",
+  "inference_inputs": [
+    "features_1min.parquet",
+    "operating_context.csv",
+    "assets.csv",
+    "vibration_snapshots.parquet"
+  ],
+  "snapshot_count": 256,
+  "snapshot_caveat": "Published snapshots_for waveform route includes simulated measurement variation and missing gateways, but does not apply channel sensor-fault corruption; waveform use should be ablated.",
+  "target_only": [
+    "events.csv"
+  ],
+  "latent_or_truth_exports": [],
+  "artifacts": {
+    "features_1min.parquet": "daeefde3396c31227517370b31d37c6a6d8d45ca65833a514ed88226d63b4e49",
+    "operating_context.csv": "8dbea220310abcc235148bed6746f51353b4baa9176f0d2e9bb9984f3d20b55d",
+    "assets.csv": "06c7313c3a2c7d260bbc2d21ddfdadf26f6355df7451b22e2cc1022d6bfc4fb1",
+    "events.csv": "d75ff1a8e6e250be93d3cc71e603957abba5f723f1c78ec56fed1e6a10f72904",
+    "vibration_snapshots.parquet": "ac1b2e17fd3953ba47124a7838996e591825b78c0da56c403d162a968c076ccc"
+  },
+  "frozen_pipeline_manifest_sha256": "a6edd3db339351f2d76a66f92921bd7f9604ae5d3b192b5f09e112e3ded2c75f",
+  "holdout_labels_inspected": false
+}

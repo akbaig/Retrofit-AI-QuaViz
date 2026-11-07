@@ -1,0 +1,34 @@
+{
+  "views": [
+    "hist_01",
+    "routed_hist_02",
+    "crossed_hist_03",
+    "crossed_physics_04"
+  ],
+  "weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "sensor": "sensor_expert_03",
+  "sensor_types": [
+    "SENSOR_DRIFT",
+    "SENSOR_STUCK",
+    "SENSOR_CALIBRATION_SHIFT",
+    "SENSOR_NOISE_SPIKES"
+  ],
+  "pruned_unused": true,
+  "source_models": {
+    "hist_01": "21e179cf7ba46cbccf34e652ed3c3d183db7d8055e2bd04dcab1344f86794c9e",
+    "routed_hist_02": "d9f6153f68a3a33db6beb830597a2d79da1c60107fcab5dd95a184f421c5e5d6",
+    "crossed_hist_03": "d1053cc8d6585ad49ffd9c1edb15d64ab49499db0b67066dc4781e8c4c4f5cce",
+    "crossed_physics_04": "d48955b737e51f99822b4ead00a53a7a93ad89aec0fec958fb720448d4555f80"
+  },
+  "sensor_sha256": "43bf6c5ac7d034d99a674fd088b5853ee9e9536d6eb3db3ba033803eb023ed6a",
+  "source_sha256": {
+    "composite.py": "7cde95f97b48257b9d01672857afc8282c99bfcfbff3731131801f4d81b57b7a",
+    "sensor_expert.py": "67aba438f9ed5a550317699fff89606e74b954b0e7afa1362786a724722ad411",
+    "make_ensemble.py": "866efa91105b7dd5071c011af4d0d1fc1004d3de70ceaef72f3edc0e7d378d98"
+  }
+}

@@ -1,0 +1,22 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+PUMP-08,2025-09-08T02:34:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9915481209754944,learned SUCTION_STRAINER_CLOGGING score=0.992; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-09T02:48:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.5159311294555664,learned SUCTION_STRAINER_CLOGGING score=0.516; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-10T02:48:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9999982118606567,learned SUCTION_STRAINER_CLOGGING score=1.000; sustained 418 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-10T18:18:00+00:00,MACHINE,BEARING_WEAR,0.9999208450317383,learned BEARING_WEAR score=1.000; sustained 15 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-11T02:48:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9999984502792358,learned SUCTION_STRAINER_CLOGGING score=1.000; sustained 460 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-11T18:18:00+00:00,MACHINE,BEARING_WEAR,0.9999672174453735,learned BEARING_WEAR score=1.000; sustained 100 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-13T00:07:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9990743398666382,learned COMMUNICATION_LOSS score=0.999; sustained 15 min,"Check gateway power, network and data acquisition."
+PUMP-08,2025-09-13T04:47:00+00:00,MACHINE,BEARING_WEAR,0.9999669790267944,learned BEARING_WEAR score=1.000; sustained 15 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-08,2025-09-13T20:29:00+00:00,SENSOR,SENSOR_NOISE_SPIKES,0.9999107122421265,learned SENSOR_NOISE_SPIKES score=1.000; sustained 15 min,"Check instrument wiring, signal quality and a reference measurement."
+PUMP-08,2025-09-13T21:27:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.28802430629730225,learned SUCTION_STRAINER_CLOGGING score=0.288; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-08,2025-09-14T04:47:00+00:00,MACHINE,BEARING_WEAR,0.999972939491272,learned BEARING_WEAR score=1.000; sustained 53 min,Inspect bearing lubrication and condition; confirm with vibration measurements.
+PUMP-09,2026-02-10T07:27:00+00:00,MACHINE,MISALIGNMENT,0.9995400905609131,learned MISALIGNMENT score=1.000; sustained 15 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-11T07:27:00+00:00,MACHINE,MISALIGNMENT,0.999956488609314,learned MISALIGNMENT score=1.000; sustained 1455 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-12T00:20:00+00:00,SENSOR,SENSOR_DRIFT,0.999825656414032,learned SENSOR_DRIFT score=1.000; sustained 15 min,Compare the indicated instrument with a reference; recalibrate if confirmed.
+PUMP-09,2026-02-12T01:17:00+00:00,MACHINE,IMBALANCE,0.9901690483093262,learned IMBALANCE score=0.990; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+PUMP-09,2026-02-12T07:27:00+00:00,MACHINE,MISALIGNMENT,0.9999505281448364,learned MISALIGNMENT score=1.000; sustained 442 min,Check coupling alignment and confirm with vibration measurements.
+PUMP-09,2026-02-14T01:13:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.8424352407455444,learned DISCHARGE_RESTRICTION score=0.842; sustained 15 min,Inspect discharge valves and downstream restriction.
+PUMP-09,2026-02-15T01:13:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9999964237213135,learned DISCHARGE_RESTRICTION score=1.000; sustained 1455 min,Inspect discharge valves and downstream restriction.
+PUMP-09,2026-02-15T07:07:00+00:00,MACHINE,IMPELLER_WEAR,0.9925323128700256,learned IMPELLER_WEAR score=0.993; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+PUMP-09,2026-02-15T07:18:00+00:00,MACHINE,SUCTION_STRAINER_CLOGGING,0.9866312146186829,learned SUCTION_STRAINER_CLOGGING score=0.987; sustained 15 min,Inspect suction strainer and suction-side pressure loss.
+PUMP-09,2026-02-15T08:32:00+00:00,MACHINE,AIR_ENTRAINMENT,0.9999405145645142,learned AIR_ENTRAINMENT score=1.000; sustained 15 min,Check for air ingress and unstable suction or delivered flow.

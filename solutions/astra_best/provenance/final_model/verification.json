@@ -1,0 +1,18 @@
+{
+  "original_validation": {
+    "probabilities_exactly_equal": true,
+    "max_absolute_difference": 0.0,
+    "rows": 20160,
+    "composite_score": 95.02135167303905
+  },
+  "development": {
+    "probabilities_exactly_equal": true,
+    "max_absolute_difference": 0.0,
+    "rows": 30240,
+    "composite_score": 72.78515914137677
+  },
+  "seconds": 7.136457666056231,
+  "model_sha256": "0a1884354fa22a4a6de33302a988c99e074b88a59c430f04f64aaa8d5453d983",
+  "active_classifiers": 40,
+  "healthy_regressors": 14
+}

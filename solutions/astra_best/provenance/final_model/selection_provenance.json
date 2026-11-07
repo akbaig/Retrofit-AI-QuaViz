@@ -1,0 +1,4 @@
+{
+  "selected_from": "ensemble_sensor_08",
+  "modification": "Only remove overridden sensor classifiers and share identical frozen reference objects; all active predictions must remain exactly equal."
+}

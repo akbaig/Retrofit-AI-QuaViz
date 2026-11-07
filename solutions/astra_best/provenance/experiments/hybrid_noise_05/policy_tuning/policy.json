@@ -1,0 +1,14 @@
+{
+  "threshold": 0.8,
+  "persistence": 15,
+  "recovery": 240,
+  "reminder": 1440,
+  "thresholds": {
+    "DISCHARGE_RESTRICTION": 0.6,
+    "MISALIGNMENT": 0.95,
+    "IMPELLER_WEAR": 0.08,
+    "AIR_ENTRAINMENT": 0.08,
+    "SENSOR_DRIFT": 0.95,
+    "SENSOR_CALIBRATION_SHIFT": 0.15
+  }
+}

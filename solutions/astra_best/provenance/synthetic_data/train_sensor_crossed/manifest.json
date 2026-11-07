@@ -1,0 +1,574 @@
+{
+  "role": "train_sensor_crossed",
+  "seeds": [
+    1413181
+  ],
+  "days": 1.5,
+  "runs": [
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-01",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 3.287,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 6.886624084226529,
+          "end_h": 30.52043041173505,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.21436154995051288
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-02",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.401,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 7.879118759059575,
+          "end_h": 30.916355275566367,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.17631136891187538
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-03",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.154,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 8.570244333562792,
+          "end_h": 30.51126879247007,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 4.722527697868985,
+            "spike_rate": 0.017477576619383404,
+            "spike_size": 1.2914234127593498
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-04",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.085,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 9.025308062979082,
+          "end_h": 29.345397513839092,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 3.8919552467703635,
+            "spike_rate": 0.006593209166043663,
+            "spike_size": 1.0
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-05",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.131,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_accel_rms_g",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_accel_rms_g",
+          "onset_h": 8.32522226313116,
+          "end_h": 28.301142364647404,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 6.075280156102252,
+            "spike_rate": 0.01594402888999448,
+            "spike_size": 0.11703711005073793
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-06",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.093,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_crest_factor",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_crest_factor",
+          "onset_h": 7.8916978495566035,
+          "end_h": 31.45898056841979,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 6.881089145258956,
+            "spike_rate": 0.022039723220334644,
+            "spike_size": 0.1152169261345782
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-07",
+      "template_asset_id": "PUMP-02",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.065,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9734511245578715,
+      "rating_scale_head": 1.0170328149214922,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-08",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.233,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 9.408253600941054,
+          "end_h": 27.643381271523218,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.5216091993606703
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-09",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.28,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 8.71385298275255,
+          "end_h": 32.0834707676439,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.2895161631936603
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-10",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.157,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 8.81271179930179,
+          "end_h": 31.129514626872798,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 3.078420248097099,
+            "spike_rate": 0.009962576115662104,
+            "spike_size": 2.3348910295303202
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-11",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.058,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 7.01141695950177,
+          "end_h": 32.23892093184974,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 4.052936341485255,
+            "spike_rate": 0.00828840173394967,
+            "spike_size": 1.3533576891257912
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-12",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.046,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_accel_rms_g",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_accel_rms_g",
+          "onset_h": 8.53234882153889,
+          "end_h": 31.069947349174974,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 6.816868786556692,
+            "spike_rate": 0.012620579725014019,
+            "spike_size": 0.1743402518364685
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-13",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.176,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_crest_factor",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_crest_factor",
+          "onset_h": 8.138309608080627,
+          "end_h": 30.823729229254155,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 5.086315048978591,
+            "spike_rate": 0.006938046862709671,
+            "spike_size": 0.2588744398006075
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-14",
+      "template_asset_id": "PUMP-07",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.124,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9815838198469522,
+      "rating_scale_head": 1.0240892718906527,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-15",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.277,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 9.76437299656725,
+          "end_h": 30.955186042566815,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.3434575104441084
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-16",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.279,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_drift_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 9.759364635916054,
+          "end_h": 32.19201219046137,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.09480646908850637
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-17",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.3,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_current_a",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 8.455146859256875,
+          "end_h": 29.89672617115648,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 5.532958479220312,
+            "spike_rate": 0.015141649241283195,
+            "spike_size": 1.3313771639900704
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-18",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.248,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_motor_power_kw",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "motor_power_kw",
+          "onset_h": 10.13009521476741,
+          "end_h": 32.06416483889605,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 4.14625192311454,
+            "spike_rate": 0.021179273467807336,
+            "spike_size": 1.0
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-19",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.405,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_accel_rms_g",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_accel_rms_g",
+          "onset_h": 7.700944087717374,
+          "end_h": 29.98120009181584,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 3.3383784769317755,
+            "spike_rate": 0.024952193992100954,
+            "spike_size": 0.2355654690504901
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-20",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.245,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "sensor_crossed_sensor_noise_spikes_vibration_crest_factor",
+      "scenario": [
+        {
+          "type": "SENSOR_NOISE_SPIKES",
+          "sensor_tag": "vibration_crest_factor",
+          "onset_h": 7.465749257973424,
+          "end_h": 30.285216719816496,
+          "jitter_h": 0,
+          "params": {
+            "noise_mult": 3.683326455963086,
+            "spike_rate": 0.005518606264523385,
+            "spike_size": 0.26953899101964235
+          }
+        }
+      ],
+      "event_classes": {
+        "SENSOR_NOISE_SPIKES": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_SENSOR_CROSSED-1413181-21",
+      "template_asset_id": "PUMP-04",
+      "seed": 1413181,
+      "minutes": 2160,
+      "seconds": 1.122,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9653234470977728,
+      "rating_scale_head": 1.036244923902194,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    }
+  ],
+  "observed_minute_rows": 45360,
+  "asset_count": 21,
+  "total_seconds": 28.176,
+  "source_config_sha256": "3963529068778cd84a9c515ddf03e6bfc40c8f5908e438753ea45230b42f161d",
+  "generator_sha256": "46259f9e81c05de9289dfe7138206180f39b18687066ef814657c2b5362076a7",
+  "reserved_seed_manifest_sha256": "fa7f26599bb52bf10e660153e41996b5ea681458f5696345858a50f448a01fbd",
+  "availability": "features are emitted at available_at_utc = window_start_utc + 60s",
+  "inference_inputs": [
+    "features_1min.parquet",
+    "operating_context.csv",
+    "assets.csv",
+    "vibration_snapshots.parquet"
+  ],
+  "snapshot_count": 182,
+  "snapshot_caveat": "Published snapshots_for waveform route includes simulated measurement variation and missing gateways, but does not apply channel sensor-fault corruption; waveform use should be ablated.",
+  "target_only": [
+    "events.csv"
+  ],
+  "latent_or_truth_exports": [],
+  "artifacts": {
+    "features_1min.parquet": "dcd557b86b7d48a80926cae9c1d1fcb1a55c7da83e433d3911614a2d11e4aed4",
+    "operating_context.csv": "bc93df2d15883dad546207331847a9fb17a13d58e51c042412ee51ad2f00981e",
+    "assets.csv": "2378772ec6706143a9eda215ba4e36dbfc4919c2e898463aaff5793cc32a0ef0",
+    "events.csv": "e0e86f97a11bc1eeb8f30213cac84af928048e64ab51546b4ad26783accbd28a",
+    "vibration_snapshots.parquet": "11a968d2eeb69100e163514a7449c38116fed27fe2d541d03e6c333908928664"
+  },
+  "event_counts": {
+    "SENSOR_NOISE_SPIKES": 12,
+    "SENSOR_DRIFT": 6
+  },
+  "observable_event_counts": {
+    "SENSOR_NOISE_SPIKES": 12,
+    "SENSOR_DRIFT": 6
+  }
+}

@@ -1,0 +1,18 @@
+Original frozen evaluation command:
+python evaluate_frozen.py --run final_ensemble --policy-dir runs/final_ensemble/policy_tuning --freeze-manifest FREEZE.json --freeze-sha256 a6edd3db339351f2d76a66f92921bd7f9604ae5d3b192b5f09e112e3ded2c75f
+
+Exit 1, after aggregate scoring and successful input/hash re-verification.
+Traceback excerpt:
+  evaluate_frozen.py:237 evaluate(...)
+  evaluate_frozen.py:207 r = score(pred, events, scoped, benign)
+  retrofit_sim/scoring.py:147 cand = e_a[(e_a["w_start"] <= t) & (t <= e_a["w_end"])]
+  pandas/core/ops/array_ops.py:344 res_values = op(lvalues, rvalues)
+TypeError: '<=' not supported between instances of 'numpy.ndarray' and 'Timestamp'
+
+The supplemental per-asset call has zero event rows on a healthy asset; the
+original scorer creates float-typed empty event-window columns and fails when
+comparing them with an alert timestamp. The initial aggregate report and
+predictions are preserved here. The separate reporting continuation reuses
+those predictions, exactly reproduces their aggregate score, evaluates the
+same three fixed baselines, and preserves all healthy assets in aggregate
+scores. No original scoring code or frozen model/policy was modified.

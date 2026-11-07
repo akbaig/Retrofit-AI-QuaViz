@@ -1,0 +1,22 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+SYN-DEVELOPMENT-913127-01,2024-12-02T23:55:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5593752861022949,B1 mode-aware z: motor_power_kw deviates alone (z=-4.5),Verify motor_power_kw against a reference gauge.
+SYN-DEVELOPMENT-913127-01,2024-12-03T08:09:00Z,MACHINE,UNKNOWN,0.99,B1 mode-aware z: ,Inspect pump.
+SYN-DEVELOPMENT-913127-02,2024-05-12T18:46:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-14.2),Verify motor_winding_temp_c against a reference gauge.
+SYN-DEVELOPMENT-913127-03,2024-11-12T04:49:00Z,MACHINE,UNKNOWN,0.8090919852256775,B1 mode-aware z: motor_current_a z=-6.5,Inspect pump.
+SYN-DEVELOPMENT-913127-03,2024-11-12T22:05:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: discharge_pressure_kpa z=+9.7, motor_current_a z=-9.7",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-16T00:24:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: flow_m3_h z=-10.1, motor_power_kw z=-8.9, motor_speed_rpm z=-6.8",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-16T22:23:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: flow_m3_h z=-11.1, motor_power_kw z=-9.5, motor_speed_rpm z=-7.4",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-17T15:15:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5840542316436768,"B1 mode-aware z: suction_pressure_kpa z=-4.7, discharge_pressure_kpa z=-4.0",Inspect / clean suction strainer.
+SYN-DEVELOPMENT-913127-04,2024-07-18T03:55:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: suction_pressure_kpa z=-33.5, discharge_pressure_kpa z=-28.8, flow_m3_h z=-16.9",Inspect / clean suction strainer.
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:12:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: suction_pressure_kpa z=-55.6, discharge_pressure_kpa z=-50.0, vibration_accel_rms_g z=+36.3",Inspect pump bearing; plan replacement; check lubrication.
+SYN-DEVELOPMENT-913127-04,2024-07-18T23:27:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: motor_winding_temp_c z=-14.0, flow_m3_h z=-11.2, motor_power_kw z=-9.5",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-05,2024-09-03T23:26:00Z,MACHINE,DISCHARGE_RESTRICTION,0.6042709350585938,B1 mode-aware z: discharge_pressure_kpa z=+4.8,Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-05,2024-09-04T09:37:00Z,MACHINE,UNKNOWN,0.6986109018325806,B1 mode-aware z: motor_current_a z=-5.6,Inspect pump.
+SYN-DEVELOPMENT-913127-05,2024-09-04T19:19:00Z,SENSOR,SENSOR_STUCK,0.99,B1 mode-aware z: discharge_pressure_kpa frozen,Check transmitter discharge_pressure_kpa.
+SYN-DEVELOPMENT-913127-05,2024-09-05T19:19:00Z,MACHINE,DISCHARGE_RESTRICTION,0.8580207824707031,"B1 mode-aware z: discharge_pressure_kpa z=+6.9, motor_current_a z=-5.9",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-07,2024-02-06T08:49:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5876476168632507,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-4.7),Verify motor_winding_temp_c against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-06T18:51:00Z,MACHINE,UNKNOWN,0.7132528424263,B1 mode-aware z: ,Inspect pump.
+SYN-DEVELOPMENT-913127-07,2024-02-07T04:46:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.8149473071098328,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=4.3),Verify vibration_rms_mm_s against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-07T18:57:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-20.9),Verify motor_winding_temp_c against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-08T04:51:00Z,SENSOR,SENSOR_NOISE_SPIKES,0.99,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=18.9),Verify vibration_rms_mm_s against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-08T11:26:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-16.3),Verify motor_winding_temp_c against a reference gauge.

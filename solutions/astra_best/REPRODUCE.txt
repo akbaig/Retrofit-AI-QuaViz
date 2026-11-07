@@ -1,0 +1,109 @@
+REPRODUCING THE SELECTED ARCHITECTURE
+
+Use a clean extracted directory, Python 3.12 and requirements.txt. Training
+commands intentionally refuse to overwrite existing run names. To rerun an
+existing experiment, use a fresh directory or new run names and update their
+references consistently. The supplied model.joblib needs no retraining.
+
+Set the location of the user's unmodified challenge bundle:
+
+  export QUAVIZ_CHALLENGE_DIR="/path/to/RETROFIT_AI_PARTICIPANTS_2026"
+  export LOKY_MAX_CPU_COUNT=3
+  export OMP_NUM_THREADS=3
+  export PYTHONDONTWRITEBYTECODE=1
+
+1. Generate the training and development observations (default recorded seeds):
+
+  python synthetic.py --role train --days 3
+  python synthetic.py --role development --days 3
+  python synthetic.py --role train_balanced --days 2
+  python synthetic.py --role train_crossed --days 2
+  python synthetic.py --role train_sensor_crossed --days 1.5
+
+2. Fit the four core views. The first fit supplies the frozen healthy regressors
+   reused by both routed residual views and the shared sensor branch:
+
+  python run.py train --name hist_01 --kind hist
+  python run.py train --name routed_hist_02 --kind hist \
+    --reference-from hist_01 --routed
+  python run.py train --name crossed_hist_03 --kind hist \
+    --reference-from hist_01 --routed \
+    --datasets original_train train train_balanced train_crossed
+  python run.py train --name crossed_physics_04 --kind hist \
+    --no-residuals --routed \
+    --datasets original_train train train_balanced train_crossed
+
+3. Fit the four shared per-channel sensor specialists:
+
+  python train_sensor.py --name sensor_expert_03 --reference hist_01 \
+    --datasets original_train train train_balanced train_crossed train_sensor_crossed \
+    --evaluate development original_validation --seed 20261107 --max-iter 140 \
+    --max-positive-per-type-channel 1800 --max-negative-per-channel 3500
+
+4. Assemble the compact, model with equal-weight score averaging:
+
+  python make_ensemble.py --views hist_01 routed_hist_02 crossed_hist_03 \
+    crossed_physics_04 --sensor sensor_expert_03 --name final_ensemble \
+    --sensor-types SENSOR_DRIFT SENSOR_STUCK SENSOR_CALIBRATION_SHIFT \
+    SENSOR_NOISE_SPIKES --prune-unused
+
+5. Recompute development probabilities and rerun the declared policy search:
+
+  python run.py predict --name final_ensemble
+  python tune_policy.py --name final_ensemble --max-passes 2
+
+The supplied policy.json is the selected result. All candidate scores and the
+314-trial selection history are retained in results/development_search/. Earlier
+attempts and the neural alternative are recorded in provenance/ and results/.
+
+6. Run inference with labels absent:
+
+  python infer.py --model runs/final_ensemble/model.joblib \
+    --policy runs/final_ensemble/policy_tuning/policy.json \
+    --data "$QUAVIZ_CHALLENGE_DIR/data/full" --split validation \
+    --output predictions_validation.csv
+
+For the already trained packaged artifact, substitute --model model.joblib
+and --policy policy.json. Use --split test for a submission CSV. The packaged
+test_predictions.csv was generated only after the original final model freeze;
+it has not been scored against hidden labels or used for tuning.
+
+7. Score with the original challenge package:
+
+  PYTHONPATH="$QUAVIZ_CHALLENGE_DIR/src" python -m retrofit_sim score \
+    --predictions predictions_validation.csv \
+    --events "$QUAVIZ_CHALLENGE_DIR/data/full/events_validation.csv" \
+    --assets "$QUAVIZ_CHALLENGE_DIR/data/full/assets.csv" \
+    --benign "$QUAVIZ_CHALLENGE_DIR/data/full/benign_windows_train_validation.csv" \
+    --split validation
+
+CAUSAL CHECKS
+
+  python -m pytest -q --ignore=tests/test_review.py
+
+The original experiment's test evidence also includes actual-model replay on
+both validation assets: prefix/full probabilities and alerts match, and changing
+future telemetry/context/waveforms leaves earlier outputs unchanged. Some
+integration tests in tests/test_review.py require the original challenge-bundle
+layout and fitted runs/hist_01 directory; that file hardcodes the source layout
+and does not use QUAVIZ_CHALLENGE_DIR. The portable command above omits that
+file. The recorded complete 40-test run used the original workspace layout.
+
+FROZEN HOLDOUT AUDIT
+
+The original holdout was generated only after the SHA-bound FREEZE.json at
+2026-11-07T13:23:32.918861+00:00. Seeds: 1013137, 1013141, 1013153, each seven
+three-day recordings. The frozen evaluator compares the final model with three
+preselected B1 configurations using the original scorer. It verifies all model,
+policy, source and generated-input hashes before and after evaluation.
+
+The original FREEZE.json retains experiment-relative and absolute source paths
+for provenance; its paths describe the original workspace, not this delivery
+layout. PACKAGE_MANIFEST.json supplies portable hashes for the delivered files.
+The model hash is identical in both records. A new training run needs its own
+freeze and fresh holdout seeds before any unbiased new performance claim.
+
+Raw generated tables are omitted to keep this delivery compact. Generator code,
+seed plans, artifact manifests, training parameters, search histories, scored
+predictions and final fitted parameters are included. Reproducing on a different
+numerical-library version can change the fitted model; use requirements.txt.

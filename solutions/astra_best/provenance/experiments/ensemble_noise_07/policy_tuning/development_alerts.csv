@@ -1,0 +1,22 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+SYN-DEVELOPMENT-913127-01,2024-12-02T22:48:00+00:00,MACHINE,AIR_ENTRAINMENT,0.2614319927169861,learned AIR_ENTRAINMENT score=0.261; sustained 15 min,Check for air ingress and unstable suction or delivered flow.
+SYN-DEVELOPMENT-913127-01,2024-12-03T08:14:00+00:00,SENSOR,SENSOR_NOISE_SPIKES,0.9987288117408752,learned SENSOR_NOISE_SPIKES score=0.999; sustained 15 min,"Check instrument wiring, signal quality and a reference measurement."
+SYN-DEVELOPMENT-913127-02,2024-05-12T18:46:00+00:00,MACHINE,MISALIGNMENT,0.9867391321571948,learned MISALIGNMENT score=0.987; sustained 15 min,Check coupling alignment and confirm with vibration measurements.
+SYN-DEVELOPMENT-913127-02,2024-05-12T19:01:00+00:00,MACHINE,IMBALANCE,0.905707329341585,learned IMBALANCE score=0.906; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-03,2024-11-12T04:32:00+00:00,MACHINE,IMPELLER_WEAR,0.14531593873446957,learned IMPELLER_WEAR score=0.145; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-03,2024-11-12T05:03:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.7170104640234738,learned DISCHARGE_RESTRICTION score=0.717; sustained 15 min,Inspect discharge valves and downstream restriction.
+SYN-DEVELOPMENT-913127-03,2024-11-12T23:25:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9998609461576222,learned COMMUNICATION_LOSS score=1.000; sustained 15 min,"Check gateway power, network and data acquisition."
+SYN-DEVELOPMENT-913127-04,2024-07-17T16:26:00+00:00,MACHINE,IMPELLER_WEAR,0.10108789295018625,learned IMPELLER_WEAR score=0.101; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:12:00+00:00,MACHINE,CAVITATION,0.9973703126359136,learned CAVITATION score=0.997; sustained 15 min,"Check suction pressure, liquid level and strainer; confirm cavitation."
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:18:00+00:00,MACHINE,IMPELLER_WEAR,0.2413451402641115,learned IMPELLER_WEAR score=0.241; sustained 21 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-03T00:33:00+00:00,MACHINE,IMPELLER_WEAR,0.08337507716291281,learned IMPELLER_WEAR score=0.083; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-03T22:52:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.992844137396233,learned DISCHARGE_RESTRICTION score=0.993; sustained 15 min,Inspect discharge valves and downstream restriction.
+SYN-DEVELOPMENT-913127-05,2024-09-04T02:09:00+00:00,MACHINE,IMPELLER_WEAR,0.11261964151943143,learned IMPELLER_WEAR score=0.113; sustained 15 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-04T19:39:00+00:00,SENSOR,SENSOR_STUCK,0.9999105585982492,learned SENSOR_STUCK score=1.000; sustained 15 min,"Check frozen readings, transmitter and wiring against an independent measurement."
+SYN-DEVELOPMENT-913127-05,2024-09-05T02:09:00+00:00,MACHINE,IMPELLER_WEAR,0.9979662432831078,learned IMPELLER_WEAR score=0.998; sustained 425 min,Check hydraulic performance and inspect impeller or wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-05T10:51:00+00:00,MACHINE,DISCHARGE_RESTRICTION,0.9945081872552938,learned DISCHARGE_RESTRICTION score=0.995; sustained 15 min,Inspect discharge valves and downstream restriction.
+SYN-DEVELOPMENT-913127-06,2024-06-09T16:34:00+00:00,SENSOR,SENSOR_NOISE_SPIKES,0.977605938911438,learned SENSOR_NOISE_SPIKES score=0.978; sustained 15 min,"Check instrument wiring, signal quality and a reference measurement."
+SYN-DEVELOPMENT-913127-07,2024-02-06T19:06:00+00:00,SENSOR,SENSOR_NOISE_SPIKES,0.9888051748275757,learned SENSOR_NOISE_SPIKES score=0.989; sustained 15 min,"Check instrument wiring, signal quality and a reference measurement."
+SYN-DEVELOPMENT-913127-07,2024-02-07T06:21:00+00:00,MACHINE,IMBALANCE,0.9167382521195871,learned IMBALANCE score=0.917; sustained 15 min,"Inspect rotating assembly for fouling, damage or imbalance."
+SYN-DEVELOPMENT-913127-07,2024-02-07T21:16:00+00:00,SENSOR,COMMUNICATION_LOSS,0.9998816838989807,learned COMMUNICATION_LOSS score=1.000; sustained 15 min,"Check gateway power, network and data acquisition."
+SYN-DEVELOPMENT-913127-07,2024-02-08T06:21:00+00:00,MACHINE,IMBALANCE,0.9441192408162233,learned IMBALANCE score=0.944; sustained 78 min,"Inspect rotating assembly for fouling, damage or imbalance."

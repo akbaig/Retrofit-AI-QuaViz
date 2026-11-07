@@ -1,0 +1,28 @@
+{
+  "base": "crossed_hist_03",
+  "sensor": "sensor_expert_01",
+  "sensor_types": [
+    "SENSOR_NOISE_SPIKES"
+  ],
+  "base_sha256": "d1053cc8d6585ad49ffd9c1edb15d64ab49499db0b67066dc4781e8c4c4f5cce",
+  "sensor_sha256": "d24127471139cc2f0619bef05f121752471946b772be726c01099710aa4eece2",
+  "active_base_classifiers": [
+    "BEARING_WEAR",
+    "SUCTION_STRAINER_CLOGGING",
+    "CAVITATION",
+    "DISCHARGE_RESTRICTION",
+    "MISALIGNMENT",
+    "IMBALANCE",
+    "IMPELLER_WEAR",
+    "AIR_ENTRAINMENT",
+    "SENSOR_DRIFT",
+    "SENSOR_STUCK",
+    "SENSOR_CALIBRATION_SHIFT",
+    "COMMUNICATION_LOSS"
+  ],
+  "source_sha256": {
+    "composite.py": "b617a87dd4e3d4784bbd60e23c191d490a0692078c22b1f9a5b95000d14cc34e",
+    "sensor_expert.py": "67aba438f9ed5a550317699fff89606e74b954b0e7afa1362786a724722ad411",
+    "make_composite.py": "99b32ff36753a05edbb54ff9c0b9fd3108c92ceada99de3067774c08117193b1"
+  }
+}

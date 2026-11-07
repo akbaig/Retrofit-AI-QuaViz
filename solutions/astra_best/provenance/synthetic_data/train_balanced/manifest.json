@@ -1,0 +1,1123 @@
+{
+  "role": "train_balanced",
+  "seeds": [
+    1213139,
+    1213151
+  ],
+  "days": 2.0,
+  "runs": [
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-01",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 1.168,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0329144219558426,
+      "rating_scale_head": 1.0180026194248517,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 11.69536034288997,
+          "end_h": 42.887711764963356,
+          "jitter_h": 0,
+          "repair_h": 1.6368453936107827,
+          "params": {
+            "rate_per_h": 0.022527850995401128,
+            "t_fail_h": 30.242788291586997,
+            "w_max": 0.7354717358523418
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-02",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.558,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.002819067769142,
+      "rating_scale_head": 1.0155580966868791,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 9.807040732017683,
+          "end_h": 37.728219605079815,
+          "jitter_h": 0,
+          "repair_h": 1.7961429388194485,
+          "params": {
+            "rate_per_h": 0.02119734182820221,
+            "t_fail_h": 27.00222492124585,
+            "w_max": 0.7827116473764866
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 8.010577029736183,
+          "end_h": 18.424301387188756,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.25804814488222955
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-03",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.571,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9955021649798231,
+      "rating_scale_head": 0.9955499097459045,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 13.297756598621273,
+          "end_h": 38.035943134869335,
+          "jitter_h": 0,
+          "repair_h": 1.3537806449418084,
+          "params": {
+            "rate_per_h": 0.032178962671655674,
+            "t_fail_h": 16.976988401526974,
+            "w_max": 0.8920478291240374
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 11.0623663718859,
+          "end_h": 25.954169262226277,
+          "jitter_h": 0,
+          "params": {
+            "step": 0.588653053902927
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-04",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.58,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0185873565874024,
+      "rating_scale_head": 1.0204074995699917,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 14.367780379326113,
+          "end_h": 38.776607065313655,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.3202887865303137,
+            "c_max": 6.878382246382072
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 16.64009713693546,
+          "end_h": 38.776607065313655,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 7.495999033329057,
+            "ramp_h": 0.8222786584112807
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "CAVITATION": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-05",
+      "template_asset_id": "PUMP-07",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.545,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.003515162224777,
+      "rating_scale_head": 1.0113322685660175,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 8.802511554789348,
+          "end_h": 38.321407642206225,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2566209441477536,
+            "c_max": 6.847564117230511
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 10.732486163492366,
+          "end_h": 38.321407642206225,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 6.91739118516764,
+            "ramp_h": 1.1497924887402644
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "suction_pressure_kpa",
+          "onset_h": 14.469498945634438,
+          "end_h": 27.24605089496886,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.8575259754816246
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-06",
+      "template_asset_id": "PUMP-06",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.571,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9861145352555399,
+      "rating_scale_head": 0.9826157373669548,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 10.854364502252347,
+          "end_h": 43.57790115136337,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.29719568103943755,
+            "c_max": 7.0698003796379645
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 13.495111261417659,
+          "end_h": 43.57790115136337,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 2.9553878403945775,
+            "ramp_h": 1.0031632093186436
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 14.297327070887096,
+          "end_h": 30.512006657757407,
+          "jitter_h": 0,
+          "params": {
+            "step": 2.000850578470704
+          }
+        }
+      ],
+      "event_classes": {
+        "CAVITATION": 6,
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-07",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.55,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9727387020556146,
+      "rating_scale_head": 1.027048332740033,
+      "scenario_kind": "balanced_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 9.81540473334791,
+          "end_h": 43.247342004892744,
+          "jitter_h": 0,
+          "repair_h": 1.9646421537582834,
+          "params": {
+            "alpha_max": 0.03769238228510931
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-08",
+      "template_asset_id": "PUMP-07",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.59,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0363857687695754,
+      "rating_scale_head": 1.0002506748934876,
+      "scenario_kind": "balanced_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 11.85228836051014,
+          "end_h": 42.677668302288275,
+          "jitter_h": 0,
+          "repair_h": 1.8364439850827359,
+          "params": {
+            "alpha_max": 0.045177347001775274
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 9.468710207439619,
+          "end_h": 24.763634687075125,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.05325893344819232
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-09",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.576,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9974851284571156,
+      "rating_scale_head": 0.9619102195901493,
+      "scenario_kind": "balanced_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 9.492284687333486,
+          "end_h": 39.57881241874014,
+          "jitter_h": 0,
+          "repair_h": 1.1461198306737812,
+          "params": {
+            "level": 0.42994112493787123,
+            "growth_per_h": 0.003964544245739419
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "suction_pressure_kpa",
+          "onset_h": 23.33784430892539,
+          "end_h": 34.57979207233343,
+          "jitter_h": 0,
+          "params": {
+            "step": 19.301589793514196
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-10",
+      "template_asset_id": "PUMP-06",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.513,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0273806967444854,
+      "rating_scale_head": 1.0312001514942044,
+      "scenario_kind": "balanced_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 10.278341452620438,
+          "end_h": 43.0944622108888,
+          "jitter_h": 0,
+          "repair_h": 1.213315101744773,
+          "params": {
+            "level": 0.4041620913677652,
+            "growth_per_h": 0.0037361538820407363
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-11",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.58,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.96000628429634,
+      "rating_scale_head": 0.9962075609769632,
+      "scenario_kind": "balanced_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 10.019305628196191,
+          "end_h": 41.225501621384616,
+          "jitter_h": 0,
+          "repair_h": 0.5045039001282889,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.04467007305512392,
+            "u0": 0.01203087711600077,
+            "u_max": 0.8754504213486056
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 3.9249051882628585,
+          "end_h": 16.96561785573459,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.08157439098450266
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-12",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.551,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.977134821971267,
+      "rating_scale_head": 1.0160582838875503,
+      "scenario_kind": "balanced_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 13.208556884789111,
+          "end_h": 40.51334220615068,
+          "jitter_h": 0,
+          "repair_h": 0.5556716653094491,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.07501555126969639,
+            "u0": 0.13425436043822536,
+            "u_max": 1.757627173995384
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 14.80474801981936,
+          "end_h": 30.666377463503366,
+          "jitter_h": 0,
+          "params": {
+            "step": 4.488421830143529
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-13",
+      "template_asset_id": "PUMP-03",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.475,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.962367243730015,
+      "rating_scale_head": 1.0085863753039543,
+      "scenario_kind": "balanced_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 10.366290465019807,
+          "end_h": 40.521013449757035,
+          "jitter_h": 0,
+          "repair_h": 1.4863287080971639,
+          "params": {
+            "rate_per_h": 0.004990434498465334,
+            "iw0": 0.0,
+            "iw_max": 0.08952494371930848
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-14",
+      "template_asset_id": "PUMP-05",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.467,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.9920222243942065,
+      "rating_scale_head": 1.0081133730876304,
+      "scenario_kind": "balanced_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 14.08738158190161,
+          "end_h": 43.09648302541078,
+          "jitter_h": 0,
+          "repair_h": 1.0429622133253298,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 0.25,
+            "extra_max": 0.25640412097649423
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 19.32435919753217,
+          "end_h": 32.32581332857869,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.04852198820331545
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213139-15",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213139,
+      "minutes": 2880,
+      "seconds": 0.391,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9912374491059883,
+      "rating_scale_head": 0.9779393727165597,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-01",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.575,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.990527877648844,
+      "rating_scale_head": 0.96529088574212,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 13.410961977045243,
+          "end_h": 40.11721403931632,
+          "jitter_h": 0,
+          "repair_h": 0.5109804802334605,
+          "params": {
+            "rate_per_h": 0.04262265514782637,
+            "t_fail_h": 20.312301514000985,
+            "w_max": 0.9045445874321214
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-02",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.547,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0021775577784748,
+      "rating_scale_head": 0.9903546248025954,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 12.073683678795751,
+          "end_h": 39.71121914913273,
+          "jitter_h": 0,
+          "repair_h": 0.8116642417866538,
+          "params": {
+            "rate_per_h": 0.03163312970734462,
+            "t_fail_h": 25.9277200956676,
+            "w_max": 0.837711020377145
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 14.67605987722814,
+          "end_h": 23.71724276955795,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.22255215993345107
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-03",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.583,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0191421389327262,
+      "rating_scale_head": 0.9658381274960736,
+      "scenario_kind": "balanced_bearing_wear",
+      "scenario": [
+        {
+          "type": "BEARING_WEAR",
+          "onset_h": 13.383084626814528,
+          "end_h": 40.903372487645214,
+          "jitter_h": 0,
+          "repair_h": 0.9513203052252732,
+          "params": {
+            "rate_per_h": 0.030878804028840107,
+            "t_fail_h": 26.231571590117785,
+            "w_max": 0.795351588634623
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 23.552487479381927,
+          "end_h": 36.90706161923313,
+          "jitter_h": 0,
+          "params": {
+            "step": -0.557492016431493
+          }
+        }
+      ],
+      "event_classes": {
+        "BEARING_WEAR": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-04",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.569,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9800555184337485,
+      "rating_scale_head": 1.0156346966809129,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 12.24763494069823,
+          "end_h": 43.03357345904966,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2978638958514222,
+            "c_max": 5.884862110366599
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 14.925690384038898,
+          "end_h": 43.03357345904966,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 6.396166275267438,
+            "ramp_h": 1.759338123426634
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-05",
+      "template_asset_id": "PUMP-07",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.553,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9636828149374147,
+      "rating_scale_head": 1.021988607246925,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 13.406147294364553,
+          "end_h": 40.07366923372014,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2932899294236623,
+            "c_max": 6.85894247473398
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 14.6865953745627,
+          "end_h": 40.07366923372014,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 7.228614406996764,
+            "ramp_h": 1.2517290888529877
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "suction_pressure_kpa",
+          "onset_h": 27.816451555766072,
+          "end_h": 37.47138661279523,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.9517073279203374
+          }
+        }
+      ],
+      "event_classes": {
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-06",
+      "template_asset_id": "PUMP-06",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.564,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0019984355418077,
+      "rating_scale_head": 0.9893304367425404,
+      "scenario_kind": "balanced_cavitation",
+      "scenario": [
+        {
+          "type": "SUCTION_STRAINER_CLOGGING",
+          "onset_h": 8.875619488042455,
+          "end_h": 39.72071935753286,
+          "jitter_h": 0,
+          "repair_h": 0.7,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.2535721566670967,
+            "c_max": 5.14602886452008
+          }
+        },
+        {
+          "type": "SUCTION_LEVEL_DROP",
+          "onset_h": 10.71997009474859,
+          "end_h": 39.72071935753286,
+          "jitter_h": 0,
+          "params": {
+            "drop_m": 3.6634485895916225,
+            "ramp_h": 0.8355591152412445
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 28.38421283782337,
+          "end_h": 41.719370654033256,
+          "jitter_h": 0,
+          "params": {
+            "step": -1.1251369205865502
+          }
+        }
+      ],
+      "event_classes": {
+        "CAVITATION": 6,
+        "SUCTION_STRAINER_CLOGGING": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-07",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.556,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.019808187923278,
+      "rating_scale_head": 1.0258831464566749,
+      "scenario_kind": "balanced_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 10.125314792667556,
+          "end_h": 42.07786367369792,
+          "jitter_h": 0,
+          "repair_h": 1.0512742897816931,
+          "params": {
+            "alpha_max": 0.044836239418340175
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-08",
+      "template_asset_id": "PUMP-07",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.581,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0192663710933285,
+      "rating_scale_head": 1.029520974294877,
+      "scenario_kind": "balanced_air_entrainment",
+      "scenario": [
+        {
+          "type": "AIR_ENTRAINMENT",
+          "onset_h": 10.379853668281008,
+          "end_h": 43.598534090809245,
+          "jitter_h": 0,
+          "repair_h": 1.3842189166208017,
+          "params": {
+            "alpha_max": 0.04872181228655756
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 17.17352219236864,
+          "end_h": 25.791326874681623,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": 0.0712109644246313
+          }
+        }
+      ],
+      "event_classes": {
+        "AIR_ENTRAINMENT": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-09",
+      "template_asset_id": "PUMP-02",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.576,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 1.0396578863684391,
+      "rating_scale_head": 0.9952971274285176,
+      "scenario_kind": "balanced_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 10.27081914864128,
+          "end_h": 38.009389331074104,
+          "jitter_h": 0,
+          "repair_h": 0.6564320674344386,
+          "params": {
+            "level": 0.45161049334819225,
+            "growth_per_h": 0.0007031720356352524
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "suction_pressure_kpa",
+          "onset_h": 17.111428873849498,
+          "end_h": 32.97957654584066,
+          "jitter_h": 0,
+          "params": {
+            "step": -17.533149919697266
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-10",
+      "template_asset_id": "PUMP-06",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.508,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9715812439944818,
+      "rating_scale_head": 1.0135008968522896,
+      "scenario_kind": "balanced_misalignment",
+      "scenario": [
+        {
+          "type": "MISALIGNMENT",
+          "onset_h": 9.139135176341782,
+          "end_h": 39.371521172944,
+          "jitter_h": 0,
+          "repair_h": 0.5299883895714679,
+          "params": {
+            "level": 0.5819137915466335,
+            "growth_per_h": 0.003385156737781852
+          }
+        }
+      ],
+      "event_classes": {
+        "MISALIGNMENT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-11",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.566,
+      "instrumentation_tier": "T2_FULL",
+      "rating_scale_flow": 0.9703129241704886,
+      "rating_scale_head": 1.0377568968401358,
+      "scenario_kind": "balanced_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 9.567122032817464,
+          "end_h": 38.28931947703434,
+          "jitter_h": 0,
+          "repair_h": 1.706953209555314,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.06886133595711104,
+            "u0": 0.11497476093076121,
+            "u_max": 1.1562701831239286
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 14.319262662133777,
+          "end_h": 24.127998787252913,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.4157382804095291
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-12",
+      "template_asset_id": "PUMP-01",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.557,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 1.0123518756843684,
+      "rating_scale_head": 0.9983303645489179,
+      "scenario_kind": "balanced_imbalance",
+      "scenario": [
+        {
+          "type": "IMBALANCE",
+          "onset_h": 13.286532642467158,
+          "end_h": 38.245612270218,
+          "jitter_h": 0,
+          "repair_h": 1.536833287907716,
+          "params": {
+            "shape": "linear",
+            "rate_per_h": 0.050406428187342894,
+            "u0": 0.06876299414295885,
+            "u_max": 1.0710169173582382
+          }
+        },
+        {
+          "type": "SENSOR_CALIBRATION_SHIFT",
+          "sensor_tag": "bearing_temp_c",
+          "onset_h": 19.885769272544625,
+          "end_h": 28.161836212005696,
+          "jitter_h": 0,
+          "params": {
+            "step": -2.6787990377943314
+          }
+        }
+      ],
+      "event_classes": {
+        "IMBALANCE": 1,
+        "SENSOR_CALIBRATION_SHIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-13",
+      "template_asset_id": "PUMP-03",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.462,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 0.9628409686316294,
+      "rating_scale_head": 1.0086825520249172,
+      "scenario_kind": "balanced_impeller_wear",
+      "scenario": [
+        {
+          "type": "IMPELLER_WEAR",
+          "onset_h": 10.650726853291923,
+          "end_h": 40.96846515369793,
+          "jitter_h": 0,
+          "repair_h": 1.8974811945504888,
+          "params": {
+            "rate_per_h": 0.00762855538277961,
+            "iw0": 0.0,
+            "iw_max": 0.1101425353751546
+          }
+        }
+      ],
+      "event_classes": {
+        "IMPELLER_WEAR": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-14",
+      "template_asset_id": "PUMP-05",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.469,
+      "instrumentation_tier": "T0_LEGACY",
+      "rating_scale_flow": 1.0385486504163481,
+      "rating_scale_head": 0.9856034525785287,
+      "scenario_kind": "balanced_discharge_restriction",
+      "scenario": [
+        {
+          "type": "DISCHARGE_RESTRICTION",
+          "onset_h": 12.736125785320844,
+          "end_h": 41.03817986308635,
+          "jitter_h": 0,
+          "repair_h": 1.6763697436732368,
+          "params": {
+            "shape": "exp",
+            "rate_per_h": 0.08,
+            "extra_max": 0.8170599920009924
+          }
+        },
+        {
+          "type": "SENSOR_DRIFT",
+          "sensor_tag": "motor_current_a",
+          "onset_h": 22.494163169831033,
+          "end_h": 36.267505156992726,
+          "jitter_h": 0,
+          "params": {
+            "drift_per_h": -0.06532923255625378
+          }
+        }
+      ],
+      "event_classes": {
+        "DISCHARGE_RESTRICTION": 1,
+        "SENSOR_DRIFT": 1
+      }
+    },
+    {
+      "asset_id": "SYN-TRAIN_BALANCED-1213151-15",
+      "template_asset_id": "PUMP-04",
+      "seed": 1213151,
+      "minutes": 2880,
+      "seconds": 0.39,
+      "instrumentation_tier": "T1_RETROFIT",
+      "rating_scale_flow": 0.9675082358563422,
+      "rating_scale_head": 0.9843424570323998,
+      "scenario_kind": "healthy",
+      "scenario": [],
+      "event_classes": {}
+    }
+  ],
+  "observed_minute_rows": 86400,
+  "asset_count": 30,
+  "total_seconds": 17.19,
+  "source_config_sha256": "3963529068778cd84a9c515ddf03e6bfc40c8f5908e438753ea45230b42f161d",
+  "generator_sha256": "9642f6ba18b4d44e80f0d3c5b19f9c2ccea63519c6db20f2e480b72f4600082e",
+  "reserved_seed_manifest_sha256": "cba6cbbad0485da1d1ae4d70d0f13ed64ecd20d48bac0305ffaff547b80b9c43",
+  "availability": "features are emitted at available_at_utc = window_start_utc + 60s",
+  "inference_inputs": [
+    "features_1min.parquet",
+    "operating_context.csv",
+    "assets.csv",
+    "vibration_snapshots.parquet"
+  ],
+  "snapshot_count": 297,
+  "snapshot_caveat": "Published snapshots_for waveform route includes simulated measurement variation and missing gateways, but does not apply channel sensor-fault corruption; waveform use should be ablated.",
+  "target_only": [
+    "events.csv"
+  ],
+  "latent_or_truth_exports": [],
+  "artifacts": {
+    "features_1min.parquet": "cfc8df9fefb631a59055b1181eb74c6154850bd88f03543ba4016f777b6b7a62",
+    "operating_context.csv": "ae3c03c20bbeb3b467d44366e08250522ccc3f518726c15539700f2cca5e3848",
+    "assets.csv": "be85e5db8ac67c5ed975f9edcff705597a96e336d67997b58b3d7005df018c7b",
+    "events.csv": "876754d5dcbadc37ec9dd530ce7c3c42842de9251f1b76557b0fd6bedbb2ee5b",
+    "vibration_snapshots.parquet": "2c83f0fc639915ef84c6ad57d17baf24ed6cf54f3e1c2267e47d349a02a01ed8"
+  },
+  "event_counts": {
+    "CAVITATION": 13,
+    "SENSOR_DRIFT": 10,
+    "SENSOR_CALIBRATION_SHIFT": 8,
+    "BEARING_WEAR": 6,
+    "SUCTION_STRAINER_CLOGGING": 6,
+    "AIR_ENTRAINMENT": 4,
+    "MISALIGNMENT": 4,
+    "IMBALANCE": 4,
+    "IMPELLER_WEAR": 2,
+    "DISCHARGE_RESTRICTION": 2
+  },
+  "observable_event_counts": {
+    "CAVITATION": 13,
+    "SENSOR_DRIFT": 10,
+    "SENSOR_CALIBRATION_SHIFT": 8,
+    "BEARING_WEAR": 6,
+    "SUCTION_STRAINER_CLOGGING": 6,
+    "AIR_ENTRAINMENT": 4,
+    "MISALIGNMENT": 4,
+    "IMBALANCE": 4,
+    "IMPELLER_WEAR": 2,
+    "DISCHARGE_RESTRICTION": 2
+  }
+}

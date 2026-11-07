@@ -1,0 +1,92 @@
+{
+  "datasets": [
+    "original_train",
+    "train",
+    "train_balanced",
+    "train_crossed"
+  ],
+  "kind": "hist",
+  "include_waveforms": true,
+  "include_residuals": true,
+  "routed": true,
+  "reference_from": "hist_01",
+  "rows": 351360,
+  "assets": 94,
+  "healthy_rows": 132470,
+  "model_features": 416,
+  "fault_sample_counts": {
+    "BEARING_WEAR": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 115
+    },
+    "SUCTION_STRAINER_CLOGGING": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 196
+    },
+    "CAVITATION": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 196
+    },
+    "DISCHARGE_RESTRICTION": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 196
+    },
+    "MISALIGNMENT": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 115
+    },
+    "IMBALANCE": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 115
+    },
+    "IMPELLER_WEAR": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 196
+    },
+    "AIR_ENTRAINMENT": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 196
+    },
+    "SENSOR_DRIFT": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 401
+    },
+    "SENSOR_STUCK": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 401
+    },
+    "SENSOR_CALIBRATION_SHIFT": {
+      "positive_samples": 6500,
+      "negative_samples": 18000,
+      "features": 401
+    },
+    "SENSOR_NOISE_SPIKES": {
+      "positive_samples": 4798,
+      "negative_samples": 18000,
+      "features": 401
+    },
+    "COMMUNICATION_LOSS": {
+      "positive_samples": 3332,
+      "negative_samples": 18000,
+      "features": 3
+    }
+  },
+  "elapsed_seconds": 332.4091944999527,
+  "source_hashes": {
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f",
+    "alerts.py": "05f7e1da10c7d6d2b2a2615b5645c9d8096f86a79ed6a59a414e39481a8e372f",
+    "run.py": "cc0ab794685666525692c2bd75f031bf8b1a1c3c9018a6f26ac0c345dc346f0c"
+  }
+}

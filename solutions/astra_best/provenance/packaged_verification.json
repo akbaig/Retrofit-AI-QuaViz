@@ -1,0 +1,13 @@
+{
+  "portable_unit_tests_passed": 29,
+  "portable_unit_seconds": 3.0,
+  "inference_from_different_working_directory": true,
+  "validation_prediction_csv_exactly_equal": true,
+  "unchanged_official_validation_score": 95.02135167303905,
+  "validation_alert_rows": 17,
+  "unscored_test_alert_rows": 43,
+  "unscored_test_assets": 3,
+  "test_schema_confidence_and_asset_time_windows_valid": true,
+  "all_packaged_python_modules_equal_frozen_source": true,
+  "packaged_model_sha256": "0a1884354fa22a4a6de33302a988c99e074b88a59c430f04f64aaa8d5453d983"
+}

@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "role": "train_balanced",
+  "purpose": "training augmentation only",
+  "seeds": [
+    1213139,
+    1213151
+  ],
+  "days": 2.0,
+  "tracks_per_seed": 15,
+  "coverage_strata": [
+    [
+      "PUMP-02",
+      "T2_FULL",
+      "BEARING_WEAR"
+    ],
+    [
+      "PUMP-01",
+      "T1_RETROFIT",
+      "BEARING_WEAR"
+    ],
+    [
+      "PUMP-04",
+      "T2_FULL",
+      "BEARING_WEAR"
+    ],
+    [
+      "PUMP-02",
+      "T2_FULL",
+      "CAVITATION"
+    ],
+    [
+      "PUMP-07",
+      "T1_RETROFIT",
+      "CAVITATION"
+    ],
+    [
+      "PUMP-06",
+      "T2_FULL",
+      "CAVITATION"
+    ],
+    [
+      "PUMP-01",
+      "T1_RETROFIT",
+      "AIR_ENTRAINMENT"
+    ],
+    [
+      "PUMP-07",
+      "T2_FULL",
+      "AIR_ENTRAINMENT"
+    ],
+    [
+      "PUMP-02",
+      "T2_FULL",
+      "MISALIGNMENT"
+    ],
+    [
+      "PUMP-06",
+      "T1_RETROFIT",
+      "MISALIGNMENT"
+    ],
+    [
+      "PUMP-04",
+      "T2_FULL",
+      "IMBALANCE"
+    ],
+    [
+      "PUMP-01",
+      "T1_RETROFIT",
+      "IMBALANCE"
+    ],
+    [
+      "PUMP-03",
+      "T0_LEGACY",
+      "IMPELLER_WEAR"
+    ],
+    [
+      "PUMP-05",
+      "T0_LEGACY",
+      "DISCHARGE_RESTRICTION"
+    ],
+    [
+      "PUMP-04",
+      "T1_RETROFIT",
+      "HEALTHY"
+    ]
+  ],
+  "selection_basis": "published simulator physics and original synthetic training class coverage",
+  "validation_or_test_data_used": false,
+  "reserved_evaluation_seed_manifest_sha256": "cba6cbbad0485da1d1ae4d70d0f13ed64ecd20d48bac0305ffaff547b80b9c43"
+}

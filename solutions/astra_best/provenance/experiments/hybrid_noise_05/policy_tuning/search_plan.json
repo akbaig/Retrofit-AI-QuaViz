@@ -1,0 +1,69 @@
+{
+  "run": "hybrid_noise_05",
+  "development_datasets": [
+    "original_validation",
+    "development"
+  ],
+  "objective": "Equal mean official composite score",
+  "threshold_grid": [
+    0.005,
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.15,
+    0.25,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "global_persistence_grid": [
+    3,
+    5,
+    10,
+    15
+  ],
+  "coordinate_order": [
+    "BEARING_WEAR",
+    "SUCTION_STRAINER_CLOGGING",
+    "CAVITATION",
+    "DISCHARGE_RESTRICTION",
+    "MISALIGNMENT",
+    "IMBALANCE",
+    "IMPELLER_WEAR",
+    "AIR_ENTRAINMENT",
+    "SENSOR_DRIFT",
+    "SENSOR_STUCK",
+    "SENSOR_CALIBRATION_SHIFT",
+    "SENSOR_NOISE_SPIKES",
+    "COMMUNICATION_LOSS",
+    "global_persistence",
+    "recovery"
+  ],
+  "max_coordinate_passes": 1,
+  "initial_recovery": 60,
+  "recovery_grid": [
+    60,
+    240,
+    720
+  ],
+  "reminder": 1440,
+  "initial_grid_policies": 44,
+  "maximum_proposed_policies": 194,
+  "source_sha256": {
+    "alerts.py": "05f7e1da10c7d6d2b2a2615b5645c9d8096f86a79ed6a59a414e39481a8e372f",
+    "learning.py": "433cda1e7869e182c73600393dbb5872174b329dd764fda5d94092a77147ac5f",
+    "features.py": "015d8e1b579225fbcf7897cd7cb8eb4b9d1e02abf9532aa025a4215eb9c6d25e",
+    "physics_features.py": "749395aa04e3ed5cb36908e573beaf25bb2622e353e938797996fbdf791e3e6f",
+    "run.py": "cc0ab794685666525692c2bd75f031bf8b1a1c3c9018a6f26ac0c345dc346f0c",
+    "tune_policy.py": "0c97c0bfac11940f0d805b85413a5fee89697ecc1697812294bdaff368dc4db5",
+    "scoring.py": "5293c2e427d6181e0f24cfd64d617fc96d284c31a949410d3c88769a7e1802c2"
+  },
+  "probability_sha256": {
+    "original_validation": "deca2504d9358d36f9bafbcd722bec974dd5715ed45aa16618632d648f5e8ec5",
+    "development": "b46bfce2280dece9982ab9e542a9ae5408391ea5d56f397ed3e74932d6c1da8c"
+  },
+  "no_holdout_access": true,
+  "interpretation": "Adaptive fitting to both declared development sets. This score is not independent generalization evidence."
+}
