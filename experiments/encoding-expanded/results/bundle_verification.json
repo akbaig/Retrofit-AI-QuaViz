@@ -1,0 +1,11 @@
+{
+  "standalone_bundle_cli_passed": true,
+  "rows": 240,
+  "past_warmup": 120,
+  "events_file_available": false,
+  "zip_sha256": "7922fbc921b27e8c9be77118f681c86a12bfdc286d5921ed18d2d901033fb37b",
+  "zip_bytes": 3037893,
+  "compact_model_replay_families": 7,
+  "zip_crc_and_file_hashes_verified": true,
+  "files": 48
+}

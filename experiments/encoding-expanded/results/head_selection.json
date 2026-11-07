@@ -1,0 +1,33 @@
+{
+  "selected_candidate": "expanded_task_encoder/logistic",
+  "rankings": [
+    {
+      "candidate": "expanded_task_encoder/logistic",
+      "macro_ap": 0.8895985957231555,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "expanded_task_encoder/histogram",
+      "macro_ap": 0.8676984334572403,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "expanded_kernel_pca/histogram",
+      "macro_ap": 0.8395126232027882,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    }
+  ],
+  "added_candidates": [
+    "expanded_task_encoder/histogram",
+    "expanded_kernel_pca/histogram",
+    "frozen_denoising_ae/histogram"
+  ],
+  "original_logistic_selection": "expanded_task_encoder/logistic",
+  "test_data_used": false
+}

@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-11-07T16:17:03.131832+00:00",
+  "selected_encoder": "expanded_task_encoder/logistic",
+  "selected_logistic_encoder": "expanded_task_encoder/logistic",
+  "added_candidates": [
+    "expanded_task_encoder/histogram",
+    "expanded_kernel_pca/histogram",
+    "frozen_denoising_ae/histogram"
+  ],
+  "selected_frozen_reference": "frozen_denoising_ae/logistic",
+  "frozen_reference_development_ranking": [
+    {
+      "candidate": "frozen_denoising_ae/logistic",
+      "macro_ap": 0.7966898579873474,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "frozen_autoencoder/logistic",
+      "macro_ap": 0.7841566022269093,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "frozen_pca/logistic",
+      "macro_ap": 0.7767166136190682,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "frozen_temporal_ae/logistic",
+      "macro_ap": 0.7651651571427204,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    },
+    {
+      "candidate": "frozen_kernel_pca/logistic",
+      "macro_ap": 0.7487105869191444,
+      "families": 7,
+      "recordings": 23,
+      "cases": 23
+    }
+  ],
+  "selection_source_sha256": "5a92f1309f43f636c66c97e2afa06d2fefa57b2b43b9b8976acaab59d3664cf2",
+  "new_model_selection_sha256": "b42708f95184790e941a4239d760c2f13bb33a703b4251d47833e60a07e1f40c",
+  "all_candidates_reported": true,
+  "test_tuning_allowed": false,
+  "note": "Reference selection excludes frozen label-informed encoder, which was unavailable on two families; paired same-encoder comparisons are also reported."
+}

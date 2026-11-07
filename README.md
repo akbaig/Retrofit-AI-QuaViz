@@ -1,5 +1,9 @@
 # Pump encodings — encoding-astra
 
+**New follow-up:** [Expanded-data encoding study](experiments/encoding-expanded/REPORT.md) reruns all six encoders with 108 additional training recordings and adds an encoder trained to retain fault information. On 35 newly generated test recordings, its 32D vectors plus logistic regression reach **0.869 fault-present AP**, compared with **0.827** for retrained kernel PCA. Its selected cutoff reduces false positives but also reduces recall. Full-feature classifiers remain stronger for identifying individual fault types. [Approach and reproduction](experiments/encoding-expanded/README.md).
+
+The rest of this page documents the original within-pump experiment, whose scores use a different data split.
+
 This branch investigates **how to turn pump sensor data into useful 32-dimensional vectors**, then tests whether a classifier can detect faults from those vectors. It includes code, trained models, full vectors, visualizations and measured results.
 
 **Current finding:** PCA preserves the input information best on 11 of 12 pumps. For detecting whether any fault is present, the label-informed autoencoder plus logistic regression leads the main validation comparison. **There is no test-confirmed fault-detection winner.**

@@ -1,0 +1,7 @@
+.cache/
+synthetic_data/
+results/**/*.joblib
+results/**/*.parquet
+*.log
+results/*.partial.csv
+results/PUMP-*/*_metrics.json

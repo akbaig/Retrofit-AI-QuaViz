@@ -1,0 +1,117 @@
+{
+  "primary": "expanded encoders, ANY_FAULT, logistic regression",
+  "selected_candidate": "expanded_task_encoder/logistic",
+  "rankings": {
+    "logistic": [
+      {
+        "candidate": "expanded_task_encoder/logistic",
+        "macro_ap": 0.8895985957231555,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_kernel_pca/logistic",
+        "macro_ap": 0.869673983607071,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_label_informed/logistic",
+        "macro_ap": 0.8442331944542367,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_pca/logistic",
+        "macro_ap": 0.797573838135343,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_temporal_ae/logistic",
+        "macro_ap": 0.7880442381506138,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_autoencoder/logistic",
+        "macro_ap": 0.7853428469080214,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_denoising_ae/logistic",
+        "macro_ap": 0.7733415373985133,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      }
+    ],
+    "knn": [
+      {
+        "candidate": "expanded_label_informed/knn",
+        "macro_ap": 0.8164009506413716,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_temporal_ae/knn",
+        "macro_ap": 0.794362447603573,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_task_encoder/knn",
+        "macro_ap": 0.7841687429190581,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_denoising_ae/knn",
+        "macro_ap": 0.7740346850161479,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_autoencoder/knn",
+        "macro_ap": 0.7550713462926144,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_kernel_pca/knn",
+        "macro_ap": 0.7420165168005496,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      },
+      {
+        "candidate": "expanded_pca/knn",
+        "macro_ap": 0.7351017665407621,
+        "families": 7,
+        "recordings": 23,
+        "cases": 23
+      }
+    ]
+  },
+  "chosen_on": "development only; historical holdout is reused as development",
+  "fresh_test_seeds": [
+    202611071,
+    202611073,
+    202611079,
+    202611083,
+    202611089
+  ],
+  "test_labels_used": false
+}

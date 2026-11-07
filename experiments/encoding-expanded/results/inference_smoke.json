@@ -1,0 +1,7 @@
+{
+  "label_free_inference": true,
+  "four_hour_rows": 240,
+  "warmup_rows": 120,
+  "four_vs_five_hour_prefix_stable": true,
+  "model": "PUMP-01/expanded_task_encoder/logistic"
+}

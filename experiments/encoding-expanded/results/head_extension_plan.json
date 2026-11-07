@@ -1,0 +1,16 @@
+{
+  "variants": [
+    "expanded_task_encoder",
+    "expanded_kernel_pca",
+    "frozen_denoising_ae"
+  ],
+  "rule": "top two expanded encoders and best original frozen reference on development logistic AP",
+  "settings": {
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.08,
+    "l2_regularization": 3,
+    "min_samples_leaf": 30
+  },
+  "test_data_used": false
+}
