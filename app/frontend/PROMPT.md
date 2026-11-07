@@ -1,9 +1,3 @@
-# AI prompt — build the QuaViz operator frontend
-
-Copy everything below the line into a coding agent. Build an **engineering-ready** UI for industrial / marine cooling-pump operators. Advice only — no plant write path.
-
----
-
 ## Mission
 
 Build `app/frontend` as a live operator console for the Retrofit AI / QuaViz pump-fault assistant.
