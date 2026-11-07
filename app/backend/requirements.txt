@@ -1,0 +1,6 @@
+# Product backend extras (also pulled in via repo-root requirements.txt)
+fastapi>=0.115
+uvicorn[standard]>=0.30
+paho-mqtt>=2.0
+python-dotenv>=1.0
+google-genai>=1.0

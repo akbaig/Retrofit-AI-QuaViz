@@ -1,0 +1,3 @@
+# Optional deps for LLM explainability (not required for scoring/submission)
+google-genai>=1.0
+python-dotenv>=1.0

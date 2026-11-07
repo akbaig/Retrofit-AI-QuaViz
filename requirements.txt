@@ -1,0 +1,18 @@
+# Repo-root environment for Retrofit-AI-QuaViz (kit + frozen best + backend).
+# Prefer uv (https://docs.astral.sh/uv/):
+#   uv venv --python 3.12
+#   source .venv/bin/activate
+#   uv pip install -r requirements.txt
+#   uv pip install -e ./retrofit_starter --no-deps
+
+# Challenge kit (simulator / scorer / replay)
+-r retrofit_starter/requirements.txt
+
+# Frozen best — keep these pins; model.joblib was fit against them
+-r retrofit_starter/solution/final_model/requirements.txt
+
+# LLM explainability (Gemini optional; template works offline)
+-r retrofit_starter/solution/final_model/explainability/requirements.txt
+
+# Product backend
+-r app/backend/requirements.txt
