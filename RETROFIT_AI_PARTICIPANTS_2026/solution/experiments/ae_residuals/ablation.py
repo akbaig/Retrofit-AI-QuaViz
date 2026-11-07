@@ -14,9 +14,11 @@ At time t it uses only the readings of minute t, and the trailing features use o
 earlier minutes, so alerts stay causal.
 
   python ablation.py
+  python ablation.py --seed 1 --arms regressors autoencoder
 """
 from __future__ import annotations
 
+import argparse
 import itertools
 import json
 import sys
@@ -64,8 +66,8 @@ class Net(torch.nn.Module):
 class HealthyAutoencoder:
     """Conditional denoising autoencoder of the 14 rating-scaled channel levels."""
 
-    def fit(self, x, healthy_steady, epochs=40, drop=0.25):
-        torch.manual_seed(SEED)
+    def fit(self, x, healthy_steady, seed=SEED, epochs=40, drop=0.25):
+        torch.manual_seed(seed)
         self.channels = [c for c in CHANNELS if self._observed(x, c)[healthy_steady].sum() >= 80]
         self.context = [c for c in x if c.startswith(CONTEXT_PREFIXES)] + ["obs__running", "obs__run_minutes"]
         values, mask = self._channels(x, fit_rows=healthy_steady)
@@ -167,24 +169,26 @@ def minute_metrics(probs, y):
             "any_fault_auroc": float(roc_auc_score(any_fault, p_any))}
 
 
-def main():
-    OUT.mkdir(parents=True, exist_ok=True)
+def main(seed=SEED, selected=None):
+    out = OUT if seed == SEED else OUT / f"seed_{seed}"
+    out.mkdir(parents=True, exist_ok=True)
     meta, x, _, events, _ = prepared("original_train")
     vmeta, vx, vassets, vevents, vbenign = prepared("original_validation")
     y, w, healthy = make_targets(meta, events)
     vy, _, _ = make_targets(vmeta, vevents)
 
     t0 = time.perf_counter()
-    ae = HealthyAutoencoder().fit(x, healthy & meta.steady.to_numpy())
+    ae = HealthyAutoencoder().fit(x, healthy & meta.steady.to_numpy(), seed=seed)
     print(f"autoencoder: {len(ae.channels)} channels, fitted in {time.perf_counter() - t0:.0f} s", flush=True)
     x_ae, vx_ae = ae.features(x, meta), ae.features(vx, vmeta)
 
     arms = {"none": (False, x, vx), "regressors": (True, x, vx),
             "autoencoder": (False, x_ae, vx_ae), "both": (True, x_ae, vx_ae)}
+    arms = {k: v for k, v in arms.items() if not selected or k in selected}
     rows, per_type, minute = [], [], {}
     for arm, (residuals, train_x, val_x) in arms.items():
         t0 = time.perf_counter()
-        model = LearnedModel(kind="hist", include_residuals=residuals)
+        model = LearnedModel(kind="hist", include_residuals=residuals, seed=seed)
         if residuals:
             model.fit_reference(train_x, meta, healthy)
         model.fit_classifier(model.transform(train_x, meta), meta, y, w)
@@ -204,10 +208,10 @@ def main():
               f"{minute[arm]['mean_fault_auroc']:.3f}  ({time.perf_counter() - t0:.0f} s)", flush=True)
 
     grid = pd.DataFrame(rows)
-    grid.to_csv(OUT / "policy_grid.csv", index=False)
+    grid.to_csv(out / "policy_grid.csv", index=False)
     if per_type:
-        pd.DataFrame(per_type).to_csv(OUT / "per_event_best_policy.csv", index=False)
-    (OUT / "minute_metrics.json").write_text(json.dumps(minute, indent=2) + "\n")
+        pd.DataFrame(per_type).to_csv(out / "per_event_best_policy.csv", index=False)
+    (out / "minute_metrics.json").write_text(json.dumps(minute, indent=2) + "\n")
     best = grid.loc[grid.groupby("arm", sort=False).composite_score.idxmax()]
     common = grid.groupby(["threshold", "persistence", "recovery"]).composite_score.mean().idxmax()
     fixed = grid.set_index(["threshold", "persistence", "recovery"]).loc[common].reset_index()
@@ -218,10 +222,14 @@ def main():
         "mean_fault_auroc": pd.Series({a: m["mean_fault_auroc"] for a, m in minute.items()}),
         "any_fault_ap": pd.Series({a: m["any_fault_ap"] for a, m in minute.items()}),
     }).loc[list(arms)].round(3)
-    summary.to_csv(OUT / "summary.csv")
+    summary.to_csv(out / "summary.csv")
     print(f"\nshared policy = threshold {common[0]}, persistence {common[1]}, recovery {common[2]}")
     print(summary.to_string())
 
 
 if __name__ == "__main__":
-    main()
+    p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    p.add_argument("--seed", type=int, default=SEED)
+    p.add_argument("--arms", nargs="+", choices=["none", "regressors", "autoencoder", "both"])
+    a = p.parse_args()
+    main(a.seed, a.arms)
