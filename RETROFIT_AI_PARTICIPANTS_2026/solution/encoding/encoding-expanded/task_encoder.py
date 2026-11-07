@@ -6,7 +6,7 @@ import torch
 from torch import nn
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import average_precision_score
-from models import Autoencoder, packed, masked_loss, neural_output
+from models import Autoencoder, masked_loss, neural_output
 
 
 def fit_task_encoder(x,mask,train,validation,train_y,validation_y,seed=42,max_epochs=30):

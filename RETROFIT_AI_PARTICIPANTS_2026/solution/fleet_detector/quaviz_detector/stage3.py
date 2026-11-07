@@ -142,7 +142,3 @@ def tune(cfg: Config, official_ids=OFFICIAL_TRAIN, jobs: int = 8, log=print) -> 
         pickle.dump((res["policy"].iloc[0], res), fh)
     log(f"[{cfg.name}] policy tuned on {', '.join(sets)} ({len(cand)} candidates): {time.time() - t0:.0f} s")
     return res["policy"].iloc[0], res
-
-
-def sim_holdout_ids() -> list[str]:
-    return sim_ids(HOLDOUT_SEEDS)

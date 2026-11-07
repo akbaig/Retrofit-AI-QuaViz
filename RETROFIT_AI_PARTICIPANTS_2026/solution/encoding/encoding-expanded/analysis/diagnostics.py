@@ -5,7 +5,6 @@ import sys
 import joblib
 import numpy as np
 import pandas as pd
-import torch
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from protocol import FAMILIES,load_family,make_targets

@@ -1,29 +1,5 @@
 """Combine fitted machine/asset experts with shared per-channel sensor experts."""
 from dataclasses import dataclass
-import pandas as pd
-
-
-@dataclass
-class CompositeModel:
-    base: object
-    sensor: object
-    sensor_faults: tuple
-    is_composite: bool=True
-
-    def transform(self,x,meta):
-        return self.base.transform(x,meta)
-
-    def probabilities_from_transformed(self,x,meta):
-        if not len(x):
-            from learning import FAULTS
-            return pd.DataFrame(index=x.index,columns=FAULTS,dtype=float)
-        scores=self.base.probabilities_from_transformed(x)
-        shared=self.sensor.predict(x,meta)
-        for fault in self.sensor_faults:scores[fault]=shared[fault]
-        return scores
-
-    def predict_proba(self,x,meta):
-        return self.probabilities_from_transformed(self.transform(x,meta),meta)
 
 
 @dataclass

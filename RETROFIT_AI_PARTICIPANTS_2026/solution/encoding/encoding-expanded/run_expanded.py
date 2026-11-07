@@ -215,10 +215,10 @@ def verify_freeze(out):
 
 
 def test(args):
-    frozen=verify_freeze(args.output)
+    verify_freeze(args.output)
     verify_data_seal(args.output/'data_seal.json')
     old_meta=pd.concat([load_family(args.cache,f)[0] for f in FAMILIES],ignore_index=True)
-    manifest=validate_test_dataset(args.test_data,args.output/'frozen.json',old_meta,
+    validate_test_dataset(args.test_data,args.output/'frozen.json',old_meta,
         ROOT/'generator/synthetic.py',ROOT.parents[1]/'RETROFIT_AI_PARTICIPANTS_2026/configs/fleet_public.yaml')
     test_cache=args.cache.parent/'fresh_test'
     prepare_sources([(args.test_data,'test',False)],test_cache)

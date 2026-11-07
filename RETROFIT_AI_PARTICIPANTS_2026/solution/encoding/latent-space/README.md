@@ -13,7 +13,7 @@ python -m pip install -r experiments/latent-space/requirements-lock.txt
 cd experiments/latent-space
 ```
 
-The default dataset is `../../RETROFIT_AI_PARTICIPANTS_2026/data/full`. For another copy, set `ENCODING_DATA_DIR` to its absolute `data/full` directory before running Python. This path configuration is the only change to training/data implementation for branch packaging. Saved models and vectors are unchanged. Original source is retained in [provenance/data_original.py.txt](provenance/data_original.py.txt).
+The default dataset is `../../RETROFIT_AI_PARTICIPANTS_2026/data/full`. For another copy, set `ENCODING_DATA_DIR` to its absolute `data/full` directory before running Python. This path configuration is the only change to training/data implementation for branch packaging. Saved models and vectors are unchanged.
 
 ## Load a saved 32D representation
 

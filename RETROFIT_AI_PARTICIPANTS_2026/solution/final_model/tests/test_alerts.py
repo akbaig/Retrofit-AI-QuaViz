@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from alerts import make_alerts, AlertPolicy
 from learning import FAULTS
 

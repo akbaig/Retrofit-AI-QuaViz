@@ -2,13 +2,12 @@
 import os,tempfile
 os.environ.setdefault('MPLCONFIGDIR',os.path.join(tempfile.gettempdir(),'latent-space-matplotlib'))
 import json,html
-import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from data import ROOT
-from fault_detection import ANY,READOUTS
+from fault_detection import ANY
 NAMES={'pca':'PCA','kernel_pca':'Kernel PCA','autoencoder':'Autoencoder','denoising_ae':'Denoising AE','temporal_ae':'Temporal AE','label_informed':'Label-informed AE'}
 OUT=ROOT/'results/fault_detection'
 
@@ -18,7 +17,7 @@ def format_table(ranking):
 
 
 def main():
-    selection=json.loads((OUT/'selection.json').read_text());decisions=selection['decisions'];metrics=pd.read_csv(OUT/'metrics.csv');coverage=pd.read_csv(OUT/'label_coverage.csv')
+    selection=json.loads((OUT/'selection.json').read_text());decisions=selection['decisions'];metrics=pd.read_csv(OUT/'metrics.csv')
     primary=decisions['any_fault_logistic'];winner=primary['winner'];ranking=primary['ranking']
     test=metrics[metrics.split.eq('test')&metrics.readout.eq('logistic')&metrics.target.eq(ANY)&metrics.asset_id.isin(['PUMP-01','PUMP-09'])]
     primary_val=metrics[metrics.split.eq('validation')&metrics.readout.eq('logistic')&metrics.target.eq(ANY)&metrics.asset_id.isin(['PUMP-01','PUMP-09'])]

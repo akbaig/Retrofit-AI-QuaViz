@@ -152,8 +152,3 @@ def asset_features(ds: Dataset, asset_id: str, stride_min: int = 1) -> pd.DataFr
     if stride_min > 1:
         wf = wf.iloc[::stride_min]
     return wf
-
-
-def build_features(ds: Dataset, asset_ids=None, stride_min: int = 1) -> pd.DataFrame:
-    ids = asset_ids if asset_ids is not None else ds.ids()
-    return pd.concat([asset_features(ds, a, stride_min) for a in ids], ignore_index=False)

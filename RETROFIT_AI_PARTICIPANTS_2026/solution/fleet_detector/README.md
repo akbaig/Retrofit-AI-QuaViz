@@ -4,7 +4,7 @@ Fleet-wide normal-behavior models, causal window features, a multiclass fault cl
 
 ## Layout
 
-- `quaviz_detector/` — package (stage 1–3, baselines harness, simfleet generator, fidelity check)
+- `quaviz_detector/` — package (stage 1–3, baselines harness, simfleet generator)
 - `cache/` — fitted stage-1 models, stage-2 tables, stage-3 classifiers and policies
 - `results/` — scores on train / validation / held-out sims, stage-1 separability
 - `run_detector.py` — harness entry point

@@ -51,7 +51,7 @@ Before training a deep detector we asked whether compressing each minute into a 
 
 ![Expanded encoding comparison](solution/figures/07_encoding_expanded.png)
 
-**Decision:** do not build the submission as a deep model on the encodings. A small neural detector was also trained later and rejected (79.8 on validation under its own policy search); code remains in `solution/final_model/neural.py`.
+**Decision:** do not build the submission as a deep model on the encodings. A small neural detector was also trained later and rejected (79.8 on validation under its own policy search).
 
 ## 4. Track 2 — machine learning
 

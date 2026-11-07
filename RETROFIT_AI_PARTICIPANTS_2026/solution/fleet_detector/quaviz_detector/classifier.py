@@ -73,7 +73,6 @@ class FaultClassifier:
     def fit(self, table: pd.DataFrame) -> "FaultClassifier":
         self.cols = feature_columns(table, self.deviations)
         X, y, w = design(table, self.cols)
-        self.present = np.unique(y)
         self.m = HistGradientBoostingClassifier(max_iter=self.max_iter, learning_rate=0.1, max_bins=63, max_leaf_nodes=31,
                                                 min_samples_leaf=40, l2_regularization=1.0, max_features=0.5,
                                                 early_stopping=False, random_state=self.seed).fit(X, y, sample_weight=w)

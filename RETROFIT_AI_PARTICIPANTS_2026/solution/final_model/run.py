@@ -9,7 +9,6 @@ from pathlib import Path
 import sys
 import time
 import joblib
-import numpy as np
 import pandas as pd
 
 from paths import HERE,SOURCE

@@ -54,7 +54,7 @@ PYTHONPATH="$QUAVIZ_CHALLENGE_DIR/src" python -m retrofit_sim score \
 
 See [TRAINING.md](TRAINING.md). Quick path: generate synthetic roles with `synthetic.py`, train views with `run.py` / `train_sensor.py`, assemble with `make_ensemble.py`, then `tune_policy.py`.
 
-A small neural alternative was trained and rejected (79.8 validation under its policy search); code remains in `neural.py`.
+A small neural alternative was trained and rejected (79.8 validation under its policy search).
 
 ## Tests
 

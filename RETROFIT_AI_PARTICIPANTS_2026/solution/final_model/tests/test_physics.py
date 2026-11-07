@@ -71,7 +71,6 @@ class PhysicsFeatureTests(unittest.TestCase):
 
     def test_impulse_envelope_selects_bpfo_over_bpfi(self):
         fs = 10240
-        t = np.arange(fs)/fs
         fr = 30.
         bpfo = fr*self.asset["bearing_bpfo_order"]*0.995
         pulses = np.zeros(fs)
