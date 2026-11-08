@@ -1,4 +1,4 @@
-import type { Alert, AssetStatus, Explanation, Health, StatusSnapshot } from "./types";
+import type { Alert, AssetStatus, Explanation, FleetContext, Health, StatusSnapshot } from "./types";
 
 const KEY = "quaviz.apiBase";
 export const DEFAULT_BASE = (import.meta.env["VITE_API_BASE"] as string | undefined) ?? "http://127.0.0.1:8000";
@@ -33,6 +33,7 @@ export const api = {
   alerts: (b: string) => get<{ alerts: Alert[] }>(b, "/alerts?limit=500").then((r) => r.alerts ?? []),
   explanations: (b: string) =>
     get<{ explanations: Explanation[] }>(b, "/explanations?limit=200").then((r) => r.explanations ?? []),
+  context: (b: string) => get<FleetContext>(b, "/context"),
   score: async (b: string, id: string) => {
     const r = await fetch(`${b}/score/${encodeURIComponent(id)}`, { method: "POST" });
     if (!r.ok) throw new Error(`score: HTTP ${r.status}`);

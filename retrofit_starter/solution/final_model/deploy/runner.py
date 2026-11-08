@@ -45,11 +45,19 @@ class OnlineBest:
     def extend_features(self, minute_frame: pd.DataFrame) -> None:
         if minute_frame is None or not len(minute_frame):
             return
-        self.features = (
-            minute_frame.copy()
-            if not len(self.features)
-            else pd.concat([self.features, minute_frame], ignore_index=True)
-        )
+        frame = minute_frame.copy()
+        frame["window_start_utc"] = pd.to_datetime(frame["window_start_utc"], utc=True)
+        # Live feeds can re-emit a minute (late MQTT, replay restart, flush races).
+        # Keep one row per window_start_utc so build_features never sees duplicates.
+        if len(self.features):
+            prev = self.features.copy()
+            prev["window_start_utc"] = pd.to_datetime(prev["window_start_utc"], utc=True)
+            combined = pd.concat([prev, frame], ignore_index=True)
+        else:
+            combined = frame
+        combined = combined.drop_duplicates(subset=["window_start_utc"], keep="last")
+        combined = combined.sort_values("window_start_utc").reset_index(drop=True)
+        self.features = combined
 
     def infer_new_alerts(self, until: pd.Timestamp | None = None) -> pd.DataFrame:
         if not len(self.features):

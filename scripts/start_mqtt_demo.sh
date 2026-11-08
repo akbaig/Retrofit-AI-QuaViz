@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Start MQTT broker (if needed) + Quaviz subscriber + retrofit_sim publisher(s).
-# Default: all assets, full windows, steady pace (SPEED=60), Gemini explain.
+# One-click stack: MQTT broker + Quaviz API + publishers + frontend console.
+# Default: all assets, full windows, steady pace (SPEED=60), Gemini explain, UI on :5173.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -13,13 +13,15 @@ ASSET="${ASSET:-}"
 ASSETS="${ASSETS:-}"
 PROVIDER="${LLM_PROVIDER:-gemini}"
 HTTP_PORT="${HTTP_PORT:-8000}"
+UI_PORT="${UI_PORT:-5173}"
+FRONTEND="${FRONTEND:-1}"          # 0 = API + MQTT only
+OPEN_BROWSER="${OPEN_BROWSER:-1}"  # 0 = do not open the UI
 # 0 = asap; 1 = real time; 60 = 1 sim-min / wall-sec (~2.8h for a full week)
 SPEED="${SPEED:-60}"
 START="${START:-}"
 END="${END:-}"
 INFER_EVERY="${INFER_EVERY:-5}"
 PROGRESS_EVERY="${PROGRESS_EVERY:-5}"
-
 
 VENV_PY="$ROOT/.venv/bin/python"
 if [[ ! -x "$VENV_PY" ]]; then
@@ -32,9 +34,11 @@ fi
 export QUAVIZ_CHALLENGE_DIR="${QUAVIZ_CHALLENGE_DIR:-$ROOT/retrofit_starter}"
 export PYTHONPATH="${PYTHONPATH:-}"
 export LLM_PROVIDER="$PROVIDER"
+export VITE_API_BASE="http://127.0.0.1:${HTTP_PORT}"
 
 BROKER_PID=""
 BACKEND_PID=""
+FRONTEND_PID=""
 REPLAY_PIDS=()
 STARTED_BROKER=0
 
@@ -46,6 +50,7 @@ cleanup() {
   for pid in "${REPLAY_PIDS[@]:-}"; do
     kill "$pid" 2>/dev/null || true
   done
+  [[ -n "$FRONTEND_PID" ]] && kill "$FRONTEND_PID" 2>/dev/null || true
   [[ -n "$BACKEND_PID" ]] && kill "$BACKEND_PID" 2>/dev/null || true
   if [[ "$STARTED_BROKER" -eq 1 && -n "$BROKER_PID" ]]; then
     kill "$BROKER_PID" 2>/dev/null || true
@@ -55,10 +60,11 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 port_open() {
+  local host="$1" port="$2"
   if command -v nc >/dev/null 2>&1; then
-    nc -z "$MQTT_HOST" "$MQTT_PORT" >/dev/null 2>&1
+    nc -z "$host" "$port" >/dev/null 2>&1
   else
-    "$VENV_PY" - "$MQTT_HOST" "$MQTT_PORT" <<'PY'
+    "$VENV_PY" - "$host" "$port" <<'PY'
 import socket, sys
 host, port = sys.argv[1], int(sys.argv[2])
 s = socket.socket()
@@ -73,8 +79,10 @@ PY
   fi
 }
 
+mqtt_open() { port_open "$MQTT_HOST" "$MQTT_PORT"; }
+
 ensure_broker() {
-  if port_open; then
+  if mqtt_open; then
     echo "MQTT broker already on $MQTT_HOST:$MQTT_PORT"
     return
   fi
@@ -88,7 +96,7 @@ ensure_broker() {
   BROKER_PID=$!
   STARTED_BROKER=1
   for _ in $(seq 1 20); do
-    if port_open; then
+    if mqtt_open; then
       echo "Broker ready (pid $BROKER_PID)"
       return
     fi
@@ -100,14 +108,14 @@ ensure_broker() {
 
 wait_for_health() {
   local url="http://127.0.0.1:${HTTP_PORT}/health"
-  echo "Waiting for subscriber at $url ..."
+  echo "Waiting for API at $url ..."
   for _ in $(seq 1 120); do
     if ! kill -0 "$BACKEND_PID" 2>/dev/null; then
       echo "Subscriber exited before becoming healthy." >&2
       exit 1
     fi
     if curl -sf "$url" >/dev/null 2>&1; then
-      echo "Subscriber ready."
+      echo "API ready."
       sleep 0.5
       return
     fi
@@ -115,6 +123,63 @@ wait_for_health() {
   done
   echo "Timed out waiting for $url" >&2
   exit 1
+}
+
+wait_for_ui() {
+  local url="http://127.0.0.1:${UI_PORT}/"
+  echo "Waiting for frontend at $url ..."
+  for _ in $(seq 1 180); do
+    if ! kill -0 "$FRONTEND_PID" 2>/dev/null; then
+      echo "Frontend exited before becoming ready - see /tmp/quaviz-frontend.log" >&2
+      exit 1
+    fi
+    if curl -sf "$url" >/dev/null 2>&1; then
+      echo "Frontend ready."
+      return
+    fi
+    sleep 0.5
+  done
+  echo "Timed out waiting for $url - see /tmp/quaviz-frontend.log" >&2
+  exit 1
+}
+
+ensure_frontend() {
+  if [[ "$FRONTEND" != "1" ]]; then
+    echo "Frontend skipped (FRONTEND=$FRONTEND)."
+    return
+  fi
+  if ! command -v npm >/dev/null 2>&1; then
+    echo "npm not found — install Node.js or set FRONTEND=0." >&2
+    exit 1
+  fi
+  local fe="$ROOT/app/frontend"
+  if [[ ! -d "$fe/node_modules" ]]; then
+    echo "Installing frontend dependencies (first run)..."
+    (cd "$fe" && npm install) >/tmp/quaviz-frontend-install.log 2>&1 \
+      || { echo "npm install failed — see /tmp/quaviz-frontend-install.log" >&2; exit 1; }
+  fi
+  if port_open 127.0.0.1 "$UI_PORT"; then
+    echo "Something already on :$UI_PORT — reusing it (UI_PORT=$UI_PORT)."
+    return
+  fi
+  echo "Starting frontend (http://127.0.0.1:$UI_PORT → API $VITE_API_BASE)..."
+  (
+    cd "$fe"
+    exec npm run dev -- --host 127.0.0.1 --port "$UI_PORT" --strictPort
+  ) >/tmp/quaviz-frontend.log 2>&1 &
+  FRONTEND_PID=$!
+  wait_for_ui
+}
+
+open_ui() {
+  [[ "$FRONTEND" == "1" && "$OPEN_BROWSER" == "1" ]] || return 0
+  local url="http://127.0.0.1:${UI_PORT}/"
+  echo "Opening $url ..."
+  if command -v open >/dev/null 2>&1; then
+    open "$url" >/dev/null 2>&1 || true
+  elif command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$url" >/dev/null 2>&1 || true
+  fi
 }
 
 list_assets() {
@@ -134,6 +199,12 @@ for a in pd.read_csv(path)["asset_id"].astype(str):
 PY
 }
 
+echo "=== QuaViz one-click demo ==="
+echo "  API       http://127.0.0.1:$HTTP_PORT"
+[[ "$FRONTEND" == "1" ]] && echo "  Frontend  http://127.0.0.1:$UI_PORT"
+echo "  Provider  $PROVIDER   SPEED=$SPEED"
+echo
+
 ensure_broker
 
 ASSET_LIST=()
@@ -150,7 +221,6 @@ echo "Starting subscriber (API http://127.0.0.1:$HTTP_PORT, provider=$PROVIDER).
 echo "  accepting assets: ${ASSET_LIST[*]}"
 (
   cd "$ROOT/app/backend"
-  # No --asset: hub accepts any known asset from assets.csv
   exec "$VENV_PY" -m quaviz_backend serve \
     --mqtt-host "$MQTT_HOST" \
     --mqtt-port "$MQTT_PORT" \
@@ -162,6 +232,8 @@ echo "  accepting assets: ${ASSET_LIST[*]}"
 BACKEND_PID=$!
 
 wait_for_health
+ensure_frontend
+open_ui
 
 # Rough ETA: full week is 604800 sim-seconds; wall ~= sim/SPEED when SPEED>0.
 if [[ "$SPEED" != "0" ]]; then
@@ -191,9 +263,11 @@ for aid in "${ASSET_LIST[@]}"; do
 done
 
 echo
-echo "Running. Ctrl+C to stop. Progress every ${PROGRESS_EVERY}s from /status."
-echo "  GET http://127.0.0.1:$HTTP_PORT/status"
-echo "  GET http://127.0.0.1:$HTTP_PORT/alerts"
+echo "Running. Ctrl+C stops everything."
+[[ "$FRONTEND" == "1" ]] && echo "  UI     http://127.0.0.1:$UI_PORT"
+echo "  API    http://127.0.0.1:$HTTP_PORT/status"
+echo "  Docs   http://127.0.0.1:$HTTP_PORT/docs"
+echo "  Progress every ${PROGRESS_EVERY}s"
 echo
 
 publishers_alive() {
@@ -228,16 +302,14 @@ print(
 PY
 }
 
-# Progress ticker while any publisher is still running.
 while publishers_alive; do
   print_progress || true
   sleep "$PROGRESS_EVERY"
 done
 
-# Reap children.
 for pid in "${REPLAY_PIDS[@]}"; do
   wait "$pid" 2>/dev/null || true
 done
-echo "All replays finished - API still up (Ctrl+C to stop)."
+echo "All replays finished — API/UI still up (Ctrl+C to stop)."
 print_progress || true
 wait "$BACKEND_PID"

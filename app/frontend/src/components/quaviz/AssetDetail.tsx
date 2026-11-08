@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { humanFault, pct, RED_CONFIDENCE, relTime } from "@/lib/quaviz/status";
 import { forceScore } from "@/lib/quaviz/store";
 import type { Alert, AssetStatus, Explanation, TileStatus } from "@/lib/quaviz/types";
+import { PumpGlyph } from "./PumpGlyph";
 import { tone } from "./tone";
 
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
   focusAlertId: string | null;
   live: boolean;
   now: number;
+  onClose?: () => void;
 }
 
 function Stat({ k, v }: { k: string; v: string | number }) {
@@ -40,7 +42,7 @@ function KvTable({ rows }: { rows: unknown[] }) {
   );
 }
 
-export function AssetDetail({ id, status, asset, alerts, explanations, focusAlertId, live, now }: Props) {
+export function AssetDetail({ id, status, asset, alerts, explanations, focusAlertId, live, now, onClose }: Props) {
   const t = tone[status];
   const [scoring, setScoring] = useState(false);
   const [scoreErr, setScoreErr] = useState<string | null>(null);
@@ -57,18 +59,31 @@ export function AssetDetail({ id, status, asset, alerts, explanations, focusAler
   useEffect(() => { focusRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }); }, [focusAlertId]);
 
   return (
-    <section className="panel flex min-h-0 flex-col overflow-hidden" aria-label={`${id} detail`}>
+    <section className="panel flex min-h-0 flex-col overflow-hidden bg-card" aria-label={`${id} detail`}>
       <div className={`h-1.5 ${t.bar} transition-colors duration-500`} />
       <header className="flex flex-wrap items-end justify-between gap-3 border-b border-border px-5 py-3">
-        <div>
-          <div className={`text-xs font-bold tracking-widest ${t.text}`}>{t.label}</div>
-          <h2 className="font-mono text-2xl font-semibold">{id}</h2>
+        <div className="flex items-center gap-3">
+          <PumpGlyph status={status} className="h-12 w-12" />
+          <div>
+            <div className={`text-xs font-bold tracking-widest ${t.text}`}>{t.label}</div>
+            <h2 className="font-mono text-2xl font-semibold">{id}</h2>
+          </div>
         </div>
-        <div className="flex gap-5">
+        <div className="flex items-start gap-5">
           <Stat k="messages" v={(asset?.messages ?? 0).toLocaleString()} />
           <Stat k="minutes" v={asset?.minutes_aggregated ?? 0} />
           <Stat k="alerts" v={asset?.alerts ?? alerts.length} />
           <Stat k="last data" v={relTime(asset?.last_timestamp_utc, now)} />
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-sm border border-border px-2 py-1 text-xs hover:bg-secondary"
+              aria-label="Close detail pane"
+            >
+              Close
+            </button>
+          )}
         </div>
       </header>
 

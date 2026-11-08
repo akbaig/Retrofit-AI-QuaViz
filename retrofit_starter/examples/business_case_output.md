@@ -7,8 +7,8 @@ All inputs are assumptions or benchmark measurements on synthetic data. This is 
 | Input | Value | Unit | Basis |
 |---|---|---|---|
 | Developing faults per year | 0.6 | 1/yr | assumption: developing faults that would otherwise end in an unplanned stop (bearing, clogging/cavitation, restriction) for one duty pump |
-| Share caught early (recall) | 0.889 | - | measured: B1 baseline validation event recall (replace with your own) |
-| False + excess alerts per pump-day | 0.071 | 1/asset-day | measured: B1 baseline validation false + excess-repeat alerts per asset-day |
+| Share caught early (recall) | 0.705 | - | measured: B1 baseline validation event recall (replace with your own) |
+| False + excess alerts per pump-day | 0.413 | 1/asset-day | measured: B1 baseline validation false + excess-repeat alerts per asset-day |
 | Unplanned stop duration | 10 | h | assumption: detection by failure, diagnosis, parts, repair |
 | Planned stop duration | 3 | h | assumption: same work prepared and done in a planned window |
 | Downtime cost | 1500 | EUR/h | assumption: production loss of a mid-size process line with no redundant pump |
@@ -20,25 +20,25 @@ All inputs are assumptions or benchmark measurements on synthetic data. This is 
 
 ## Result (base case)
 
-- Faults caught early per year: 0.53
-- Avoided downtime and repair cost: EUR 8,268 per year
-- False-alert handling cost: EUR 3,110 per year
-- Net annual effect after operating cost: EUR 4,458
-- Simple payback on EUR 4,500 installed cost: 1.0 years
+- Faults caught early per year: 0.42
+- Avoided downtime and repair cost: EUR 6,556 per year
+- False-alert handling cost: EUR 18,089 per year
+- Net annual effect after operating cost: EUR -12,233
+- Simple payback on EUR 4,500 installed cost: never (net effect not positive)
 
 ## Sensitivity (one input changed at a time)
 
 | Input | Low | High | Net EUR/yr at low | Net EUR/yr at high | Payback at low | Payback at high |
 |---|---|---|---|---|---|---|
-| Developing faults per year | 0.2 | 1.2 | -1,054 | 12,726 | never | 0.4 yr |
-| Share caught early (recall) | 0.4 | 0.95 | -90 | 5,025 | never | 0.9 yr |
-| False + excess alerts per pump-day | 0 | 0.5 | 7,568 | -14,332 | 0.6 yr | never |
-| Downtime cost | 0 | 5000 | -1,143 | 17,526 | never | 0.3 yr |
-| Repair cost, unplanned | 5000 | 15000 | 2,324 | 7,658 | 1.9 yr | 0.6 yr |
-| Installed cost (hardware + installation) | 2500 | 12000 | 4,458 | 4,458 | 0.6 yr | 2.7 yr |
+| Developing faults per year | 0.2 | 1.2 | -16,604 | -5,676 | never | never |
+| Share caught early (recall) | 0.4 | 0.95 | -15,069 | -9,954 | never | never |
+| False + excess alerts per pump-day | 0 | 0.5 | 5,856 | -16,044 | 0.8 yr | never |
+| Downtime cost | 0 | 5000 | -16,674 | -1,869 | never | never |
+| Repair cost, unplanned | 5000 | 15000 | -13,925 | -9,695 | never | never |
+| Installed cost (hardware + installation) | 2500 | 12000 | -12,233 | -12,233 | never | never |
 
 ## Break-even and redundancy
 
-- Break-even: with these assumptions, a 5-year payback needs a downtime cost of about EUR 547 per hour.
-- Redundant duty/standby pump (e.g. a ship seawater pump with a healthy standby, downtime cost about 0) and 0.3 events per year: net effect EUR -2,476 per year, so payback never. Here the case rests on repair-cost avoidance, energy (drive retrofits are a separate, documented lever) and crew time, not on downtime.
+- Break-even: with these assumptions, a 5-year payback needs a downtime cost of about EUR 5,935 per hour.
+- Redundant duty/standby pump (e.g. a ship seawater pump with a healthy standby, downtime cost about 0) and 0.3 events per year: net effect EUR -17,732 per year, so payback never. Here the case rests on repair-cost avoidance, energy (drive retrofits are a separate, documented lever) and crew time, not on downtime.
 - Each false alert per asset-day costs about EUR 43,800 per year in checks alone and erodes operator trust; the benchmark weights alert burden for this reason.

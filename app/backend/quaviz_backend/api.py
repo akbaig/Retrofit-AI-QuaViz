@@ -8,12 +8,14 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
+from .context import ContextCache
 from .pipeline import PipelineHub
 from .store import EventStore
 
 
 def create_app(hub: PipelineHub, store: EventStore | None = None) -> FastAPI:
     store = store or hub.store
+    ctx_cache = ContextCache(hub.settings.data_dir)
     app = FastAPI(title="QuaViz backend", version="0.1.0")
     app.add_middleware(
         CORSMiddleware,
@@ -23,6 +25,7 @@ def create_app(hub: PipelineHub, store: EventStore | None = None) -> FastAPI:
     )
     app.state.hub = hub
     app.state.store = store
+    app.state.context = ctx_cache
 
     @app.get("/")
     def root() -> dict[str, str]:
@@ -43,6 +46,12 @@ def create_app(hub: PipelineHub, store: EventStore | None = None) -> FastAPI:
     @app.get("/status")
     def status() -> dict[str, Any]:
         return store.snapshot()
+
+    @app.get("/context")
+    def context() -> dict[str, Any]:
+        """Latest operating context (sea temp, duty, schedule, …) for the dashboard."""
+        snap = store.snapshot()
+        return ctx_cache.snapshot(snap.get("assets") or {})
 
     @app.get("/assets")
     def assets() -> dict[str, Any]:

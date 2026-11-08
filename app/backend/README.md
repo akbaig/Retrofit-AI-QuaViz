@@ -72,6 +72,7 @@ python -m retrofit_sim replay \
 | Method | Path | |
 |---|---|---|
 | GET | `/health` | model/data paths |
+| GET | `/context` | Fleet operating context (sea temp, duty, schedule, …) |
 | GET | `/status` | per-asset progress |
 | GET | `/assets` | message/minute/alert counts |
 | GET | `/alerts?asset_id=` | recent alerts |

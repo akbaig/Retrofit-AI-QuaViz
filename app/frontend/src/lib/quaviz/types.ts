@@ -65,4 +65,45 @@ export interface Health {
   mqtt_host?: string;
 }
 
+export interface FleetContextValues {
+  n_assets?: number;
+  schedule_state?: string | null;
+  duty_demand_pct?: number | null;
+  sea_temp_c?: number | null;
+  supply_water_temp_c?: number | null;
+  ambient_temp_c?: number | null;
+  sea_state_hs_m?: number | null;
+}
+
+export interface AssetContext extends FleetContextValues {
+  asset_id: string;
+  timestamp_utc?: string;
+  controlled_setpoint?: string | null;
+  schedule_state?: string | null;
+  duty_demand_pct?: number | null;
+  sea_temp_c?: number | null;
+  supply_water_temp_c?: number | null;
+  ambient_temp_c?: number | null;
+  sea_state_hs_m?: number | null;
+  suction_static_head_m?: number | null;
+}
+
+export interface FleetContext {
+  ok: boolean;
+  source?: string | null;
+  fleet: FleetContextValues;
+  assets: Record<string, AssetContext>;
+}
+
+export type LogKind = "alert" | "explain" | "telemetry" | "system" | "error";
+
+export interface LogEntry {
+  id: string;
+  kind: LogKind;
+  at: number;
+  asset_id?: string;
+  title: string;
+  detail?: string;
+}
+
 export type TileStatus = "red" | "amber" | "green" | "grey";
