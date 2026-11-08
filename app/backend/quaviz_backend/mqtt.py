@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import queue
 import threading
 import time
@@ -20,13 +21,13 @@ class MqttSubscriber:
         host: str,
         port: int = 1883,
         topic: str = "retrofit/+/+/telemetry",
-        client_id: str = "quaviz-backend",
+        client_id: str | None = None,
         out: queue.Queue | None = None,
     ):
         self.host = host
         self.port = port
         self.topic = topic
-        self.client_id = client_id
+        self.client_id = client_id or f"quaviz-backend-{os.getpid()}"
         self.out = out if out is not None else queue.Queue(maxsize=100_000)
         self._client = None
         self._connected = threading.Event()

@@ -198,11 +198,12 @@ def explain_live_alert(*, online, alert: dict[str, Any], settings: Settings) -> 
     target_t = pd.Timestamp(alert["alert_time_utc"])
     target_f = str(alert["fault_type"])
     # First pass discovers alert list; second pass (if needed) selects the matching card.
+    asset = online.effective_asset() if hasattr(online, "effective_asset") else online.asset
     explained = explain_alert(
         model=online.model,
         policy=online.policy,
         features=online.features,
-        asset=online.asset,
+        asset=asset,
         context=online.context,
         snapshots=online.snapshots,
         alert_index=0,
@@ -221,7 +222,7 @@ def explain_live_alert(*, online, alert: dict[str, Any], settings: Settings) -> 
             model=online.model,
             policy=online.policy,
             features=online.features,
-            asset=online.asset,
+            asset=asset,
             context=online.context,
             snapshots=online.snapshots,
             alert_index=match_idx,

@@ -13,43 +13,69 @@ CHALLENGE = HERE.parent
 OUT = HERE / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 
-NAMES = {"astra-best": "best", "quaviz": "fleet detector", "b1": "B1", "b3": "B3", "b2": "B2", "b0": "B0"}
-SETS = {"validation": "Validation\n(PUMP-08/09)", "astra holdout": "Frozen holdout\n(78 events)"}
+NAMES = {"astra-best": "best", "b1": "B1", "b3": "B3", "b2": "B2", "b0": "B0"}
+COLORS = {"astra-best": "#1b9e77", "b1": "#7570b3", "b3": "#e7298a", "b2": "#66a61e", "b0": "#a6761d"}
 
 
 def headline():
     s = pd.read_csv(HERE / "comparison" / "results" / "comparison.csv")
-    s = s[s["method"].isin(NAMES) & s["set"].isin(SETS)]
-    colors = {"astra-best": "#1b9e77", "quaviz": "#d95f02", "b1": "#7570b3", "b3": "#e7298a", "b2": "#66a61e",
-              "b0": "#a6761d"}
-    order = list(SETS)
-    x = np.arange(len(order))
-    w = 0.13
-    fig, ax = plt.subplots(figsize=(8, 4.5))
-    for i, m in enumerate(NAMES):
-        vals = [float(s[(s.method == m) & (s.set == st)]["composite_score"].iloc[0]) for st in order]
-        ax.bar(x + (i - len(NAMES) / 2) * w + w / 2, vals, w, label=NAMES[m], color=colors[m])
+    s = s[s["method"].isin(NAMES) & (s["set"] == "validation")]
+    methods = list(NAMES)
+    vals = [float(s[s.method == m]["composite_score"].iloc[0]) for m in methods]
+    fig, ax = plt.subplots(figsize=(7.5, 4.2))
+    x = np.arange(len(methods))
+    ax.bar(x, vals, width=0.62, color=[COLORS[m] for m in methods])
     ax.set_xticks(x)
-    ax.set_xticklabels([SETS[st] for st in order])
+    ax.set_xticklabels([NAMES[m] for m in methods])
     ax.set_ylabel("Official composite / 100")
     ax.set_ylim(0, 100)
-    ax.legend(ncol=3, fontsize=8, loc="upper right")
-    ax.set_title("Same scorer, two evaluation sets")
+    for i, v in enumerate(vals):
+        ax.text(i, v + 1.5, f"{v:.1f}", ha="center", va="bottom", fontsize=9)
+    ax.set_title("Official validation (PUMP-08/09): best vs baselines")
     fig.tight_layout()
     fig.savefig(OUT / "01_headline_composites.png", dpi=140)
     plt.close(fig)
 
 
+def validation_prf():
+    s = pd.read_csv(HERE / "comparison" / "results" / "comparison.csv")
+    s = s[s["method"].isin(NAMES) & (s["set"] == "validation")].set_index("method")
+    methods = list(NAMES)
+    metrics = [
+        ("event_recall", "Event recall"),
+        ("alert_precision", "Alert precision"),
+        ("event_f1", "Event F1"),
+    ]
+    x = np.arange(len(metrics))
+    w = 0.15
+    fig, ax = plt.subplots(figsize=(8.2, 4.4))
+    for i, m in enumerate(methods):
+        vals = [float(s.loc[m, key]) for key, _ in metrics]
+        ax.bar(x + (i - (len(methods) - 1) / 2) * w, vals, w, label=NAMES[m], color=COLORS[m])
+        for xi, v in zip(x + (i - (len(methods) - 1) / 2) * w, vals):
+            ax.text(xi, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=7, rotation=90)
+    ax.set_xticks(x)
+    ax.set_xticklabels([label for _, label in metrics])
+    ax.set_ylabel("Score (0–1)")
+    ax.set_ylim(0, 1.18)
+    ax.legend(ncol=5, fontsize=8, loc="upper right")
+    ax.set_title("Official validation (PUMP-08/09): precision, recall, and F1")
+    ax.axhline(1.0, color="#bbbbbb", lw=0.8, ls=":")
+    fig.tight_layout()
+    fig.savefig(OUT / "08_validation_prf.png", dpi=140)
+    plt.close(fig)
+
+
 def per_type():
     pe = pd.read_csv(HERE / "comparison" / "results" / "per_event.csv")
-    methods = ["astra-best", "quaviz", "b1"]
-    pe = pe[pe["method"].isin(methods) & (pe["set"] == "astra holdout")].copy()
+    methods = list(NAMES)
+    pe = pe[pe["method"].isin(methods) & (pe["set"] == "validation")].copy()
     pe["named"] = pe["type_correct"].astype(int)
     g = pe.groupby(["fault_type", "method"]).agg(n=("detected", "size"), named=("named", "sum"))
     rate = (g["named"] / g["n"]).unstack("method").reindex(columns=methods)
     n = g["n"].unstack("method")["astra-best"]
     rate = rate.sort_values("astra-best", ascending=False)
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(8, 5.5))
     im = ax.imshow(rate.to_numpy(float), aspect="auto", vmin=0, vmax=1, cmap="viridis")
     ax.set_xticks(range(len(methods)))
     ax.set_xticklabels([NAMES[m] for m in methods])
@@ -62,9 +88,9 @@ def per_type():
             if np.isfinite(v):
                 ax.text(j, i, f"{v:.0%}", ha="center", va="center", color="white" if v < 0.55 else "black", fontsize=8)
     fig.colorbar(im, ax=ax, fraction=0.03, label="First-alert type correct")
-    ax.set_title("Frozen holdout: fraction of events named correctly first")
+    ax.set_title("Official validation: fraction of events named correctly first")
     fig.tight_layout()
-    fig.savefig(OUT / "02_per_type_holdout.png", dpi=140)
+    fig.savefig(OUT / "02_per_type_validation.png", dpi=140)
     plt.close(fig)
 
 
@@ -128,10 +154,16 @@ def copy_static():
 
 
 def main():
-    for old in ["02_per_type_holdouts.png", "08_sim_coverage.png", "09_sim_event_mix.png"]:
+    for old in [
+        "02_per_type_holdouts.png",
+        "02_per_type_holdout.png",
+        "08_sim_coverage.png",
+        "09_sim_event_mix.png",
+    ]:
         (OUT / old).unlink(missing_ok=True)
     headline()
     per_type()
+    validation_prf()
     validation_timeline()
     stage1_separability()
     copy_static()

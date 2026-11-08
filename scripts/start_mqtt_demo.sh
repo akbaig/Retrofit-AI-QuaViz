@@ -17,7 +17,7 @@ UI_PORT="${UI_PORT:-5173}"
 FRONTEND="${FRONTEND:-1}"          # 0 = API + MQTT only
 OPEN_BROWSER="${OPEN_BROWSER:-1}"  # 0 = do not open the UI
 # 0 = asap; 1 = real time; 60 = 1 sim-min / wall-sec (~2.8h for a full week)
-SPEED="${SPEED:-60}"
+SPEED="${SPEED:-30}"
 START="${START:-}"
 END="${END:-}"
 INFER_EVERY="${INFER_EVERY:-5}"

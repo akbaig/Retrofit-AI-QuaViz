@@ -142,16 +142,13 @@ Same official scorer everywhere. Frozen `model.joblib` numbers reproduced for va
 
 From [`solution/comparison/results/comparison.csv`](solution/comparison/results/comparison.csv):
 
-| Set | **best** | Fleet (quaviz) | B1 | B3 | B2 | B0 |
-|---|---:|---:|---:|---:|---:|---:|
-| Validation (9 events) | **95.0** | 75.0 | 78.0 | 69.2 | 50.9 | 23.1 |
-| Astra frozen holdout (78) | **63.5** | 52.5 | 41.7 | 32.3 | 44.9 | 10.0 |
-
-B0 is 10.0 on astra holdout (no SCADA alarm table on those recordings).
+| Set | **best** | B1 | B3 | B2 | B0 |
+|---|---:|---:|---:|---:|---:|
+| Validation (9 events) | **95.0** | 78.0 | 69.2 | 50.9 | 23.1 |
 
 ![Headline composites](solution/figures/01_headline_composites.png)
 
-![Per-type on the frozen holdout](solution/figures/02_per_type_holdout.png)
+![Per-type on official validation](solution/figures/02_per_type_validation.png)
 
 ![Validation timeline](solution/figures/03_validation_timeline.png)
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import threading
 
 import joblib
 import pandas as pd
@@ -41,6 +42,17 @@ class OnlineBest:
         )
         self.features = pd.DataFrame()
         self._seen_alert_keys: set[tuple] = set()
+        self._lock = threading.Lock()
+
+    def effective_asset(self) -> pd.Series:
+        asset = self.asset.copy()
+        with self._lock:
+            if len(self.features):
+                starts = pd.to_datetime(self.features["window_start_utc"], utc=True)
+                first = starts.min()
+                if pd.Timestamp(asset.window_start_utc) < first:
+                    asset["window_start_utc"] = first.isoformat()
+        return asset
 
     def extend_features(self, minute_frame: pd.DataFrame) -> None:
         if minute_frame is None or not len(minute_frame):
@@ -49,31 +61,36 @@ class OnlineBest:
         frame["window_start_utc"] = pd.to_datetime(frame["window_start_utc"], utc=True)
         # Live feeds can re-emit a minute (late MQTT, replay restart, flush races).
         # Keep one row per window_start_utc so build_features never sees duplicates.
-        if len(self.features):
-            prev = self.features.copy()
-            prev["window_start_utc"] = pd.to_datetime(prev["window_start_utc"], utc=True)
-            combined = pd.concat([prev, frame], ignore_index=True)
-        else:
-            combined = frame
-        combined = combined.drop_duplicates(subset=["window_start_utc"], keep="last")
-        combined = combined.sort_values("window_start_utc").reset_index(drop=True)
-        self.features = combined
+        with self._lock:
+            if len(self.features):
+                prev = self.features.copy()
+                prev["window_start_utc"] = pd.to_datetime(prev["window_start_utc"], utc=True)
+                combined = pd.concat([prev, frame], ignore_index=True)
+            else:
+                combined = frame
+            combined = combined.drop_duplicates(subset=["window_start_utc"], keep="last")
+            combined = combined.sort_values("window_start_utc").reset_index(drop=True)
+            self.features = combined
 
     def infer_new_alerts(self, until: pd.Timestamp | None = None) -> pd.DataFrame:
-        if not len(self.features):
-            return pd.DataFrame(columns=COLS)
-        starts = pd.to_datetime(self.features["window_start_utc"], utc=True)
-        if until is None:
-            # A completed minute [t, t+1) becomes available at t+1.
-            until = starts.max() + pd.Timedelta(minutes=1)
-        # Do not treat pre-stream history as gateway loss: clip the asset window
-        # to the first minute we have actually aggregated from the live feed.
-        asset = self.asset.copy()
-        first = starts.min()
-        if pd.Timestamp(asset.window_start_utc) < first:
-            asset["window_start_utc"] = first.isoformat()
+        with self._lock:
+            if not len(self.features):
+                return pd.DataFrame(columns=COLS)
+            features = self.features.copy()
+            features["window_start_utc"] = pd.to_datetime(features["window_start_utc"], utc=True)
+            features = features.drop_duplicates(subset=["window_start_utc"], keep="last")
+            starts = features["window_start_utc"]
+            if until is None:
+                # A completed minute [t, t+1) becomes available at t+1.
+                until = starts.max() + pd.Timedelta(minutes=1)
+            # Do not treat pre-stream history as gateway loss: clip the asset window
+            # to the first minute we have actually aggregated from the live feed.
+            asset = self.asset.copy()
+            first = starts.min()
+            if pd.Timestamp(asset.window_start_utc) < first:
+                asset["window_start_utc"] = first.isoformat()
         alerts = infer_asset(
-            self.model, self.policy, self.features, asset,
+            self.model, self.policy, features, asset,
             self.context, self.snapshots, until=until,
         )
         if alerts.empty:

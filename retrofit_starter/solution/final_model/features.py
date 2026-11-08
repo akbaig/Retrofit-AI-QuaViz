@@ -43,7 +43,8 @@ def build_features(features,asset,context=None,snapshots=None,until=None):
     f=features[features.asset_id==asset.asset_id].copy()
     f['window_start_utc']=pd.to_datetime(f.window_start_utc,utc=True)
     f=f[(f.window_start_utc>=start)&(f.window_start_utc+pd.Timedelta(minutes=1)<=until)]
-    if f.window_start_utc.duplicated().any():raise ValueError('Duplicate minute')
+    if f.window_start_utc.duplicated().any():
+        f=f.drop_duplicates(subset=['window_start_utc'],keep='last')
     f=f.set_index('window_start_utc').reindex(grid).rename_axis('window_start_utc').reset_index()
     f['available_utc']=f.window_start_utc+pd.Timedelta(minutes=1)
     f['asset_id']=asset.asset_id
