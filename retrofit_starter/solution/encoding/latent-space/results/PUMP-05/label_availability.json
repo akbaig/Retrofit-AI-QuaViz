@@ -1,0 +1,10 @@
+{
+  "asset_id": "PUMP-05",
+  "model": "label_informed",
+  "available": false,
+  "reason": "Fewer than two unambiguous training states",
+  "supervised_rows": 1467,
+  "training_states": {
+    "IMPELLER_WEAR": 1467
+  }
+}

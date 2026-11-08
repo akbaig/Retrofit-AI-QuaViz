@@ -1,0 +1,20 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+PUMP-08,2025-09-10T08:26:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5535416603088379,B1 mode-aware z: suction_pressure_kpa z=-4.4,Inspect / clean suction strainer.
+PUMP-08,2025-09-11T08:26:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: suction_pressure_kpa z=-12.7, discharge_pressure_kpa z=-4.5",Inspect / clean suction strainer.
+PUMP-08,2025-09-11T17:20:00Z,MACHINE,UNKNOWN,0.5443037748336792,B1 mode-aware z: fluid_temp_c z=-4.4,Inspect pump.
+PUMP-08,2025-09-13T00:07:00Z,SENSOR,COMMUNICATION_LOSS,0.05,B1 mode-aware z: missing rows,Check gateway / network; data gap.
+PUMP-08,2025-09-13T05:22:00Z,MACHINE,UNKNOWN,0.608889102935791,B1 mode-aware z: ,Inspect pump.
+PUMP-08,2025-09-13T23:37:00Z,MACHINE,UNKNOWN,0.99,B1 mode-aware z: fluid_temp_c z=-5.7,Inspect pump.
+PUMP-08,2025-09-14T04:09:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: vibration_crest_factor z=+13.9, fluid_temp_c z=-6.2, vibration_accel_rms_g z=+6.0",Inspect pump bearing; plan replacement; check lubrication.
+PUMP-08,2025-09-14T18:25:00Z,MACHINE,UNKNOWN,0.5219860672950745,"B1 mode-aware z: fluid_temp_c z=-4.2, bearing_temp_c z=-4.0",Inspect pump.
+PUMP-09,2026-02-09T12:46:00Z,SENSOR,SENSOR_NOISE_SPIKES,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-12.4),Verify motor_winding_temp_c against a reference gauge.
+PUMP-09,2026-02-10T06:28:00Z,MACHINE,IMBALANCE,0.99,"B1 mode-aware z: vibration_rms_mm_s z=+16.3, motor_winding_temp_c z=-12.9",Inspect impeller for fouling / damage; balance.
+PUMP-09,2026-02-10T18:28:00Z,MACHINE,MISALIGNMENT,0.99,B1 mode-aware z: vibration_rms_mm_s z=+21.1,Check coupling alignment.
+PUMP-09,2026-02-11T06:28:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=18.5),Verify vibration_rms_mm_s against a reference gauge.
+PUMP-09,2026-02-11T18:28:00Z,MACHINE,IMBALANCE,0.99,B1 mode-aware z: vibration_rms_mm_s z=+20.7,Inspect impeller for fouling / damage; balance.
+PUMP-09,2026-02-12T00:20:00Z,SENSOR,SENSOR_STUCK,0.99,B1 mode-aware z: bearing_temp_c frozen,Check transmitter bearing_temp_c.
+PUMP-09,2026-02-13T00:20:00Z,MACHINE,IMBALANCE,0.99,B1 mode-aware z: vibration_rms_mm_s z=+27.2,Inspect impeller for fouling / damage; balance.
+PUMP-09,2026-02-13T06:07:00Z,SENSOR,SENSOR_NOISE_SPIKES,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-13.6),Verify motor_winding_temp_c against a reference gauge.
+PUMP-09,2026-02-14T01:13:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: flow_m3_h z=-10.6, motor_power_kw z=-6.8",Check discharge valves and heat-exchanger fouling.
+PUMP-09,2026-02-15T01:13:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: flow_m3_h z=-23.1, motor_power_kw z=-14.4, discharge_pressure_kpa z=+9.2",Check discharge valves and heat-exchanger fouling.
+PUMP-09,2026-02-15T13:13:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: flow_m3_h z=-27.8, motor_power_kw z=-27.1, motor_current_a z=-10.1",Inspect / clean suction strainer.

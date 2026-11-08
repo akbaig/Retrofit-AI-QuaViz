@@ -1,0 +1,79 @@
+[
+  {
+    "epoch": 1,
+    "train_objective": 1.451428860425949,
+    "reconstruction_loss": 0.9721034814914068,
+    "contrastive_loss": 4.793253759543101,
+    "validation_nmse": 0.5007855686344552
+  },
+  {
+    "epoch": 5,
+    "train_objective": 0.9427160571018854,
+    "reconstruction_loss": 0.48771166304747265,
+    "contrastive_loss": 4.550043761730194,
+    "validation_nmse": 0.4259544568150854
+  },
+  {
+    "epoch": 10,
+    "train_objective": 0.7740582451224327,
+    "reconstruction_loss": 0.3207709677517414,
+    "contrastive_loss": 4.532872656981151,
+    "validation_nmse": 0.35255375897006536
+  },
+  {
+    "epoch": 15,
+    "train_objective": 0.7030937050779661,
+    "reconstruction_loss": 0.2511178217828274,
+    "contrastive_loss": 4.519758760929108,
+    "validation_nmse": 0.30962928745930934
+  },
+  {
+    "epoch": 20,
+    "train_objective": 0.6573192204038302,
+    "reconstruction_loss": 0.20735379556814829,
+    "contrastive_loss": 4.499654213587443,
+    "validation_nmse": 0.2840766042057896
+  },
+  {
+    "epoch": 25,
+    "train_objective": 0.6294101749857267,
+    "reconstruction_loss": 0.17932929657399654,
+    "contrastive_loss": 4.500808755556743,
+    "validation_nmse": 0.26355448724154346
+  },
+  {
+    "epoch": 30,
+    "train_objective": 0.6119678144653639,
+    "reconstruction_loss": 0.162669841820995,
+    "contrastive_loss": 4.492979645729065,
+    "validation_nmse": 0.2531917188430133
+  },
+  {
+    "epoch": 35,
+    "train_objective": 0.5985783562064171,
+    "reconstruction_loss": 0.15054523634413877,
+    "contrastive_loss": 4.480331142743428,
+    "validation_nmse": 0.25150497032910224
+  },
+  {
+    "epoch": 40,
+    "train_objective": 0.5874387919902802,
+    "reconstruction_loss": 0.13846625046183667,
+    "contrastive_loss": 4.4897253314654035,
+    "validation_nmse": 0.24489832378313486
+  },
+  {
+    "epoch": 45,
+    "train_objective": 0.5818034360806147,
+    "reconstruction_loss": 0.13169844293346009,
+    "contrastive_loss": 4.5010499358177185,
+    "validation_nmse": 0.2380871730637562
+  },
+  {
+    "epoch": 50,
+    "train_objective": 0.5618493060270945,
+    "reconstruction_loss": 0.114439330684642,
+    "contrastive_loss": 4.474099636077881,
+    "validation_nmse": 0.23340295847758147
+  }
+]

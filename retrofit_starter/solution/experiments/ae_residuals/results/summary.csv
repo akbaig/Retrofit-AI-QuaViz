@@ -1,0 +1,5 @@
+,best_policy_composite,shared_policy_composite,median_over_grid,mean_fault_auroc,any_fault_ap
+none,50.548,50.548,44.478,0.725,0.993
+regressors,55.446,55.446,47.69,0.69,0.994
+autoencoder,68.541,68.541,52.643,0.75,0.993
+both,56.924,55.427,46.244,0.725,0.994

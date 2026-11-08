@@ -1,0 +1,26 @@
+{
+  "new_seeds": [
+    202611071,
+    202611073,
+    202611079,
+    202611083,
+    202611089
+  ],
+  "previously_used_seeds": [
+    813107,
+    813109,
+    813121,
+    913127,
+    1013137,
+    1013141,
+    1013153,
+    1213139,
+    1213151,
+    1313161,
+    1413181
+  ],
+  "recordings": 35,
+  "days_per_recording": 3,
+  "generated": false,
+  "generation_after_model_freeze": true
+}

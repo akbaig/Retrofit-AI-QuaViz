@@ -1,0 +1,11 @@
+{
+  "frozen_inputs_unchanged": true,
+  "generated_test_artifacts_verified": true,
+  "metric_rows_recomputed": 11830,
+  "prediction_files_checked": 213,
+  "prediction_labels_and_times_verified": true,
+  "selected_model_replayed_families": 7,
+  "max_replay_rows_per_family": 100,
+  "selected_candidate": "expanded_task_encoder/logistic",
+  "test_metrics_sha256": "a6451b9fe3fea0934038a6822227ed09aec266230b83228b25139136563d7a52"
+}

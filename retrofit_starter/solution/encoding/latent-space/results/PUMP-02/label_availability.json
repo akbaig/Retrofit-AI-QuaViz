@@ -1,0 +1,11 @@
+{
+  "asset_id": "PUMP-02",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 5997,
+  "training_states": {
+    "BEARING_WEAR": 1041,
+    "BEARING_WEAR|SENSOR_DRIFT": 4956
+  }
+}

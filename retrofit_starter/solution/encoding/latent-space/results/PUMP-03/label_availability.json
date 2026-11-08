@@ -1,0 +1,11 @@
+{
+  "asset_id": "PUMP-03",
+  "model": "label_informed",
+  "available": true,
+  "reason": "",
+  "supervised_rows": 6046,
+  "training_states": {
+    "DISCHARGE_RESTRICTION|IMPELLER_WEAR": 3127,
+    "IMPELLER_WEAR": 2919
+  }
+}

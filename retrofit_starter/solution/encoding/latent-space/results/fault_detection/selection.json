@@ -1,0 +1,233 @@
+{
+  "primary": "any_fault_logistic",
+  "selected_model": "label_informed",
+  "uses_test_for_selection": false,
+  "encoder_fits_frozen": true,
+  "decisions": {
+    "any_fault_logistic": {
+      "ranking": [
+        {
+          "model": "label_informed",
+          "macro_ap": 0.7695204748240745,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "denoising_ae",
+          "macro_ap": 0.7451142118042713,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "autoencoder",
+          "macro_ap": 0.7425222315730702,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "temporal_ae",
+          "macro_ap": 0.5617268071741321,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "kernel_pca",
+          "macro_ap": 0.4662650281901565,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "pca",
+          "macro_ap": 0.39190444977704875,
+          "pumps": 2,
+          "cases": 2
+        }
+      ],
+      "common_cases": [
+        [
+          "PUMP-01",
+          "ANY_FAULT"
+        ],
+        [
+          "PUMP-09",
+          "ANY_FAULT"
+        ]
+      ],
+      "winner": "label_informed",
+      "metric": "equal-pump macro average precision on identical mixed-label validation cases"
+    },
+    "any_fault_knn": {
+      "ranking": [
+        {
+          "model": "autoencoder",
+          "macro_ap": 0.4958604027230935,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "label_informed",
+          "macro_ap": 0.486817235296477,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "denoising_ae",
+          "macro_ap": 0.4808337455425298,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "kernel_pca",
+          "macro_ap": 0.46991484098541414,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "pca",
+          "macro_ap": 0.44787902043235167,
+          "pumps": 2,
+          "cases": 2
+        },
+        {
+          "model": "temporal_ae",
+          "macro_ap": 0.4445915282246282,
+          "pumps": 2,
+          "cases": 2
+        }
+      ],
+      "common_cases": [
+        [
+          "PUMP-01",
+          "ANY_FAULT"
+        ],
+        [
+          "PUMP-09",
+          "ANY_FAULT"
+        ]
+      ],
+      "winner": "autoencoder",
+      "metric": "equal-pump macro average precision on identical mixed-label validation cases"
+    },
+    "fault_types_logistic": {
+      "ranking": [
+        {
+          "model": "pca",
+          "macro_ap": 0.8234341117317009,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "label_informed",
+          "macro_ap": 0.7818600031748503,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "kernel_pca",
+          "macro_ap": 0.7591929227709463,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "temporal_ae",
+          "macro_ap": 0.5967433608524567,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "denoising_ae",
+          "macro_ap": 0.5383142516227605,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "autoencoder",
+          "macro_ap": 0.49702576485588174,
+          "pumps": 3,
+          "cases": 4
+        }
+      ],
+      "common_cases": [
+        [
+          "PUMP-01",
+          "SUCTION_STRAINER_CLOGGING"
+        ],
+        [
+          "PUMP-02",
+          "SENSOR_DRIFT"
+        ],
+        [
+          "PUMP-06",
+          "CAVITATION"
+        ],
+        [
+          "PUMP-06",
+          "SUCTION_STRAINER_CLOGGING"
+        ]
+      ],
+      "winner": "pca",
+      "metric": "equal-pump macro average precision on identical mixed-label validation cases"
+    },
+    "fault_types_knn": {
+      "ranking": [
+        {
+          "model": "denoising_ae",
+          "macro_ap": 0.5267843527947952,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "pca",
+          "macro_ap": 0.5125550758458455,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "autoencoder",
+          "macro_ap": 0.48715574746832185,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "temporal_ae",
+          "macro_ap": 0.4770603280694308,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "label_informed",
+          "macro_ap": 0.4761567797826407,
+          "pumps": 3,
+          "cases": 4
+        },
+        {
+          "model": "kernel_pca",
+          "macro_ap": 0.3701374079799999,
+          "pumps": 3,
+          "cases": 4
+        }
+      ],
+      "common_cases": [
+        [
+          "PUMP-01",
+          "SUCTION_STRAINER_CLOGGING"
+        ],
+        [
+          "PUMP-02",
+          "SENSOR_DRIFT"
+        ],
+        [
+          "PUMP-06",
+          "CAVITATION"
+        ],
+        [
+          "PUMP-06",
+          "SUCTION_STRAINER_CLOGGING"
+        ]
+      ],
+      "winner": "denoising_ae",
+      "metric": "equal-pump macro average precision on identical mixed-label validation cases"
+    }
+  },
+  "protocol": "same train-only probes, fixed settings, validation AP on common cases; validation-only F1 thresholds"
+}

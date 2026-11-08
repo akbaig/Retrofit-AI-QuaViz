@@ -1,0 +1,21 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+SYN-DEVELOPMENT-913127-01,2024-12-03T08:10:00Z,MACHINE,UNKNOWN,0.99,B1 mode-aware z: ,Inspect pump.
+SYN-DEVELOPMENT-913127-02,2024-05-12T18:46:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-14.2),Verify motor_winding_temp_c against a reference gauge.
+SYN-DEVELOPMENT-913127-03,2024-11-12T05:12:00Z,MACHINE,UNKNOWN,0.7370226383209229,B1 mode-aware z: motor_current_a z=-8.8,Inspect pump.
+SYN-DEVELOPMENT-913127-03,2024-11-12T17:12:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_current_a deviates alone (z=-25.8),Verify motor_current_a against a reference gauge.
+SYN-DEVELOPMENT-913127-03,2024-11-12T22:05:00Z,MACHINE,DISCHARGE_RESTRICTION,0.8100700378417969,"B1 mode-aware z: discharge_pressure_kpa z=+9.7, motor_current_a z=-9.7",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-16T00:24:00Z,MACHINE,DISCHARGE_RESTRICTION,0.8394240538279215,"B1 mode-aware z: flow_m3_h z=-10.1, motor_power_kw z=-8.9, motor_speed_rpm z=-6.8",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-16T22:25:00Z,MACHINE,DISCHARGE_RESTRICTION,0.9081205526987711,"B1 mode-aware z: flow_m3_h z=-10.9, motor_power_kw z=-9.5, motor_speed_rpm z=-7.2",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-04,2024-07-17T16:06:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.550545851389567,B1 mode-aware z: suction_pressure_kpa z=-6.6,Inspect / clean suction strainer.
+SYN-DEVELOPMENT-913127-04,2024-07-18T21:12:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: suction_pressure_kpa z=-55.6, discharge_pressure_kpa z=-50.0, vibration_accel_rms_g z=+36.3",Inspect pump bearing; plan replacement; check lubrication.
+SYN-DEVELOPMENT-913127-04,2024-07-18T23:27:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: motor_winding_temp_c z=-14.0, flow_m3_h z=-11.2, motor_power_kw z=-9.5",Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-05,2024-09-04T00:44:00Z,MACHINE,DISCHARGE_RESTRICTION,0.526251475016276,B1 mode-aware z: discharge_pressure_kpa z=+6.3,Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-05,2024-09-04T06:56:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5717595020929972,B1 mode-aware z: motor_current_a deviates alone (z=-6.9),Verify motor_current_a against a reference gauge.
+SYN-DEVELOPMENT-913127-05,2024-09-04T10:02:00Z,MACHINE,UNKNOWN,0.5203702449798584,B1 mode-aware z: motor_current_a z=-6.2,Inspect pump.
+SYN-DEVELOPMENT-913127-05,2024-09-04T11:53:00Z,MACHINE,IMPELLER_WEAR,0.5912038882573446,"B1 mode-aware z: motor_current_a z=-7.1, discharge_pressure_kpa z=-6.3",Performance test; inspect impeller / wear rings.
+SYN-DEVELOPMENT-913127-05,2024-09-04T19:24:00Z,SENSOR,SENSOR_STUCK,0.7722218831380209,B1 mode-aware z: discharge_pressure_kpa frozen,Check transmitter discharge_pressure_kpa.
+SYN-DEVELOPMENT-913127-05,2024-09-05T13:26:00Z,MACHINE,UNKNOWN,0.5462963978449503,B1 mode-aware z: motor_current_a z=-6.6,Inspect pump.
+SYN-DEVELOPMENT-913127-05,2024-09-05T16:05:00Z,MACHINE,DISCHARGE_RESTRICTION,0.5161819458007812,B1 mode-aware z: discharge_pressure_kpa z=+6.2,Check discharge valves and heat-exchanger fouling.
+SYN-DEVELOPMENT-913127-07,2024-02-07T06:53:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.7283333937327067,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=8.7),Verify vibration_rms_mm_s against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-07T18:57:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-20.9),Verify motor_winding_temp_c against a reference gauge.
+SYN-DEVELOPMENT-913127-07,2024-02-08T11:26:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-16.3),Verify motor_winding_temp_c against a reference gauge.

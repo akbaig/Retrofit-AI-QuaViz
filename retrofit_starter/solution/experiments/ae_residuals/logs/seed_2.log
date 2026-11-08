@@ -1,0 +1,8 @@
+autoencoder: 13 channels, fitted in 2 s
+regressors   best composite 63.3  mean fault AUROC 0.752  (470 s)
+autoencoder  best composite 59.5  mean fault AUROC 0.755  (417 s)
+
+shared policy = threshold 0.7, persistence 5, recovery 240
+             best_policy_composite  shared_policy_composite  median_over_grid  mean_fault_auroc  any_fault_ap
+regressors                  63.280                   61.686            53.144             0.752         0.993
+autoencoder                 59.516                   52.948            48.779             0.755         0.980

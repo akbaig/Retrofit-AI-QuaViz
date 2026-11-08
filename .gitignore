@@ -1,0 +1,42 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Local generation and throwaway data
+build/
+results/
+
+# Large challenge data stay local
+# (repo-root .venv/ is already ignored above — do not recreate under retrofit_starter/)
+retrofit_starter/data/full/telemetry/
+
+# Unified synthetic generalizability set (~700MB; regenerate via simfleet / stress / synthetic.py)
+retrofit_starter/sim_data/
+
+# Explainability CLI demo cards (regenerate with python -m explainability)
+**/explain_template.json
+**/explain_gemini.json
+retrofit_starter/solution/final_model/explain_*.json
+
+# Detector caches (large; regenerate with stage1/stage2/stage3)
+retrofit_starter/solution/fleet_detector/cache/
+retrofit_starter/solution/fleet_detector/*.log
+retrofit_starter/solution/final_model/runs/
+retrofit_starter/solution/final_model/synthetic_data/
+
+# Encoding binaries (regenerate with run.py)
+retrofit_starter/solution/encoding/**/*.npy
+retrofit_starter/solution/encoding/**/*.joblib
+retrofit_starter/solution/encoding/**/*.pt
+retrofit_starter/solution/encoding/**/*.npz
+
+# Teammate draft, not part of the aggregated solution
+proposed_solution.md
+
+# Final-model feature cache (rebuilt by run.py prepare)
+retrofit_starter/solution/final_model/cache/

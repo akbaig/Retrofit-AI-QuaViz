@@ -1,0 +1,97 @@
+asset_id,alert_time_utc,event_class,fault_type,confidence,evidence,recommended_action
+SYN-HOLDOUT-1013137-01,2024-12-15T04:23:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.618283192316691,B1 mode-aware z: bearing_temp_c deviates alone (z=7.4),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013137-01,2024-12-15T08:03:00Z,MACHINE,UNKNOWN,0.5389662583669027,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013137-02,2024-08-16T01:22:00Z,MACHINE,UNKNOWN,0.6443198124567667,B1 mode-aware z: vibration_crest_factor z=-7.7,Inspect pump.
+SYN-HOLDOUT-1013137-02,2024-08-16T18:17:00Z,MACHINE,UNKNOWN,0.6488792101542155,B1 mode-aware z: vibration_crest_factor z=+7.8,Inspect pump.
+SYN-HOLDOUT-1013137-02,2024-08-16T23:33:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: vibration_crest_factor z=+59.1, vibration_accel_rms_g z=+8.1",Inspect pump bearing; plan replacement; check lubrication.
+SYN-HOLDOUT-1013137-02,2024-08-17T15:38:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: vibration_rms_mm_s z=+38.0, bearing_temp_c z=+14.9, vibration_accel_rms_g z=+13.4",Inspect pump bearing; plan replacement; check lubrication.
+SYN-HOLDOUT-1013137-02,2024-08-17T22:31:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-16.7),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013137-02,2024-08-18T04:02:00Z,MACHINE,UNKNOWN,0.6323966979980469,B1 mode-aware z: vibration_crest_factor z=-7.6,Inspect pump.
+SYN-HOLDOUT-1013137-02,2024-08-18T23:06:00Z,MACHINE,UNKNOWN,0.6559828519821167,B1 mode-aware z: vibration_crest_factor z=-7.9,Inspect pump.
+SYN-HOLDOUT-1013137-03,2024-09-05T22:22:00Z,MACHINE,IMPELLER_WEAR,0.5297155380249023,B1 mode-aware z: discharge_pressure_kpa z=-6.4,Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013137-03,2024-09-06T11:04:00Z,MACHINE,IMPELLER_WEAR,0.9862680435180664,"B1 mode-aware z: motor_current_a z=-11.8, discharge_pressure_kpa z=-7.6",Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013137-03,2024-09-06T23:04:00Z,SENSOR,COMMUNICATION_LOSS,0.05,B1 mode-aware z: missing rows,Check gateway / network; data gap.
+SYN-HOLDOUT-1013137-03,2024-09-07T04:26:00Z,MACHINE,IMPELLER_WEAR,0.8716192245483398,"B1 mode-aware z: motor_current_a z=-10.5, discharge_pressure_kpa z=-8.1",Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013137-04,2024-06-04T00:14:00Z,MACHINE,DISCHARGE_RESTRICTION,0.7027109464009603,"B1 mode-aware z: valve_position_pct z=-8.4, flow_m3_h z=-6.5, motor_speed_rpm z=-6.4",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013137-04,2024-06-04T22:14:00Z,MACHINE,DISCHARGE_RESTRICTION,0.6890597343444824,"B1 mode-aware z: flow_m3_h z=-8.3, valve_position_pct z=-8.1, motor_speed_rpm z=-7.6",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013137-04,2024-06-05T13:59:00Z,MACHINE,DISCHARGE_RESTRICTION,0.6797710259755453,"B1 mode-aware z: motor_winding_temp_c z=-8.2, flow_m3_h z=-7.6, motor_speed_rpm z=-7.1",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013137-04,2024-06-06T15:10:00Z,MACHINE,UNKNOWN,0.24548598130544028,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013137-04,2024-06-06T22:15:00Z,MACHINE,DISCHARGE_RESTRICTION,0.7546706994374593,"B1 mode-aware z: valve_position_pct z=-9.1, flow_m3_h z=-7.4, motor_speed_rpm z=-6.7",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013137-05,2024-03-01T11:31:00Z,SENSOR,SENSOR_STUCK,0.99,B1 mode-aware z: discharge_pressure_kpa frozen,Check transmitter discharge_pressure_kpa.
+SYN-HOLDOUT-1013137-05,2024-03-01T18:46:00Z,SENSOR,SENSOR_NOISE_SPIKES,0.99,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=16.0),Verify vibration_rms_mm_s against a reference gauge.
+SYN-HOLDOUT-1013137-05,2024-03-02T06:46:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=16.6),Verify vibration_rms_mm_s against a reference gauge.
+SYN-HOLDOUT-1013137-05,2024-03-02T13:46:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: motor_winding_temp_c z=-29.4, vibration_rms_mm_s z=+17.9, flow_m3_h z=-6.5",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-05,2024-03-02T19:17:00Z,MACHINE,IMBALANCE,0.99,"B1 mode-aware z: motor_winding_temp_c z=-32.6, vibration_rms_mm_s z=+15.3, flow_m3_h z=-10.3",Inspect impeller for fouling / damage; balance.
+SYN-HOLDOUT-1013137-05,2024-03-02T23:26:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: motor_winding_temp_c z=-31.2, flow_m3_h z=-11.9, motor_power_kw z=-8.8",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013137-05,2024-03-03T09:25:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-27.8),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013137-06,2024-02-02T04:11:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.598393718401591,B1 mode-aware z: suction_pressure_kpa z=-7.2,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-06,2024-02-02T09:26:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.618283192316691,B1 mode-aware z: bearing_temp_c deviates alone (z=-7.4),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013137-06,2024-02-02T11:40:00Z,MACHINE,UNKNOWN,0.646386981010437,B1 mode-aware z: bearing_temp_c z=-7.8,Inspect pump.
+SYN-HOLDOUT-1013137-06,2024-02-02T16:44:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5608758529027303,B1 mode-aware z: suction_pressure_kpa z=-6.7,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-06,2024-02-03T06:39:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: suction_pressure_kpa z=-26.1, discharge_pressure_kpa z=-11.6",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-06,2024-02-03T10:12:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: vibration_accel_rms_g z=+45.1, vibration_rms_mm_s z=+27.1, suction_pressure_kpa z=-26.4",Inspect pump bearing; plan replacement; check lubrication.
+SYN-HOLDOUT-1013137-06,2024-02-03T21:25:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: suction_pressure_kpa z=-26.3, discharge_pressure_kpa z=-13.2",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-07,2024-08-05T00:53:00Z,MACHINE,UNKNOWN,0.871524969736735,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013137-07,2024-08-05T01:05:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.8607152303059896,B1 mode-aware z: fluid_temp_c deviates alone (z=6.4),Verify fluid_temp_c against a reference gauge.
+SYN-HOLDOUT-1013137-07,2024-08-05T14:10:00Z,MACHINE,UNKNOWN,0.6932925383249918,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013137-07,2024-08-05T17:22:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.553124745686849,"B1 mode-aware z: flow_m3_h z=+6.6, motor_speed_rpm z=+6.5",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013137-07,2024-08-06T06:20:00Z,MACHINE,UNKNOWN,0.6792881488800049,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013137-07,2024-08-06T13:08:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-20.2),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013141-01,2024-07-12T19:10:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.618283192316691,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=7.4),Verify vibration_rms_mm_s against a reference gauge.
+SYN-HOLDOUT-1013141-01,2024-07-13T01:43:00Z,MACHINE,UNKNOWN,0.5100473562876383,B1 mode-aware z: fluid_temp_c z=-6.1,Inspect pump.
+SYN-HOLDOUT-1013141-01,2024-07-13T16:47:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5486114422480265,B1 mode-aware z: motor_speed_rpm z=+6.6,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013141-02,2024-08-14T08:10:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-23.4),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013141-02,2024-08-14T22:13:00Z,MACHINE,UNKNOWN,0.5605365037918091,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013141-02,2024-08-15T10:46:00Z,MACHINE,UNKNOWN,0.5261574586232504,B1 mode-aware z: fluid_temp_c z=-6.3,Inspect pump.
+SYN-HOLDOUT-1013141-02,2024-08-15T11:12:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.6604106426239014,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-6.0),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013141-02,2024-08-15T15:04:00Z,MACHINE,IMBALANCE,0.6147222518920898,B1 mode-aware z: vibration_rms_mm_s z=+7.4,Inspect impeller for fouling / damage; balance.
+SYN-HOLDOUT-1013141-02,2024-08-15T17:10:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.8290971120198568,B1 mode-aware z: suction_pressure_kpa z=-9.9,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013141-02,2024-08-16T04:52:00Z,MACHINE,IMBALANCE,0.6983333428700765,B1 mode-aware z: vibration_rms_mm_s z=+8.4,Inspect impeller for fouling / damage; balance.
+SYN-HOLDOUT-1013141-02,2024-08-16T06:45:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5291666587193807,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=6.3),Verify vibration_rms_mm_s against a reference gauge.
+SYN-HOLDOUT-1013141-02,2024-08-16T12:04:00Z,MACHINE,UNKNOWN,0.5543978611628214,B1 mode-aware z: fluid_temp_c z=-6.7,Inspect pump.
+SYN-HOLDOUT-1013141-03,2024-11-19T22:05:00Z,SENSOR,COMMUNICATION_LOSS,0.05,B1 mode-aware z: missing rows,Check gateway / network; data gap.
+SYN-HOLDOUT-1013141-03,2024-11-20T10:12:00Z,MACHINE,IMPELLER_WEAR,0.99,"B1 mode-aware z: discharge_pressure_kpa z=-22.2, motor_current_a z=-15.1",Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013141-04,2024-11-06T00:14:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,"B1 mode-aware z: flow_m3_h z=-12.3, motor_power_kw z=-10.9, motor_current_a z=-8.8",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013141-04,2024-11-06T22:13:00Z,MACHINE,DISCHARGE_RESTRICTION,0.9735802014668783,"B1 mode-aware z: flow_m3_h z=-11.7, motor_power_kw z=-10.2, motor_current_a z=-8.1",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013141-04,2024-11-07T22:14:00Z,MACHINE,DISCHARGE_RESTRICTION,0.9115180969238281,"B1 mode-aware z: flow_m3_h z=-10.9, motor_power_kw z=-9.5, motor_current_a z=-7.1",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013141-04,2024-11-08T22:16:00Z,MACHINE,DISCHARGE_RESTRICTION,0.8763884703318278,"B1 mode-aware z: flow_m3_h z=-10.5, motor_power_kw z=-9.3, motor_current_a z=-7.2",Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013141-05,2024-05-13T18:40:00Z,SENSOR,SENSOR_STUCK,0.20719653367996216,B1 mode-aware z: fluid_temp_c frozen,Check transmitter fluid_temp_c.
+SYN-HOLDOUT-1013141-05,2024-05-14T06:40:00Z,MACHINE,IMPELLER_WEAR,0.99,B1 mode-aware z: discharge_pressure_kpa z=-22.4,Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013141-06,2024-09-04T08:35:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.514010469118754,B1 mode-aware z: suction_pressure_kpa z=-6.2,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013141-06,2024-09-04T10:46:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5616011222203573,B1 mode-aware z: suction_pressure_kpa deviates alone (z=-6.7),Verify suction_pressure_kpa against a reference gauge.
+SYN-HOLDOUT-1013141-06,2024-09-04T22:08:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,B1 mode-aware z: suction_pressure_kpa z=-34.1,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013141-06,2024-09-05T04:25:00Z,SENSOR,SENSOR_STUCK,0.99,B1 mode-aware z: discharge_pressure_kpa frozen,Check transmitter discharge_pressure_kpa.
+SYN-HOLDOUT-1013141-06,2024-09-05T18:40:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: suction_pressure_kpa z=-45.6, discharge_pressure_kpa z=-10.2",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013141-07,2024-03-18T08:34:00Z,MACHINE,UNKNOWN,0.99,"B1 mode-aware z: motor_winding_temp_c z=-14.2, bearing_temp_c z=-8.0",Inspect pump.
+SYN-HOLDOUT-1013141-07,2024-03-18T19:24:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.6100196838378906,B1 mode-aware z: flow_m3_h deviates alone (z=-7.3),Verify flow_m3_h against a reference gauge.
+SYN-HOLDOUT-1013141-07,2024-03-19T07:24:00Z,MACHINE,DISCHARGE_RESTRICTION,0.99,B1 mode-aware z: flow_m3_h z=-37.8,Check discharge valves and heat-exchanger fouling.
+SYN-HOLDOUT-1013141-07,2024-03-19T14:26:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-10.0),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-01,2024-06-15T09:02:00Z,SENSOR,COMMUNICATION_LOSS,0.05,B1 mode-aware z: missing rows,Check gateway / network; data gap.
+SYN-HOLDOUT-1013153-01,2024-06-15T21:09:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5122222900390625,B1 mode-aware z: motor_speed_rpm z=+6.1,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013153-01,2024-06-16T13:47:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: motor_speed_rpm z=+41.2, motor_power_kw z=+14.9, suction_pressure_kpa z=-12.7",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013153-01,2024-06-17T06:16:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.5513885418574015,B1 mode-aware z: motor_speed_rpm z=+6.6,Inspect / clean suction strainer.
+SYN-HOLDOUT-1013153-03,2024-02-01T22:56:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5321375528971354,B1 mode-aware z: discharge_pressure_kpa deviates alone (z=-6.4),Verify discharge_pressure_kpa against a reference gauge.
+SYN-HOLDOUT-1013153-03,2024-02-02T10:56:00Z,SENSOR,SENSOR_STUCK,0.8440818786621094,B1 mode-aware z: discharge_pressure_kpa frozen,Check transmitter discharge_pressure_kpa.
+SYN-HOLDOUT-1013153-03,2024-02-03T06:15:00Z,MACHINE,UNKNOWN,0.5184138615926107,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013153-04,2024-04-14T16:50:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-20.8),Verify motor_winding_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-04,2024-04-14T19:41:00Z,MACHINE,UNKNOWN,0.45786138375600177,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013153-04,2024-04-15T08:29:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: valve_position_pct z=+37.1, motor_power_kw z=+28.5, motor_current_a z=+23.4",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013153-04,2024-04-16T06:16:00Z,MACHINE,SUCTION_STRAINER_CLOGGING,0.99,"B1 mode-aware z: valve_position_pct z=+34.0, motor_power_kw z=+27.2, motor_current_a z=+24.8",Inspect / clean suction strainer.
+SYN-HOLDOUT-1013153-05,2024-01-06T13:42:00Z,MACHINE,IMPELLER_WEAR,0.5046831766764323,B1 mode-aware z: discharge_pressure_kpa z=-6.1,Performance test; inspect impeller / wear rings.
+SYN-HOLDOUT-1013153-05,2024-01-07T09:25:00Z,MACHINE,UNKNOWN,0.99,B1 mode-aware z: ,Inspect pump.
+SYN-HOLDOUT-1013153-06,2024-01-05T04:08:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.674490769704183,B1 mode-aware z: bearing_temp_c deviates alone (z=-8.1),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-06,2024-01-05T18:52:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.590179443359375,B1 mode-aware z: bearing_temp_c deviates alone (z=-7.1),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-06,2024-01-05T19:37:00Z,MACHINE,IMBALANCE,0.5188390413920084,B1 mode-aware z: vibration_rms_mm_s z=+6.2,Inspect impeller for fouling / damage; balance.
+SYN-HOLDOUT-1013153-06,2024-01-05T20:38:00Z,MACHINE,MISALIGNMENT,0.6528725226720175,B1 mode-aware z: vibration_rms_mm_s z=+7.8,Check coupling alignment.
+SYN-HOLDOUT-1013153-06,2024-01-05T23:58:00Z,MACHINE,UNKNOWN,0.5339718659718832,B1 mode-aware z: bearing_temp_c z=-6.4,Inspect pump.
+SYN-HOLDOUT-1013153-06,2024-01-06T07:06:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.5534283717473348,B1 mode-aware z: vibration_rms_mm_s deviates alone (z=6.6),Verify vibration_rms_mm_s against a reference gauge.
+SYN-HOLDOUT-1013153-06,2024-01-06T07:47:00Z,MACHINE,IMBALANCE,0.6615198453267416,B1 mode-aware z: vibration_rms_mm_s z=+7.9,Inspect impeller for fouling / damage; balance.
+SYN-HOLDOUT-1013153-06,2024-01-06T09:04:00Z,MACHINE,MISALIGNMENT,0.5880175828933716,B1 mode-aware z: vibration_rms_mm_s z=+7.1,Check coupling alignment.
+SYN-HOLDOUT-1013153-06,2024-01-06T19:36:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.7306983470916748,B1 mode-aware z: bearing_temp_c deviates alone (z=-8.8),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-06,2024-01-07T01:31:00Z,MACHINE,UNKNOWN,0.646386981010437,B1 mode-aware z: bearing_temp_c z=-7.8,Inspect pump.
+SYN-HOLDOUT-1013153-06,2024-01-07T10:53:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.674490769704183,B1 mode-aware z: bearing_temp_c deviates alone (z=-8.1),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-06,2024-01-07T15:56:00Z,MACHINE,UNKNOWN,0.562075654665629,B1 mode-aware z: bearing_temp_c z=-6.7,Inspect pump.
+SYN-HOLDOUT-1013153-06,2024-01-07T23:29:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.646386981010437,B1 mode-aware z: bearing_temp_c deviates alone (z=-7.8),Verify bearing_temp_c against a reference gauge.
+SYN-HOLDOUT-1013153-07,2024-11-11T02:33:00Z,MACHINE,UNKNOWN,0.7419443130493164,B1 mode-aware z: vibration_crest_factor z=+8.9,Inspect pump.
+SYN-HOLDOUT-1013153-07,2024-11-11T13:16:00Z,MACHINE,BEARING_WEAR,0.99,"B1 mode-aware z: vibration_crest_factor z=+43.4, vibration_accel_rms_g z=+24.9",Inspect pump bearing; plan replacement; check lubrication.
+SYN-HOLDOUT-1013153-07,2024-11-11T19:29:00Z,SENSOR,SENSOR_CALIBRATION_SHIFT,0.99,B1 mode-aware z: motor_winding_temp_c deviates alone (z=-18.9),Verify motor_winding_temp_c against a reference gauge.
