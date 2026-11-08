@@ -86,23 +86,24 @@ flowchart LR
 
 ## 4. Evaluation and Benchmark Comparison
 
-We evaluated the frozen ensemble against our fleet model (`quaviz`) and the four official challenge baselines (`B0` through `B3`).
+We evaluated the frozen ensemble against the four official challenge baselines (`B0` through `B3`) on the official validation set.
 
-| Evaluation Split | Final Ensemble (**best**) | Fleet Model (quaviz) | Baseline 1 (B1) | Baseline 3 (B3) | Baseline 2 (B2) | Baseline 0 (B0) |
-|---|---:|---:|---:|---:|---:|---:|
-| **Official Validation** (9 events) | **95.0** | 75.0 | 78.0 | 69.2 | 50.9 | 23.1 |
-| **Astra Holdout** (78 events) | **63.5** | 52.5 | 41.7 | 32.3 | 44.9 | 10.0 |
+| Evaluation Split | Final Ensemble (**best**) | Baseline 1 (B1) | Baseline 3 (B3) | Baseline 2 (B2) | Baseline 0 (B0) |
+|---|---:|---:|---:|---:|---:|
+| **Official Validation** (9 events) | **95.0** | 78.0 | 69.2 | 50.9 | 23.1 |
 
 ![Headline Composite Scores](figures/01_headline_composites.png)
 
-![Per-Fault Class Performance on Astra Holdout](figures/02_per_type_holdout.png)
+![Precision, Recall, and F1 on Official Validation](figures/08_validation_prf.png)
+
+![Per-Fault Class Performance on Official Validation](figures/02_per_type_validation.png)
 
 ![Validation Performance Timeline](figures/03_validation_timeline.png)
 
 ### Key Observations
 
-- **Validation Performance:** The final ensemble scored **95.0** on the official validation set, outperforming all baseline models by substantial margins.
-- **Unseen Holdout Generalization:** On the post-freeze Astra holdout (78 events across diverse operational regimes), the model achieved **63.5**, retaining a 18.6-point lead over the strongest challenge baseline (B2 at 44.9).
+- **Validation Performance:** The final ensemble scored **95.0** on the official validation set, outperforming all baseline models by substantial margins (strongest baseline B1 at 78.0).
+- **Fault-Type Naming:** Across the nine validation events, the ensemble correctly named the first alert type for eight events; the baselines primarily recovered only the high-amplitude sensor and restriction cases.
 - **Instrumentation Robustness:** Thanks to crossed-sensor training and dedicated sensor specialists, the ensemble maintained accurate classification across pumps with differing sensor placements.
 
 ---
