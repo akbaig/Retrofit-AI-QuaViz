@@ -2,6 +2,8 @@
 
 Team solution for the Since AI 2026 / Business Turku industrial pump-fault challenge. The system provides real-time early fault detection, diagnostic classification (distinguishing mechanical degradation from sensor failures), physical explainability with LLM narration, simulated maintenance what-if impact, and a local plant console designed for edge deployment.
 
+![QuaViz — From Signals to Safe Decisions](presentation_images/01_overall.jpg)
+
 ---
 
 ## Solution Highlights
@@ -9,9 +11,15 @@ Team solution for the Since AI 2026 / Business Turku industrial pump-fault chall
 1. **Machine Learning Ensemble:**
    - Evaluated and rejected an encode-first deep learning approach (Track 1) due to elevated false-alarm rates and poor fault-type separation.
    - Selected a feature-engineered ensemble (Track 2) that explicitly models healthy pump behavior with 14 regressors, extracts thermodynamic and spectral features, and classifies anomalies using four multi-view boosted trees and four dedicated sensor specialists.
+
+   ![Machine Learning Workflow](presentation_images/02_machine_learning_workflow.jpg)
+
 2. **Benchmark Performance:**
    - **Official Validation Composite:** **95.0** (vs. Baselines: B1 78.0, B3 69.2, B2 50.9, B0 23.1).
    - **Post-Freeze Holdout (78 events):** **63.5** (vs. Baselines: B2 44.9, B1 41.7, B3 32.3, B0 10.0).
+
+   ![Official Validation Performance](presentation_images/03_validation_numbers.jpg)
+
 3. **Calibrated Operating Point:**
    - Alerts filtered by class-specific sensitivity thresholds, a 15-minute persistence window to eliminate transient process noise, and a 240-minute re-arming delay.
 4. **Transparent Explainability & What-If Validation:**
@@ -22,15 +30,22 @@ Team solution for the Since AI 2026 / Business Turku industrial pump-fault chall
    - Fast, CPU-only inference (<50 ms per pump) on standard industrial PCs.
    - Fully local telemetry ingestion via MQTT with connectivity-aware narration (Gemini online, Ollama offline, template fallback).
    - Read-only advisory surface: zero control write paths to PLCs, drives, or safety systems.
+
+   ![Edge Inference Architecture](presentation_images/05_edge_inference.jpg)
+
 6. **Grounded Retrofit Feasibility & Payback:**
    - Grounded in distributor list-price hardware BOMs (~€2,250 hardware; **~€4,500 total installed capex per pump**).
    - Prevents €24,000 catastrophic failures (10 h downtime + €9k overhaul) through planned €8,500 early interventions (3 h turnaround + localized repair), saving **€15,500 per event**.
    - Alert calibration limits nuisance costs (€120/false alarm check) to yield **€5,473/year in net savings per pump** with a **0.8-year payback**.
    - Read-only integration conforming to IEC 62443, NIST SP 800-82, and maritime IACS UR E26/E27 cybersecurity standards.
 
+   ![Retrofit Economics](presentation_images/06_feasibility_cost.jpg)
+
 ---
 
 ## Repository Structure & Key Deliverables
+
+![End-to-End Diagnostic System](presentation_images/04_system_diagram.jpg)
 
 ```
 Retrofit-AI-QuaViz/
@@ -185,6 +200,10 @@ python -m retrofit_sim replay --data data/full --asset PUMP-08 --mqtt-host 127.0
 ```
 
 *(If no MQTT broker is installed, telemetry can also be piped directly via stdin; see [`app/backend/README.md`](app/backend/README.md)).*
+
+---
+
+![QuaViz Summary: Earlier Insight, Safer Maintenance, Measurable Value](presentation_images/07_conclusion.jpg)
 
 ---
 

@@ -86,11 +86,12 @@ flowchart LR
 
 ## 4. Evaluation and Benchmark Comparison
 
-We evaluated the frozen ensemble against the four official challenge baselines (`B0` through `B3`) on the official validation set.
+We evaluated the frozen ensemble against the four official challenge baselines (`B0` through `B3`) on the official validation set and the post-freeze Astra holdout.
 
 | Evaluation Split | Final Ensemble (**best**) | Baseline 1 (B1) | Baseline 3 (B3) | Baseline 2 (B2) | Baseline 0 (B0) |
 |---|---:|---:|---:|---:|---:|
 | **Official Validation** (9 events) | **95.0** | 78.0 | 69.2 | 50.9 | 23.1 |
+| **Astra Holdout** (78 events) | **63.5** | 41.7 | 32.3 | 44.9 | 10.0 |
 
 ![Headline Composite Scores](figures/01_headline_composites.png)
 
@@ -98,12 +99,15 @@ We evaluated the frozen ensemble against the four official challenge baselines (
 
 ![Per-Fault Class Performance on Official Validation](figures/02_per_type_validation.png)
 
+![Per-Fault Class Performance on Astra Holdout](figures/02_per_type_holdout.png)
+
 ![Validation Performance Timeline](figures/03_validation_timeline.png)
 
 ### Key Observations
 
 - **Validation Performance:** The final ensemble scored **95.0** on the official validation set, outperforming all baseline models by substantial margins (strongest baseline B1 at 78.0).
 - **Fault-Type Naming:** Across the nine validation events, the ensemble correctly named the first alert type for eight events; the baselines primarily recovered only the high-amplitude sensor and restriction cases.
+- **Holdout Transfer:** On the post-freeze Astra holdout (78 generated events), the ensemble retained a lead over all baselines on first-alert type naming for most mechanical and sensor modes, while cavitation and calibration shift remain difficult.
 - **Instrumentation Robustness:** Thanks to crossed-sensor training and dedicated sensor specialists, the ensemble maintained accurate classification across pumps with differing sensor placements.
 
 ---

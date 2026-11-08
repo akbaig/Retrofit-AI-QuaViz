@@ -66,16 +66,16 @@ def validation_prf():
     plt.close(fig)
 
 
-def per_type():
+def per_type(set_name: str, outfile: str, title: str, figsize=(8, 5.5)) -> None:
     pe = pd.read_csv(HERE / "comparison" / "results" / "per_event.csv")
     methods = list(NAMES)
-    pe = pe[pe["method"].isin(methods) & (pe["set"] == "validation")].copy()
+    pe = pe[pe["method"].isin(methods) & (pe["set"] == set_name)].copy()
     pe["named"] = pe["type_correct"].astype(int)
     g = pe.groupby(["fault_type", "method"]).agg(n=("detected", "size"), named=("named", "sum"))
     rate = (g["named"] / g["n"]).unstack("method").reindex(columns=methods)
     n = g["n"].unstack("method")["astra-best"]
     rate = rate.sort_values("astra-best", ascending=False)
-    fig, ax = plt.subplots(figsize=(8, 5.5))
+    fig, ax = plt.subplots(figsize=figsize)
     im = ax.imshow(rate.to_numpy(float), aspect="auto", vmin=0, vmax=1, cmap="viridis")
     ax.set_xticks(range(len(methods)))
     ax.set_xticklabels([NAMES[m] for m in methods])
@@ -88,9 +88,9 @@ def per_type():
             if np.isfinite(v):
                 ax.text(j, i, f"{v:.0%}", ha="center", va="center", color="white" if v < 0.55 else "black", fontsize=8)
     fig.colorbar(im, ax=ax, fraction=0.03, label="First-alert type correct")
-    ax.set_title("Official validation: fraction of events named correctly first")
+    ax.set_title(title)
     fig.tight_layout()
-    fig.savefig(OUT / "02_per_type_validation.png", dpi=140)
+    fig.savefig(OUT / outfile, dpi=140)
     plt.close(fig)
 
 
@@ -156,13 +156,23 @@ def copy_static():
 def main():
     for old in [
         "02_per_type_holdouts.png",
-        "02_per_type_holdout.png",
         "08_sim_coverage.png",
         "09_sim_event_mix.png",
     ]:
         (OUT / old).unlink(missing_ok=True)
     headline()
-    per_type()
+    per_type(
+        "validation",
+        "02_per_type_validation.png",
+        "Official validation: fraction of events named correctly first",
+        figsize=(8, 5.5),
+    )
+    per_type(
+        "astra holdout",
+        "02_per_type_holdout.png",
+        "Frozen holdout (78 events): fraction of events named correctly first",
+        figsize=(8.5, 6),
+    )
     validation_prf()
     validation_timeline()
     stage1_separability()

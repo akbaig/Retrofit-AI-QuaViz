@@ -145,10 +145,13 @@ From [`solution/comparison/results/comparison.csv`](solution/comparison/results/
 | Set | **best** | B1 | B3 | B2 | B0 |
 |---|---:|---:|---:|---:|---:|
 | Validation (9 events) | **95.0** | 78.0 | 69.2 | 50.9 | 23.1 |
+| Astra frozen holdout (78) | **63.5** | 41.7 | 32.3 | 44.9 | 10.0 |
 
 ![Headline composites](solution/figures/01_headline_composites.png)
 
 ![Per-type on official validation](solution/figures/02_per_type_validation.png)
+
+![Per-type on the frozen holdout](solution/figures/02_per_type_holdout.png)
 
 ![Validation timeline](solution/figures/03_validation_timeline.png)
 
